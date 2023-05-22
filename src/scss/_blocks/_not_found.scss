@@ -1,0 +1,33 @@
+.not_found {
+    height: 100vh;
+
+    &__container {
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: em(106) 0 em(30);
+
+        @media(max-width: 750px) {
+            padding: em(40) em(10) 0;
+        }
+
+        .section_block {
+            position: relative;
+            top: 50%;
+            transform: translateY(-80%);
+        }
+    }
+
+    &__button {
+        text-decoration: underline;
+
+        @media(max-width: 750px) {
+            margin-top: auto;
+            margin-bottom: em(20);
+        }
+    }
+}

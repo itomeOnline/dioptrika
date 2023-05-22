@@ -1,0 +1,90 @@
+extends _base/_layout
+block settings 
+
+	- title = 'Диоптрика — Контакты';
+
+
+
+block content
+	main.view(data-app-layout="view", data-app-layout-namespace="examples")
+
+		.home__tabs
+			a.home__tab(href="/")
+				+svg('tab_1', 'icon')
+				span.text Главная
+			a.home__tab(href="/catalog")
+				+svg('tab_2', 'icon')
+				span.text Каталог
+			a.home__tab(href="/cart")
+				+svg('tab_3', 'icon')
+				span.text Корзина
+			a.home__tab(href="/favorites")
+				+svg('tab_4', 'icon')
+				span.text Избранное
+			a.home__tab(href="/account")
+				+svg('tab_5', 'icon')
+				span.text Войти
+
+		section.contacts
+			.contacts__container
+				.contacts__breadcrumbs.breadcrumbs
+					a.breadcrumbs__link(href="/") Диоптрика
+					span.slash /
+					a.breadcrumbs__link.is-active Контакты
+
+				h1.section_block__title Контакты
+
+				.contacts_slider.swiper
+					.swiper-wrapper 
+						.contacts_slider__slide.swiper-slide
+							+img(`${assetsPath}/img/contacts_pic_3.jpg`, '', 'image')
+						.contacts_slider__slide.swiper-slide
+							+img(`${assetsPath}/img/contacts_pic_2.jpg`, '', 'image')
+						.contacts_slider__slide.swiper-slide
+							+img(`${assetsPath}/img/contacts_pic_1.jpg`, '', 'image')
+
+				.contacts__links 
+				
+					a.contacts_link(href="" target="_blank")
+						p.contacts_link__title Москва, ул. Островная 2, оф. 303 #[+svg('contacts_arrow', 'icon')]
+						p.contacts_link__text Без выходных, 11:00–20:00
+
+					a.contacts_link(href="tel:8 (901) 930–08–08")
+						p.contacts_link__title 8 (901) 930–08–08 #[+svg('contacts_arrow', 'icon')]
+						p.contacts_link__text Звонок или сообщение в WhatsApp
+
+					a.contacts_link(href="mailto:dioptrikashop@yandex.ru")
+						p.contacts_link__title dioptrikashop@yandex.ru #[+svg('contacts_arrow', 'icon')]
+						p.contacts_link__text По всем вопросам
+
+					a.contacts_link(href="" target="_blank")
+						p.contacts_link__title Instagram #[+svg('contacts_arrow', 'icon')]
+						p.contacts_link__text @dioptrika_eyewear
+
+					a.contacts_link(href="" target="_blank")
+						p.contacts_link__title Telegram #[+svg('contacts_arrow', 'icon')]
+						p.contacts_link__text @dioptrika_eyewear
+
+					a.contacts_link(href="" target="_blank")
+						p.contacts_link__title ВКонтакте #[+svg('contacts_arrow', 'icon')]
+						p.contacts_link__text @dioptrika_eyewear
+
+				.contacts__location
+					a.contacts_location_link(href="https://go.2gis.com/92h0pn", target="_blank")
+						+svg('icon_gis', 'icon')
+						.text 2GIS
+					a.contacts_location_link(href="https://yandex.ru/maps/-/CCU8b4QpXA", target="_blank")
+						+svg('icon_yandex', 'icon')
+						.text Yandex.Maps
+					a.contacts_location_link(href="https://goo.gl/maps/Y3YzXCSxivJAfq8F9", target="_blank")
+						+svg('icon_geo', 'icon')
+						.text Google Maps
+
+			.contacts__gallery
+				.contacts__gallery_wrap   
+					.contacts__gallery_pic 
+						+img(`${assetsPath}/img/contacts_pic_1.jpg`, '', 'image')  
+					.contacts__gallery_pic 
+						+img(`${assetsPath}/img/contacts_pic_2.jpg`, '', 'image')  
+				.contacts__gallery_pic 
+					+img(`${assetsPath}/img/contacts_pic_3.jpg`, '', 'image')

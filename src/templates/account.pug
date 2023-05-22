@@ -1,0 +1,200 @@
+extends _base/_layout
+block settings 
+
+	- title = 'Диоптрика — Личный кабинет';
+
+
+block content
+
+	main.view(data-app-layout="view", data-app-layout-namespace="examples")
+
+		.home__tabs
+			a.home__tab(href="/")
+				+svg('tab_1', 'icon')
+				span.text Главная
+			a.home__tab(href="/catalog")
+				+svg('tab_2', 'icon')
+				span.text Каталог
+			a.home__tab(href="/cart")
+				+svg('tab_3', 'icon')
+				span.text Корзина
+			a.home__tab(href="/favorites")
+				+svg('tab_4', 'icon')
+				span.text Избранное
+			a.home__tab.is-active(href="/account")
+				+svg('tab_5', 'icon')
+				span.text Войти
+
+		section.account
+			.account__column
+				.account__column_wrap
+					.account__breadcrumbs.breadcrumbs
+						a.breadcrumbs__link(href="/") Диоптрика
+						span.slash /
+						a.breadcrumbs__link.is-active Личный кабинет
+					
+					h1.section_block__title Личный кабинет
+				
+				.account__tabs 
+					a.account__tab.is-active(href="/account")
+						+svg('acc_icon_1', 'icon_main')
+						span.text.text--desk история заказов
+						span.text.text--mob заказы
+						+svg('link_arrow', 'icon_arrow')
+					a.account__tab(href="/account_personal_info")
+						+svg('acc_icon_2', 'icon_main')
+						span.text.text--desk личные данные
+						span.text.text--mob данные
+						+svg('link_arrow', 'icon_arrow')
+					a.account__tab(href="/account_additional_info")
+						+svg('acc_icon_3', 'icon_main')
+						span.text.text--desk доп. информация
+						span.text.text--mob аккаунт
+						+svg('link_arrow', 'icon_arrow')
+
+					button.account__btn_leave
+						+svg('acc_icon_4', 'icon_main')
+						span.text.text--desk выйти из аккаунта
+						span.text.text--mob выход
+
+			.account__content
+
+				h2.section_block__title.section_block__title--small История заказов
+
+				.account__sort_buttons
+					button.account__sort_btn.is-active
+						span.text все (2)
+					button.account__sort_btn
+						span.text ожидает оплаты (0)
+					button.account__sort_btn
+						span.text СОбирается (0)
+					button.account__sort_btn
+						span.text в доставке (1)
+					button.account__sort_btn
+						span.text ожидает в магазине (0)
+					button.account__sort_btn
+						span.text завершённые (1)
+					button.account__sort_btn
+						span.text отменённые (0)
+
+				.account__cards 
+					a.account_card(href="/account_order_card")
+						.account_card__top
+							.account_card__status_btn.account_card__status_btn--payment Ожидает оплаты
+
+							.account_card__wrap
+								p.account_card__text.account_card__text--big № RU220704-602174
+								p.account_card__text Заказ от 10 декабря 2022 на сумму 23 590 руб
+						   
+							.account_card__wrap.account_card__wrap--end
+								p.account_card__text Трек-номер: 513268
+								p.account_card__text Ожидаемая дата доставки: 24 декабря 2022
+
+						.account_card__gallery
+							.account_card__img 
+								+img(`${assetsPath}/img/product_page_pic_1.jpg`, '', 'image')
+
+					a.account_card(href="/account_order_card")
+						.account_card__top
+							.account_card__status_btn.account_card__status_btn--packing Собирается
+
+							.account_card__wrap
+								p.account_card__text.account_card__text--big № RU220704-602174
+								p.account_card__text Заказ от 10 декабря 2022 на сумму 23 590 руб
+						   
+							.account_card__wrap.account_card__wrap--end
+								p.account_card__text Трек-номер: 513268
+								p.account_card__text Ожидаемая дата доставки: 24 декабря 2022
+
+						.account_card__gallery
+							.account_card__img 
+								+img(`${assetsPath}/img/product_page_pic_1.jpg`, '', 'image')
+
+					a.account_card(href="/account_order_card")
+						.account_card__top
+							.account_card__status_btn.account_card__status_btn--delivery В доставке
+
+							.account_card__wrap
+								p.account_card__text.account_card__text--big № RU220704-602174
+								p.account_card__text Заказ от 10 декабря 2022 на сумму 23 590 руб
+						   
+							.account_card__wrap.account_card__wrap--end
+								p.account_card__text Трек-номер: 513268
+								p.account_card__text Ожидаемая дата доставки: 24 декабря 2022
+
+						.account_card__gallery
+							.account_card__img 
+								+img(`${assetsPath}/img/product_page_pic_1.jpg`, '', 'image')
+
+					a.account_card(href="/account_order_card")
+						.account_card__top
+							.account_card__status_btn.account_card__status_btn--waiting Ожидает в магазине
+
+							.account_card__wrap
+								p.account_card__text.account_card__text--big № RU220704-602174
+								p.account_card__text Заказ от 10 декабря 2022 на сумму 23 590 руб
+						   
+							.account_card__wrap.account_card__wrap--end
+								p.account_card__text Трек-номер: 513268
+								p.account_card__text Ожидаемая дата доставки: 24 декабря 2022
+
+						.account_card__gallery
+							.account_card__img 
+								+img(`${assetsPath}/img/product_page_pic_1.jpg`, '', 'image')
+					
+					a.account_card(href="/account_order_card")
+						.account_card__top
+							.account_card__status_btn.account_card__status_btn--finished Завершён
+
+							.account_card__wrap
+								p.account_card__text.account_card__text--big № RU220704-602174
+								p.account_card__text Заказ от 10 декабря 2022 на сумму 23 590 руб
+						   
+							.account_card__wrap.account_card__wrap--end
+								p.account_card__text Трек-номер: 513268
+								p.account_card__text Ожидаемая дата доставки: 24 декабря 2022
+
+						.account_card__gallery
+							.account_card__img 
+								+img(`${assetsPath}/img/product_page_pic_1.jpg`, '', 'image')
+
+					a.account_card(href="/account_order_card")
+						.account_card__top
+							.account_card__status_btn.account_card__status_btn--cancel Отменён
+
+							.account_card__wrap
+								p.account_card__text.account_card__text--big № RU220704-602174
+								p.account_card__text Заказ от 10 декабря 2022 на сумму 23 590 руб
+						   
+							.account_card__wrap.account_card__wrap--end
+								p.account_card__text Трек-номер: 513268
+								p.account_card__text Ожидаемая дата доставки: 24 декабря 2022
+
+						.account_card__gallery
+							.account_card__img 
+								+img(`${assetsPath}/img/product_page_pic_1.jpg`, '', 'image')
+							.account_card__img 
+								+img(`${assetsPath}/img/product_page_pic_1.jpg`, '', 'image')
+							.account_card__img 
+								+img(`${assetsPath}/img/product_page_pic_1.jpg`, '', 'image')
+							.account_card__img 
+								+img(`${assetsPath}/img/product_page_pic_1.jpg`, '', 'image')
+
+			//- .home__tabs
+			//- 	a.home__tab.is-active(href="/")
+			//- 		+svg('tab_1', 'icon')
+			//- 		span.text Главная
+			//- 	a.home__tab(href="/catalog")
+			//- 		+svg('tab_2', 'icon')
+			//- 		span.text Каталог
+			//- 	a.home__tab(href="/cart")
+			//- 		+svg('tab_3', 'icon')
+			//- 		span.text Корзина
+			//- 	a.home__tab(href="/favorites")
+			//- 		+svg('tab_4', 'icon')
+			//- 		span.text Избранное
+			//- 	a.home__tab(href="/account")
+			//- 		+svg('tab_5', 'icon')
+			//- 		span.text Войти
+
+

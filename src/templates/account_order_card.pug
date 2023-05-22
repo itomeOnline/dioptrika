@@ -1,0 +1,159 @@
+extends _base/_layout
+block settings 
+
+	- title = 'Диоптрика — Личный кабинет';
+
+
+block content
+	main.view(data-app-layout="view", data-app-layout-namespace="examples")
+
+		.home__tabs
+			a.home__tab(href="/")
+				+svg('tab_1', 'icon')
+				span.text Главная
+			a.home__tab(href="/catalog")
+				+svg('tab_2', 'icon')
+				span.text Каталог
+			a.home__tab(href="/cart")
+				+svg('tab_3', 'icon')
+				span.text Корзина
+			a.home__tab(href="/favorites")
+				+svg('tab_4', 'icon')
+				span.text Избранное
+			a.home__tab.is-active(href="/account")
+				+svg('tab_5', 'icon')
+				span.text Войти
+
+		section.account
+			.account__column
+				.account__column_wrap
+					.account__breadcrumbs.breadcrumbs
+						a.breadcrumbs__link(href="/") Диоптрика
+						span.slash /
+						a.breadcrumbs__link.is-active Личный кабинет
+					
+					h1.section_block__title Личный кабинет
+				
+				.account__tabs 
+					a.account__tab.is-active(href="/account")
+						+svg('acc_icon_1', 'icon_main')
+						span.text.text--desk история заказов
+						span.text.text--mob заказы
+						+svg('link_arrow', 'icon_arrow')
+					a.account__tab(href="/account_personal_info")
+						+svg('acc_icon_2', 'icon_main')
+						span.text.text--desk личные данные
+						span.text.text--mob данные
+						+svg('link_arrow', 'icon_arrow')
+					a.account__tab(href="/account_additional_info")
+						+svg('acc_icon_3', 'icon_main')
+						span.text.text--desk доп. информация
+						span.text.text--mob аккаунт
+						+svg('link_arrow', 'icon_arrow')
+
+					button.account__btn_leave
+						+svg('acc_icon_4', 'icon_main')
+						span.text.text--desk выйти из аккаунта
+						span.text.text--mob выход
+
+			.account__content.account__content--order_card
+
+				.account_order_card__top 
+					h2.section_block__title.section_block__title--small № RU220704-602174
+					p.section_block__text.section_block__text--green Доставлен 7 июля
+
+				.account_order_card__content
+					.account_order_card__info
+						p.account_order_card__info_title Информация о заказе
+
+						.account_order_card__info_wrap 
+							p.account_order_card__info_caption Продавец
+							p.account_order_card__info_text Диоптрика
+					
+						.account_order_card__info_wrap 
+							p.account_order_card__info_caption Получатель
+							p.account_order_card__info_text Михаил Штарм
+							p.account_order_card__info_text +79502999789
+							p.account_order_card__info_text mikhailstarm@gmail.com
+						
+						.account_order_card__info_wrap 
+							p.account_order_card__info_caption Оплата
+							p.account_order_card__info_text Банковской картой
+
+						.account_order_card__info_wrap 
+							p.account_order_card__info_caption Доставка
+							p.account_order_card__info_text Курьер
+
+						.account_order_card__info_wrap 
+							p.account_order_card__info_caption Адрес доставки
+							p.account_order_card__info_text Москва, Варшавское шоссе 64
+
+						.account_order_card__info_wrap 
+							p.account_order_card__info_caption Дата создания заказа
+							p.account_order_card__info_text 14.06.2023
+
+						.account_order_card__info_wrap 
+							p.account_order_card__info_caption Сумма заказа
+							p.account_order_card__info_text 60 000 руб
+
+						.account_order_card__info_wrap 
+							p.account_order_card__info_caption Статус
+							p.account_order_card__info_text Завершён
+
+						.account_order_card__info_wrap 
+							p.account_order_card__info_caption Трек-номер
+							p.account_order_card__info_text 220704
+
+
+					.account_order_card__products
+						p.account_order_card__info_title Товары
+						
+						.account_order_card__products_cards
+						
+							.account_order_card__products_card 
+								.account_order_card__products_img 
+									+img(`${assetsPath}/img/product_page_pic_1.jpg`, '', 'image')
+								p.account_order_card__products_text Tam 01
+								p.account_order_card__products_text.account_order_card__products_text--small 29 000 RUB
+
+							.account_order_card__products_card 
+								.account_order_card__products_img 
+									+img(`${assetsPath}/img/product_page_pic_1.jpg`, '', 'image')
+								p.account_order_card__products_text Tam 01
+								p.account_order_card__products_text.account_order_card__products_text--small 29 000 RUB
+
+							.account_order_card__products_card 
+								.account_order_card__products_img 
+									+img(`${assetsPath}/img/product_page_pic_1.jpg`, '', 'image')
+								p.account_order_card__products_text Tam 01
+								p.account_order_card__products_text.account_order_card__products_text--small 29 000 RUB
+
+							.account_order_card__products_card 
+								.account_order_card__products_img 
+									+img(`${assetsPath}/img/product_page_pic_1.jpg`, '', 'image')
+								p.account_order_card__products_text Tam 01
+								p.account_order_card__products_text.account_order_card__products_text--small 29 000 RUB
+
+							.account_order_card__products_card 
+								.account_order_card__products_img 
+									+img(`${assetsPath}/img/product_page_pic_1.jpg`, '', 'image')
+								p.account_order_card__products_text Tam 01
+								p.account_order_card__products_text.account_order_card__products_text--small 29 000 RUB
+
+							.account_order_card__products_card 
+								.account_order_card__products_img 
+									+img(`${assetsPath}/img/product_page_pic_1.jpg`, '', 'image')
+								p.account_order_card__products_text Tam 01
+								p.account_order_card__products_text.account_order_card__products_text--small 29 000 RUB
+
+							.account_order_card__products_card 
+								.account_order_card__products_img 
+									+img(`${assetsPath}/img/product_page_pic_1.jpg`, '', 'image')
+								p.account_order_card__products_text Tam 01
+								p.account_order_card__products_text.account_order_card__products_text--small 29 000 RUB
+
+							.account_order_card__products_card 
+								.account_order_card__products_img 
+									+img(`${assetsPath}/img/product_page_pic_1.jpg`, '', 'image')
+								p.account_order_card__products_text Tam 01
+								p.account_order_card__products_text.account_order_card__products_text--small 29 000 RUB

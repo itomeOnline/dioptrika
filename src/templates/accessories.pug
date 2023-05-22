@@ -1,0 +1,52 @@
+extends _base/_layout
+block settings 
+
+	- title = 'Диоптрика — Аксессуары';
+
+
+
+block content
+	main.view(data-app-layout="view", data-app-layout-namespace="examples")
+
+		.home__tabs
+			a.home__tab.is-active(href="/")
+				+svg('tab_1', 'icon')
+				span.text Главная
+			a.home__tab.is-active(href="/catalog")
+				+svg('tab_2', 'icon')
+				span.text Каталог
+			a.home__tab(href="/cart")
+				+svg('tab_3', 'icon')
+				span.text Корзина
+			a.home__tab(href="/favorites")
+				+svg('tab_4', 'icon')
+				span.text Избранное
+			a.home__tab(href="/account")
+				+svg('tab_5', 'icon')
+				span.text Войти
+
+		section.catalog.catalog--accessories
+			.catalog__breadcrumbs.breadcrumbs
+				a.breadcrumbs__link(href="/") Диоптрика
+				span.slash /
+				a.breadcrumbs__link(href="/catalog") Каталог
+				span.slash /
+				a.breadcrumbs__link.is-active Аксессуары
+
+			h1.section_block__title Аксессуары
+
+			.catalog_search_mobile
+				+svg('icon_search', 'icon')
+				input.catalog_search_mobile__input(type="search", name="catalog_search", placeholder="Товар, бренд или артикул")
+
+			.catalog__content
+
+				a.catalog__category(href="/catalog_inner")
+					.catalog__category_img
+						+img(`${assetsPath}/img/glasses_acc_cover.jpg`, '', 'image')
+					p.catalog__category_text Аксессуары для очков
+				a.catalog__category(href="/catalog_inner")
+					.catalog__category_img
+						+img(`${assetsPath}/img/contacts_acc_cover.jpg`, '', 'image')
+					p.catalog__category_text Аксессуары для линз
+				

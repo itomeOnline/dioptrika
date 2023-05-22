@@ -1,0 +1,49 @@
+include _globals
+doctype html
+html(lang="ru")
+	block settings
+	head
+		meta(charset="UTF-8")
+		meta(name='viewport', content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no")
+		if title 
+			title #{title}
+			-
+		if description
+			-
+			meta(content=description, name="description")
+			
+		link(rel='stylesheet', href='/css/main.css?v1.1.1')
+		link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css")
+		link(rel='apple-touch-icon', sizes='180x180', href=`${assetsPath}/favicon/apple-touch-icon.png`)
+		link(rel='icon', type='image/png', sizes='32x32', href=`${assetsPath}/favicon/favicon-32x32.png`)
+		link(rel='icon', type='image/png', sizes='16x16', href=`${assetsPath}/favicon/favicon-16x16.png`)
+		link(rel='icon', type='image/png', sizes='16x16', href=`${assetsPath}/favicon/favicon.ico`)
+		link(rel='manifest', href=`${assetsPath}/favicon/site.webmanifest`)
+		link(rel='mask-icon', href=`${assetsPath}/favicon/safari-pinned-tab.svg`, color='#000000')
+		link(rel='shortcut icon', href=`${assetsPath}/favicon/favicon.ico`)
+		meta(name='msapplication-TileColor', content='#ffffff')
+		meta(name='msapplication-config', content=`${assetsPath}/favicon/browserconfig.xml`)
+		meta(name='theme-color', content='#ffffff')
+		meta(name="robots" content="noindex, nofollow")
+		script(src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js")
+		script(src="https://api-maps.yandex.ru/2.1/?apikey=db005e19-7b11-4207-82e1-2dc1681aff36&lang=ru_RU" type="text/javascript")
+	
+	body
+		include ../../assets/icons.svg
+		.preloader(data-scroll="", data-scroll-call="initCounter", data-counter-start="")
+			.preloader__wrap 
+				.preloader__num(data-counter="", data-start="0", data-end="100", data-difference="1", data-time-delay="3000", data-add-text="%") 0 
+		include ../_partials/modals
+		.content
+			include ../_partials/header
+			block content
+			.cookie(data-cookie-tooltip="")
+				.cookie__wrap
+					p.cookie__text Продолжая пользоваться сайтом, вы соглашаетесь #[br.mobile] с условиями обработки персональных данных. #[br.mobile] Подробности — на странице #[a.link(href="/privacy") конфиденциальности].
+					button.cookie__btn.btn.btn--grey(data-cookie-btn="")
+						span.btn__text ОК
+			include ../_partials/footer
+
+		block scripts
+			script(src="https://polyfill.io/v3/polyfill.js?features=IntersectionObserver")
+			script(src="js/app.js")

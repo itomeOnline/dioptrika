@@ -1,0 +1,40 @@
+.catalog_infinite_slider {
+	padding: em(60) 0;	
+
+    pointer-events: none;
+
+    @media(max-width: 750px) {
+        padding: em(40) 0;
+    }
+
+    .swiper-wrapper {
+        height: fit-content;
+
+        transition-timing-function: linear !important;
+    }
+
+    &__slide {
+        max-width: 18em;
+
+        @media(max-width: 750px) {
+            max-width: 12em;
+        }
+    }
+
+    &__slide_text {
+        font-family: $text-font;
+        font-weight: 400;
+        font-size: 1em;
+        line-height: 1.5em;
+        color: #000000;
+
+        white-space: nowrap;
+
+        width: fit-content;
+
+        @media(max-width: 750px) {
+            font-size: em(14);
+            line-height: em(22,14);
+        }
+    }
+}

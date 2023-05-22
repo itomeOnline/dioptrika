@@ -1,0 +1,36 @@
+.modal_close {
+	position: absolute;
+
+	top: 1em;
+	right: 1em;
+	
+	z-index: 1;
+
+	width: 24px;
+	height: 24px;
+    
+	padding: 0;
+	border-radius: 50%;
+
+	background: #EEEEEE;
+
+	transition: all .4s;
+
+	@media(max-width: 500px) {
+		// top: 0;
+		// right: 0;
+	}
+
+	svg {
+		width: 10px;
+		height: 10px;
+
+		transition: transform .25s;
+
+		fill: #323232;
+	}
+
+	&:hover svg {
+		transform: scale3d(.8, .8, 1) rotate(90deg);
+	}
+}

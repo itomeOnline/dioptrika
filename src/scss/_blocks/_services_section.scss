@@ -1,0 +1,15 @@
+.services_section {
+	padding: em(120) em(30);	
+
+    @media(max-width: 750px) {
+        padding: em(60) em(10) em(44);
+    }	
+    
+    &__content {
+        margin-top: em(30);
+
+        @media(max-width: 750px) {
+            margin-top: em(20);
+        }
+    }
+}

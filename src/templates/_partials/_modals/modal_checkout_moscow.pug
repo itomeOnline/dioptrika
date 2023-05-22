@@ -1,0 +1,65 @@
+.modal_checkout_moscow.modal_form.modal(data-modal="modal_checkout_moscow")
+
+	button.modal_close.modal_form__close(data-modal-close="")
+		+svg('icon_cross', 'icon')
+
+	.modal_checkout_moscow__mob_wrap
+		p.modal_checkout_moscow__title_mob Доставка по Москве #[br] и в пределах МКАД
+
+	#modalMap.modal_checkout_moscow__map
+	
+	.modal_checkout_moscow__info
+		p.section_block__title.section_block__title--mob.section_block__title--small Доставка по Москве #[br] и в пределах МКАД
+
+		.modal_checkout_moscow__content
+			.modal_checkout_moscow__line.modal_checkout_moscow__line--flex 
+
+				.modal_checkout_moscow__input.modal_checkout_moscow__input--292 
+					p.modal_checkout_moscow__input_caption Адрес доставки
+
+					.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+						+svg('icon_search', 'icon icon_left')
+						input.input_wrapper__input.input_wrapper__input--icon_left(type="search" name="checkout_search" placeholder="Улица..." required autocomplete="off")
+						
+				.modal_checkout_moscow__input.modal_checkout_moscow__input--small 
+					//- p.modal_checkout_moscow__input_caption
+
+					.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+						input.input_wrapper__input(type="text" name="apartment" required autocomplete="off")
+						label.input_wrapper__label Квартира 
+						.input_wrapper__tooltip(data-input-tooltip="")
+
+			.modal_checkout_moscow__line.modal_checkout_moscow__line--mob100.modal_checkout_moscow__input--292 
+				p.modal_checkout_moscow__input_caption Дата доставки
+				.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+					input.input_wrapper__input(type="date" name="date" placeholder="Выбрать дату" required autocomplete="off")
+						
+			.modal_checkout_moscow__line
+				p.modal_checkout_moscow__input_caption Дополнительная информация 
+				.input_wrapper.input_wrapper--textarea_grey(data-input-wrapper="")
+					textarea.input_wrapper__textarea(name="comment", placeholder="Комментарий курьеру (подъезд, этаж, как пройти)")
+
+			.modal_checkout_moscow__line
+				p.modal_checkout_moscow__input_caption Нужен ли подъём на этаж?
+
+				.modal_checkout_moscow__line_wrap
+					label.modal_checkout_moscow_radio
+						input.radio(type="radio", name="go_to_floor", value ="yes", hidden="")
+						.modal_checkout_moscow_radio__block
+							.modal_checkout_moscow_radio__radio
+							span.modal_checkout_moscow_radio__text Нужен
+					label.modal_checkout_moscow_radio
+						input.radio(type="radio", name="go_to_floor", value ="no", hidden="")
+						.modal_checkout_moscow_radio__block
+							.modal_checkout_moscow_radio__radio
+							span.modal_checkout_moscow_radio__text Не нужен
+			
+			.modal_checkout_moscow__price
+				p.section_block__title 500 руб
+				p.modal_checkout_moscow__price_text Стоимость доставки
+			
+			.modal_checkout_moscow__buttons
+				button.modal_checkout_moscow__btn.btn.btn--filled(data-modal-close="")
+					span.btn__text сохранить
+				a.modal_checkout_moscow__btn.btn.btn--grey(href="/delivery_payment" target="_blank")
+					span.btn__text условия доставки

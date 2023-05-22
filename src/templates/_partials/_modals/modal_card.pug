@@ -1,0 +1,178 @@
+.modal_card.modal_form.modal(data-modal="modal_card")
+
+	button.modal_close.modal_form__close(data-modal-close="")
+		+svg('icon_cross', 'icon')
+
+	a.modal_card__btn.btn.btn--filled(href="/product_page")
+		span.btn__text смотреть подробнее
+
+	.modal_card__content(data-simplebar="")
+
+		.modal_card__slider
+			.modal_card__slider_wrap(data-hover-images="")
+				img.image(data-lazy, data-src=`${assetsPath}/img/product_page_pic_1.jpg`, alt="")
+				img.image(data-lazy, data-src=`${assetsPath}/img/hits_pic_2.jpg`, alt="")
+				img.image(data-lazy, data-src=`${assetsPath}/img/hits_pic_1.jpg`, alt="")
+
+
+		.modal_card__info
+
+			.product_page_info__block
+				span.product_page_info__text.product_page_info__text--small.green В наличии
+
+				p.product_page_info__title Prada Palette 01
+				.product_page_info__line 
+					span.product_page_info__price 17 900 руб
+					span.product_page_info__price.old 24 000 руб
+				p.product_page_info__text Очки солнцезащитные от премиум-бренда выполнены из пластика. Особенности: нерегулируемые носовые упоры, фотохромные линзы, высокая степень светозащиты, в комплекте футляр.
+				
+				.product_page_info__buttons
+					button.product_page_info__btn.btn.btn--filled.btn--icon_right
+						span.btn__text добавить в корзину
+						+svg('cart', "btn__icon btn__icon--white btn__icon--right")
+					button.product_page_info__btn.btn.btn--grey.btn--icon_right
+						span.btn__text избранное
+						+svg('heart', "btn__icon btn__icon--black btn__icon--right")
+
+			.product_page_info__block.product_page_info__block--scroll 
+				p.product_page_info__caption Выберите цвет
+				.product_page_info__colors
+					label.product_page_info__colors_btn
+						input.radio(type="radio", name="color", value ="", hidden="")
+						p.text чёрный
+					label.product_page_info__colors_btn
+						input.radio(type="radio", name="color", value ="", hidden="")
+						p.text красный
+					label.product_page_info__colors_btn
+						input.radio(type="radio", name="color", value ="", hidden="")
+						p.text белый
+					label.product_page_info__colors_btn
+						input.radio(type="radio", name="color", value ="", hidden="")
+						p.text оранжевый
+			
+			.product_page_info__block.product_page_info__block--scroll
+
+				.product_page_info_dropdown.is-active
+					.product_page_info_dropdown__top
+						p.product_page_info__caption Размер
+						
+					.product_page_info_dropdown__content
+						.product_page_size_block
+							.product_page_size_block__pic
+								+imgSvg(`${assetsPath}/img/glasses_size_1.svg`, '', 'image')
+							p.product_page_size_block__text Ширина:
+							p.product_page_size_block__text 142 мм
+						.product_page_size_block
+							.product_page_size_block__pic
+								+imgSvg(`${assetsPath}/img/glasses_size_2.svg`, '', 'image')
+							p.product_page_size_block__text Длина дужки:
+							p.product_page_size_block__text 140 мм
+						.product_page_size_block
+							.product_page_size_block__pic
+								+imgSvg(`${assetsPath}/img/glasses_size_3.svg`, '', 'image')
+							p.product_page_size_block__text Высота линзы:
+							p.product_page_size_block__text 54 мм
+						.product_page_size_block
+							.product_page_size_block__pic
+								+imgSvg(`${assetsPath}/img/glasses_size_4.svg`, '', 'image')
+							p.product_page_size_block__text Ширина линзы:
+							p.product_page_size_block__text 65 мм
+						.product_page_size_block
+							.product_page_size_block__pic
+								+imgSvg(`${assetsPath}/img/glasses_size_5.svg`, '', 'image')
+							p.product_page_size_block__text Длина моста:
+							p.product_page_size_block__text 9 мм
+			
+			
+			.product_page_info__block.product_page_info__block--scroll
+
+				.product_page_info_dropdown.is-active
+					.product_page_info_dropdown__top
+						p.product_page_info__caption Характеристики
+						
+					.product_page_info_dropdown__content
+						.product_page_characteristics_block
+							p.product_page_characteristics_block__text УФ-защита
+							p.product_page_characteristics_block__text 100%
+						.product_page_characteristics_block
+							p.product_page_characteristics_block__text Цвет заушника
+							p.product_page_characteristics_block__text Красный
+						.product_page_characteristics_block
+							p.product_page_characteristics_block__text Материал солнцезащитных линз
+							p.product_page_characteristics_block__text Пластик
+						.product_page_characteristics_block
+							p.product_page_characteristics_block__text Тип окраски линз
+							p.product_page_characteristics_block__text Однотонная
+						.product_page_characteristics_block
+							p.product_page_characteristics_block__text Возраст
+							p.product_page_characteristics_block__text.link Взрослый
+						.product_page_characteristics_block
+							p.product_page_characteristics_block__text Страна производства
+							p.product_page_characteristics_block__text.link Италия
+						.product_page_characteristics_block
+							p.product_page_characteristics_block__text Бренд
+							p.product_page_characteristics_block__text.link Prada
+						.product_page_characteristics_block
+							p.product_page_characteristics_block__text Пол
+							p.product_page_characteristics_block__text.link Для мужчин
+						.product_page_characteristics_block
+							p.product_page_characteristics_block__text Форма оправы
+							p.product_page_characteristics_block__text.link Трапеция
+						.product_page_characteristics_block
+							p.product_page_characteristics_block__text Материал оправы
+							p.product_page_characteristics_block__text.link Пластик
+						.product_page_characteristics_block
+							p.product_page_characteristics_block__text Цвет оправы
+							p.product_page_characteristics_block__text.link Красный
+						.product_page_characteristics_block
+							p.product_page_characteristics_block__text Наличие футляра
+							p.product_page_characteristics_block__text Есть
+						.product_page_characteristics_block
+							p.product_page_characteristics_block__text Наличие салфетки
+							p.product_page_characteristics_block__text Есть
+						.product_page_characteristics_block
+							p.product_page_characteristics_block__text Цвет солнцезащитных линз
+							p.product_page_characteristics_block__text Красный
+						.product_page_characteristics_block
+							p.product_page_characteristics_block__text Номер модели
+							p.product_page_characteristics_block__text 0AX4115SU 807 887
+						.product_page_characteristics_block
+							p.product_page_characteristics_block__text Конструкция оправы
+							p.product_page_characteristics_block__text.link Ободковая
+
+			.product_page_info__block.product_page_info__block--scroll
+
+				.product_page_info_dropdown.is-active
+					.product_page_info_dropdown__top
+						p.product_page_info__caption Гарантия
+						
+					.product_page_info_dropdown__content.product_page_info_dropdown__content--38
+						p.product_page_characteristics_block__text Гарантия на все очки и на данную модель распространяется на все очки и линзы, как изготовленные в нашей компании, так и от сторонних производителей, в том числе и на продукцию заводов «Оптикс» и «Гелиос».
+						
+			.product_page_info__block.product_page_info__block--scroll
+
+				.product_page_info_dropdown.is-active
+					.product_page_info_dropdown__top
+						p.product_page_info__caption Оплата и доставка
+						
+					.product_page_info_dropdown__content
+						.product_page_delivery
+							.product_page_delivery__block 
+								
+								.product_page_delivery__info
+									p.product_page_delivery__text.product_page_delivery__text--bold Доставка курьером по Москве
+									p.product_page_delivery__text При заказе до 3000 руб. — 350 руб, при заказе от 3000 руб. — бесплатно.
+									p.product_page_delivery__text Оплата картой, наличными или по QR-коду.
+						
+							.product_page_delivery__block 
+								
+								.product_page_delivery__info
+									p.product_page_delivery__text.product_page_delivery__text--bold Доставка по России (СДЭК или Почта России)
+									p.product_page_delivery__text Доставка рассчитывается менеджером после оформления заказа.
+									p.product_page_delivery__text Оплата онлайн на сайте.
+						
+							.product_page_delivery__block 
+								
+								.product_page_delivery__info
+									p.product_page_delivery__text.product_page_delivery__text--bold Самовывоз
+									p.product_page_delivery__text Оплата картой, наличными или по QR-коду.

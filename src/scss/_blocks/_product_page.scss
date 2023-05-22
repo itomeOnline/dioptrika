@@ -1,0 +1,139 @@
+.product_page {
+	padding: em(148) em(30) 0;
+
+    @media(max-width: 750px) {
+        padding: em(60) em(10) 0;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 57% 42%;
+        gap: 1%;
+
+        margin-top: em(44);
+
+        @media(max-width: 750px) {
+            grid-template-columns: 100%;
+            gap: em(20);
+
+            margin-top: em(20);
+        }
+    }
+
+    &__gallery {
+        position: relative;
+    }
+
+    &__tag {
+        width: em(106);
+        height: em(50);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: absolute;
+        top: em(12);
+        left: em(20);
+
+        z-index: 3;
+
+        @media(max-width: 750px) {
+            width: em(70);
+        }
+
+        .bg {
+            width: 100%;
+            height: 100%;
+
+        }
+
+        &.is-new .bg {
+            fill: #1EA01B;
+        }
+        &.is-promo .bg {
+            fill: #0000EE;
+        }
+        &.is-hit .bg {
+            fill: #FF001F;
+        }
+        
+        .text {
+            color: #ffffff;
+            font-size: em(14);
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            transform: translate3d(-50%,-50%,0);
+
+            @media(max-width: 750px) {
+                font-size: em(9);
+            }
+        }
+    }
+
+    &__gallery_wrap {
+
+        @media(max-width: 750px) {
+            display: none;
+        }
+    }
+
+    &__slider {
+        display: none;
+
+        @media(max-width: 750px) {
+            display: flex;
+            height: em(424);
+
+            position: relative;
+        }
+    }
+
+    &__slider_pagination {
+        width: 100%;
+        padding: em(8) em(14);
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .swiper-pagination-bullet {
+            flex: 1;
+            height: 2px;
+            background: #ffffff;
+
+            transition: background .2s;
+
+            & + .swiper-pagination-bullet {
+                margin-left: em(6);
+            }
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #000000;
+        }
+    }
+
+    &__gallery_pic {
+        width: 100%;
+        height: auto;
+
+        background: #eeeeee;
+
+        & + & {
+            margin-top: em(14);
+
+            @media(max-width: 750px) {
+                margin-top: 0;
+            }
+        }
+    }
+}

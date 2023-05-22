@@ -1,0 +1,158 @@
+mixin hitsSlide(pic, name, model, price)
+	a.hits_slide(data-linked-modal="modal_card")
+		.hits_slide__pic 
+			+img(pic, '', 'image')
+
+			+imgSvg(`${assetsPath}/img/loader.svg`, '', 'loader')
+			button.hits_slide__btn.hits_slide__btn--mob
+				+imgSvg(`${assetsPath}/img/icon_fav_empty.svg`, '', 'image image__empty')
+				+imgSvg(`${assetsPath}/img/icon_fav_active.svg`, '', 'image image__active')
+		.hits_slide__info
+			.hits_slide__left
+				p.hits_slide__text.hits_slide__text--big= name
+				p.hits_slide__text= model
+				p.hits_slide__text= price
+			.hits_slide__right
+				button.hits_slide__btn
+					+imgSvg(`${assetsPath}/img/icon_cart_empty.svg`, '', 'image image__empty')
+					+imgSvg(`${assetsPath}/img/icon_cart_active.svg`, '', 'image image__active')
+				button.hits_slide__btn
+					+imgSvg(`${assetsPath}/img/icon_fav_empty.svg`, '', 'image image__empty')
+					+imgSvg(`${assetsPath}/img/icon_fav_active.svg`, '', 'image image__active')
+
+
+header.header
+	.header__overlay
+	.header__line.header__line--1
+		.header__line_wrap
+			button.header__menu(data-linked-modal="modal_menu") 
+				+svg('icon_menu', 'icon')
+			a.header__logo(href="/")
+				+imgSvg(`${assetsPath}/img/header_logo.svg`, '', 'image')
+
+			button.header__phone(data-linked-modal="modal_phone") 
+				+svg('icon_phone', 'icon')
+
+		.header__links 
+			a.header__link.header__link--norm(href="/modal_make_appointment") Запись на приём
+			a.header__link.header__link--norm(href="/modal_return_call") Обратный звонок
+			a.header__link.header__link--norm(href="tel:8 (901) 930–08–08") 8 (901) 930–08–08
+			a.header__link.header__link--norm(href="/login") Войти
+
+	.header__line.header__line--2
+		.header__links 
+			button.header__link.header__link--catalog(data-catalog-btn="") каталог
+			a.header__link(href="/#services") услуги
+			a.header__link(href="/brands") Бренды
+			a.header__link(href="/promotions") Акции и промо
+
+		.header__links 
+			button.header__link.header__link--search(data-search-start="") 
+				span.text поиск
+				+svg('icon_cross', 'icon')
+			a.header__link(href="/favorites") Избранное (4)
+			a.header__link(href="/cart") Корзина (3)
+
+	
+	.header_search
+		.header_search__top
+			input.header_search__input(type="search" placeholder="Поиск по бренду, названию, артикулу")
+		
+		.header_search__wrap 
+			p.header_search__caption История поиска
+			.catalog_inner__categories.header_search__categories
+				button.catalog_inner__cat_btn синие очки
+				button.catalog_inner__cat_btn розовые очки
+				button.catalog_inner__cat_btn серебрянные очки
+				button.catalog_inner__cat_btn линзы +0.2
+		
+		.header_search__wrap 
+			p.header_search__caption Бренды
+			.catalog_inner__categories.header_search__categories
+				button.catalog_inner__cat_btn Мужские (359)
+				button.catalog_inner__cat_btn Женские (614)
+				button.catalog_inner__cat_btn Мужские (359)
+				button.catalog_inner__cat_btn Женские (614)
+				button.catalog_inner__cat_btn Мужские (359)
+				button.catalog_inner__cat_btn Женские (614)
+
+		.header_search__wrap 
+			p.header_search__caption Популярные позиции
+			.header_search__cards.header_search__categories
+				+hitsSlide(`${assetsPath}/img/hits_pic_1.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+				+hitsSlide(`${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+				+hitsSlide(`${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+
+				.header_search_card
+					.header_search_card__img 
+						+img(`${assetsPath}/img/header_search_pic.jpg`, '', 'image')
+						+imgSvg(`${assetsPath}/img/header_logo.svg`, '', 'logo')
+						a.header_search_card__btn.btn.btn--white(href="/catalog_inner")
+							span.btn__text перейти в каталог
+					
+					p.header_search_card__text Больше позиций — в нашем каталоге
+
+
+
+	.header_catalog
+		.header_catalog__menu
+			.header_catalog__top
+				p.header_catalog__title Каталог
+				button.header_catalog__close(data-btn-close="")
+					+svg('icon_cross', 'icon')
+
+			.header_catalog__list 
+				.header_catalog__link(data-catalog-link="") Солнцезащитные очки
+					+svg('link_arrow', 'icon')
+				.header_catalog__link(data-catalog-link="") Оправы для очков
+					+svg('link_arrow', 'icon')
+				.header_catalog__link(data-catalog-link="") Линзы для очков
+					+svg('link_arrow', 'icon')
+				.header_catalog__link(data-catalog-link="") Контактные линзы
+					+svg('link_arrow', 'icon')
+
+			a.header_catalog__link.header_catalog__link--bottom(href="/catalog") перейти в каталог
+
+		.header_catalog__categories(data-categories="")
+			.header_catalog__categories_block
+				p.header_catalog__categories_title Пол
+				a.header_catalog__categories_link(href="/catalog_inner") Мужской
+				a.header_catalog__categories_link(href="/catalog_inner") Женский
+				a.header_catalog__categories_link(href="/catalog_inner") Унисекс
+				a.header_catalog__categories_link(href="/catalog_inner") Детские
+			.header_catalog__categories_block
+				p.header_catalog__categories_title Бренды
+				a.header_catalog__categories_link(href="/catalog_inner") Ray-Ban
+				a.header_catalog__categories_link(href="/catalog_inner") Ray-Ban
+				a.header_catalog__categories_link(href="/catalog_inner") Ray-Ban
+				a.header_catalog__categories_link(href="/catalog_inner") Ray-Ban
+				a.header_catalog__categories_link(href="/catalog_inner") Ray-Ban
+				a.header_catalog__categories_link(href="/catalog_inner") Ray-Ban
+				a.header_catalog__categories_link(href="/catalog_inner") Ray-Ban
+				a.header_catalog__categories_link(href="/catalog_inner") Ray-Ban
+				a.header_catalog__categories_link(href="/catalog_inner") Ray-Ban
+				a.header_catalog__categories_link(href="/catalog_inner") Ray-Ban
+			.header_catalog__categories_block
+				p.header_catalog__categories_title Материал
+				a.header_catalog__categories_link(href="/catalog_inner") Металл 
+				a.header_catalog__categories_link(href="/catalog_inner") Пластик
+				a.header_catalog__categories_link(href="/catalog_inner") Комбинированный
+			.header_catalog__categories_block
+				p.header_catalog__categories_title Форма
+				a.header_catalog__categories_link(href="/catalog_inner") Авиатор
+				a.header_catalog__categories_link(href="/catalog_inner") Трапеция
+				a.header_catalog__categories_link(href="/catalog_inner") Квадрат
+				a.header_catalog__categories_link(href="/catalog_inner") Круг
+			.header_catalog__categories_block
+				p.header_catalog__categories_title Линзы
+				a.header_catalog__categories_link(href="/catalog_inner") Фотохромные
+				a.header_catalog__categories_link(href="/catalog_inner") Поляризационные
+			.header_catalog__categories_block
+				p.header_catalog__categories_title Тип
+				a.header_catalog__categories_link(href="/catalog_inner") Ободковые
+				a.header_catalog__categories_link(href="/catalog_inner") Полуободковые
+				a.header_catalog__categories_link(href="/catalog_inner") Безободковые
+
+			
+
+		

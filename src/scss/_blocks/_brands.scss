@@ -1,0 +1,22 @@
+.brands {
+	padding: em(148) em(30) em(120);
+
+    @media(max-width: 750px) {
+        padding: em(60) em(10) em(30);
+    }	
+
+    &__content {
+        margin-top: em(30);
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: em(30) em(16);
+
+        @media(max-width: 750px) {
+            margin-top: em(14);
+
+            grid-template-columns: 1fr 1fr;
+            gap: em(14) em(6);
+        }
+    }
+}

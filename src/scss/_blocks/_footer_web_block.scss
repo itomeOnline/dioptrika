@@ -1,0 +1,48 @@
+.footer_web_block {
+	display: flex;
+    flex-direction: column;	
+
+    &__title {
+        font-family: $title-font;
+        font-weight: 500;
+        font-size: em(18);
+        line-height: em(26,18);
+        color: #000000;
+
+        margin-bottom: .875rem;
+
+        @media(max-width: 750px) {
+            font-size: em(24);
+            line-height: em(26,24);
+
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__card {
+        display: flex;
+        align-items: center;
+
+        .icon {
+            width: em(24);
+            height: em(24);
+
+            margin-right: em(14);
+        }
+
+        & + & {
+            margin-top: em(14);
+        }
+    }
+
+    &__text {
+        font-family: $text-font;
+        font-weight: 400;
+        font-size: 1em;
+        line-height: em(24,16);
+
+        .underline {
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+$brs: 6px;
+$color: white;
+$bg-color: red;
+
+.multi_option {
+	margin-top: .4rem;
+	margin-left: .4rem;
+	padding: .5rem;
+	border-radius: $brs;
+
+	color: $color;
+	font-size: .8em;
+
+	background: $bg-color;
+	transform: scale3d(.5, .5, 1);
+	opacity: 0;
+
+	transition: transform .3s, opacity .3s;
+
+	&.is-visible {
+		transform: none;
+		opacity: 1;
+	}
+}

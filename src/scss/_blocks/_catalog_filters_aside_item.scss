@@ -1,0 +1,55 @@
+.catalog_filters_aside_item {
+	width: 100%;
+
+    position: relative;
+
+    &__block {
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        padding: em(10) 0;
+
+        cursor: pointer;
+    }
+
+    &__checkbox {
+        flex: none;
+        width: 16px;
+        height: 16px;
+        border-radius: 2px;
+        border: 2px solid #000000;
+        background: white;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-right: em(8);
+
+        cursor: pointer;
+
+        transition: border .2s, background .2s;
+
+        .icon {
+            width: em(8);
+            height: em(6);
+            fill: white;
+        }
+
+        .checkbox:checked ~ .catalog_filters_aside_item__block & {
+            background: #000000;
+        }
+    }
+
+    &__text {
+        font-family: $button-font;
+        font-weight: 400;
+        font-size: em(12);
+        line-height: 1rem;
+
+        & + & {
+            margin-left: auto;
+        }
+    }
+}

@@ -1,0 +1,71 @@
+.catalog_filters_aside_range {
+
+    @media(max-width: 750px) {
+
+        &:first-child {
+            margin-top: em(20);
+        }
+    }
+	
+    &__caption {
+        font-size: em(12);
+        line-height: 1rem;
+    }
+
+    &__inputs {
+        margin-top: em(10);
+
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: em(14);
+    }
+
+    &__slider {
+        margin-top: em(22);
+
+        width: 100%;
+        height: 4px;
+
+        background: rgba(60, 60, 67, 0.18);
+        border-radius: 2px;
+        border: none;
+
+        padding-right: 16px;
+
+        @media(max-width: 750px) {
+            width: calc(100% - 2px);
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .noUi-connect {
+            background: #000000;
+        }
+
+        .noUi-handle {
+            background: #FFFFFF;
+            box-shadow: 0px 0.5px 4px rgba(0, 0, 0, 0.12), 0px 6px 13px rgba(0, 0, 0, 0.12);
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+
+            overflow: hidden;
+
+            &::after,
+            &::before {
+                content: none;
+            }
+
+            @media(max-width: 750px) {
+                box-shadow: none;
+
+            }
+        }
+    }
+    
+    & + & {
+        margin-top: em(38);
+    }
+}

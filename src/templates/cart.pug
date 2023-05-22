@@ -1,0 +1,211 @@
+extends _base/_layout
+block settings 
+
+	- title = 'Диоптрика — Корзина';
+	
+
+mixin hitsSlideAdd(pic, name, model, price)
+	a.hits_slide.swiper-slide(href="/product_page")
+		.hits_slide__pic 
+			+img(pic, '', 'image')
+			+imgSvg(`${assetsPath}/img/loader.svg`, '', 'loader')
+			button.hits_slide__btn.hits_slide__btn--mob
+				+imgSvg(`${assetsPath}/img/icon_fav_empty.svg`, '', 'image image__empty')
+				+imgSvg(`${assetsPath}/img/icon_fav_active.svg`, '', 'image image__active')
+		.hits_slide__info
+			.hits_slide__left
+				p.hits_slide__text.hits_slide__text--big= name
+				p.hits_slide__text= model
+				p.hits_slide__text= price
+			.hits_slide__right
+				button.hits_slide__btn
+					+imgSvg(`${assetsPath}/img/icon_cart_empty.svg`, '', 'image image__empty')
+					+imgSvg(`${assetsPath}/img/icon_cart_active.svg`, '', 'image image__active')
+				button.hits_slide__btn
+					+imgSvg(`${assetsPath}/img/icon_fav_empty.svg`, '', 'image image__empty')
+					+imgSvg(`${assetsPath}/img/icon_fav_active.svg`, '', 'image image__active')
+
+
+block content
+	main.view(data-app-layout="view", data-app-layout-namespace="examples")
+
+		.home__tabs
+			a.home__tab(href="/")
+				+svg('tab_1', 'icon')
+				span.text Главная
+			a.home__tab(href="/catalog")
+				+svg('tab_2', 'icon')
+				span.text Каталог
+			a.home__tab.is-active(href="/cart")
+				+svg('tab_3', 'icon')
+				span.text Корзина
+			a.home__tab(href="/favorites")
+				+svg('tab_4', 'icon')
+				span.text Избранное
+			a.home__tab(href="/account")
+				+svg('tab_5', 'icon')
+				span.text Войти
+
+		section.cart
+			.cart__breadcrumbs.breadcrumbs
+				a.breadcrumbs__link(href="/") Диоптрика
+				span.slash /
+				a.breadcrumbs__link.is-active Корзина
+
+			h1.section_block__title Корзина
+
+			.cart__content 
+				.cart__left
+					.cart__left_top
+						label.catalog_filters_sort__label.catalog_filters_sort__label--margin
+							input.checkbox(type="checkbox", name="product_cart", value ="", hidden="", checked)
+							.catalog_filters_sort__checkbox.catalog_filters_sort__checkbox--grey
+								+svg('checkmark', 'icon icon--grey')
+							p.catalog_filters_sort__text Выбрать всё
+
+						button.cart__left_btn.cart__left_btn--red Удалить выбранные
+
+						p.cart__left_text.cart__left_text--margin_auto 2 товара
+					
+					.cart__left_content
+						.cart_card
+							label.catalog_filters_sort__label.catalog_filters_sort__label--cart_card
+								input.checkbox(type="checkbox", name="product_cart", value ="", hidden="", checked)
+								.catalog_filters_sort__checkbox
+									+svg('checkmark', 'icon')
+
+							.cart_card__pic 
+								+img(`${assetsPath}/img/cart_pic.jpg`, '', 'image')
+
+								button.hits_slide__btn.hits_slide__btn--mob
+									+imgSvg(`${assetsPath}/img/icon_fav_empty.svg`, '', 'image image__empty')
+									+imgSvg(`${assetsPath}/img/icon_fav_active.svg`, '', 'image image__active')
+
+							.cart_card__wrap
+
+								button.cart_card__delete_mob
+									+svg('icon_cross', 'icon')
+							
+								.cart_card__column
+									p.cart__left_text.cart__left_text--big Palette 01
+									p.cart__left_text Prada
+									p.cart__left_text арт. 7478621
+									p.cart__left_text Оранжевый
+
+									.cart_card__column_line 
+										button.cart__left_btn.cart__left_btn--blue В избранное
+										button.cart__left_btn.cart__left_btn--red Удалить 
+								
+								.cart_card__prices 
+									p.cart_total__price 17 500 руб
+
+								.cart_card__amount
+									button.cart_card__amount_icon.cart_card__amount_icon--left
+										+svg('minus', 'icon')
+									span.cart_card__amount_number 1
+									button.cart_card__amount_icon.cart_card__amount_icon--right
+										+svg('plus', 'icon')
+							
+						.cart_card
+							label.catalog_filters_sort__label.catalog_filters_sort__label--cart_card
+								input.checkbox(type="checkbox", name="product_cart", value ="", hidden="", checked)
+								.catalog_filters_sort__checkbox
+									+svg('checkmark', 'icon')
+
+							.cart_card__pic 
+								+img(`${assetsPath}/img/cart_pic.jpg`, '', 'image')
+
+								button.hits_slide__btn.hits_slide__btn--mob
+									+imgSvg(`${assetsPath}/img/icon_fav_empty.svg`, '', 'image image__empty')
+									+imgSvg(`${assetsPath}/img/icon_fav_active.svg`, '', 'image image__active')
+
+							.cart_card__wrap
+
+								button.cart_card__delete_mob
+									+svg('icon_cross', 'icon')
+							
+								.cart_card__column
+									p.cart__left_text.cart__left_text--big Palette 01
+									p.cart__left_text Prada
+									p.cart__left_text арт. 7478621
+									p.cart__left_text Оранжевый
+
+									.cart_card__column_line 
+										button.cart__left_btn.cart__left_btn--blue В избранное
+										button.cart__left_btn.cart__left_btn--red Удалить 
+								
+								.cart_card__prices.mobile
+									p.cart_total__price.mobile 20 000 руб
+									p.cart_total__price.old.mobile 27 000 руб
+
+								.cart_card__amount
+									button.cart_card__amount_icon.cart_card__amount_icon--left
+										+svg('minus', 'icon')
+									span.cart_card__amount_number 2
+									button.cart_card__amount_icon.cart_card__amount_icon--right
+										+svg('plus', 'icon')
+
+				.cart_total
+					.cart_total__top
+						p.cart_total__title Ваша корзина
+
+					.cart_total__list
+						.cart_total__line 
+							p.cart_total__text Товары (2)
+							p.cart_total__price 37 500 руб
+						.cart_total__line 
+							p.cart_total__text Скидка
+							p.cart_total__price 0 руб
+						.cart_total__line 
+							p.cart_total__text Общая стоимость
+							p.cart_total__price 37 500 руб
+						
+						a.cart_total__btn.btn.btn--filled(href="/checkout")
+							.btn__wrap 
+								span.btn__text перейти к оформлению
+								//- span.btn__text.btn__text--small 2 товара на 37 500 руб
+						
+						p.cart_total__text.cart_total__text--small «Общая стоимость» указана без учёта #[br.desktop] возможной стоимости доставки
+
+		
+		section.hits
+			.hits__top
+				h2.section_block__title.section_block__title--small Дополнительные аксессуары
+
+				.hits__nav.slider__buttons
+					button.slider__button.slider__button--prev.hits_1__nav_btn--prev
+						+svg('link_arrow', 'icon')
+					button.slider__button.slider__button--next.hits_1__nav_btn--next
+						+svg('link_arrow', 'icon')
+
+			.hits__slider_1.slider.swiper
+				.swiper-wrapper
+					+hitsSlideAdd(`${assetsPath}/img/hits_pic_1.jpg`, 'Gucci', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideAdd(`${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideAdd(`${assetsPath}/img/hits_pic_3.jpg`, 'Bluemarine', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideAdd(`${assetsPath}/img/hits_pic_4.jpg`, 'Givenchy', 'Jackie 01', '5 000 RUB')
+					+hitsSlideAdd(`${assetsPath}/img/hits_pic_1.jpg`, 'Gucci', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideAdd(`${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideAdd(`${assetsPath}/img/hits_pic_3.jpg`, 'Bluemarine', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideAdd(`${assetsPath}/img/hits_pic_4.jpg`, 'Givenchy', 'Jackie 01', '5 000 RUB')
+											
+		section.hits.hits--last
+			.hits__top
+				h2.section_block__title.section_block__title--small Лучшие предложения
+
+				.hits__nav.slider__buttons
+					button.slider__button.slider__button--prev.hits_2__nav_btn--prev
+						+svg('link_arrow', 'icon')
+					button.slider__button.slider__button--next.hits_2__nav_btn--next
+						+svg('link_arrow', 'icon')
+
+			.hits__slider_2.slider.swiper
+				.swiper-wrapper
+					+hitsSlideAdd(`${assetsPath}/img/hits_pic_1.jpg`, 'Gucci', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideAdd(`${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideAdd(`${assetsPath}/img/hits_pic_3.jpg`, 'Bluemarine', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideAdd(`${assetsPath}/img/hits_pic_4.jpg`, 'Givenchy', 'Jackie 01', '5 000 RUB')
+					+hitsSlideAdd(`${assetsPath}/img/hits_pic_1.jpg`, 'Gucci', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideAdd(`${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideAdd(`${assetsPath}/img/hits_pic_3.jpg`, 'Bluemarine', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideAdd(`${assetsPath}/img/hits_pic_4.jpg`, 'Givenchy', 'Jackie 01', '5 000 RUB')

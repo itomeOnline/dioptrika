@@ -1,0 +1,139 @@
+.modal_card {
+	width: 60vw;
+    min-width: 56em;
+    height: 80vh;
+    
+    border-radius: 4px;
+
+    padding: em(14) em(42) em(52) em(14);
+
+    @media(max-width: 750px) {
+        display: none;
+        min-width: fit-content;
+    }
+
+    &__btn {
+        width: 100%;
+        height: em(48,14);
+
+        position: fixed;
+
+        bottom: 0;
+        left: 0;
+    }
+
+    &__content {
+        width: 100%;
+        height: 100%;
+
+        .simplebar-content {
+            display: flex;
+            align-items: flex-start;
+            
+            width: 100%;
+            height: 100%;
+        }
+
+        .simplebar-track.simplebar-vertical {
+            //height: calc(100% - em(28) - em(48));
+            height: 100%;
+            width: 8px;
+            background: #EEEEEE;
+            border: none;
+
+            right: em(-32);
+
+            .simplebar-scrollbar {
+                background: #000;
+            }
+        }
+    }
+
+    &__slider {
+        width: 100%;
+        max-width: 21.625em;
+        flex: none;
+        height: em(406);
+
+        margin-right: em(24);
+
+        position: relative;
+
+        &:hover {
+
+            .hvr__dots {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__slider_wrap {
+        position: relative;
+        background: #EEEEEE;
+        height: 100%;
+
+        .image {
+            display: none;
+
+            &:first-child {
+                display: block;
+            }
+        }
+    }
+
+    .hvr {
+        height: 100%;
+
+        &__images {
+            height: 100%;
+        }
+    }
+
+    .hvr__sectors {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        z-index: 5;
+    }
+      
+    .hvr__sector {
+        flex-grow: 1;
+    }
+
+    
+    .hvr__dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        padding: .5rem .875rem;
+
+        position: absolute;
+
+        left: 0;
+        top: 0;
+        z-index: 6;
+
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .hvr__dot {
+        flex: 1;
+        height: 2px;
+        background: #fff;
+
+        & + .hvr__dot {
+            margin-left: .5rem;
+        }
+    }
+    
+    .hvr__dot--active {
+        background: #000;
+    }
+
+}

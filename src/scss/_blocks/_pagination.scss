@@ -1,0 +1,67 @@
+.pagination {
+	width: 100%;
+
+    margin-top: em(30);
+    
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    &__btn_more {
+        width: 45%;
+
+        // margin-right: auto;
+        margin-left: 28%;
+
+        @media(max-width: 750px) {
+            width: 100%;
+
+            margin-left: 0;
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+
+        margin-left: auto;
+
+        @media(max-width: 750px) {
+            display: none;
+        }
+    }
+
+    &__num {
+        width: 3em;
+        height: 3em;
+        padding: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: none;
+
+        border-radius: 4px;
+        background: #EEEEEE;
+
+        font-family: $button-font;
+        font-weight: 400;
+        font-size: em(12);
+        text-align: center;
+        color: #000000;
+
+        transition: background .2s, color .2s, border .2s;
+
+        &:hover {
+            background: darken($color: #EEEEEE, $amount: 5%);
+        }
+        &.is-active {
+            background: #ffffff;
+
+        }
+
+        & + & {
+            margin-left: .5rem;
+        }
+    }	
+}

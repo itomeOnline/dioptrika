@@ -1,0 +1,78 @@
+.brands_slide {
+    display: flex;
+    flex-direction: column;
+
+    height: 16.25em;
+
+    @media(max-width: 750px) {
+        height: 15em;
+    }
+
+    &:hover {
+
+        .brands_slide__pic::before {
+            opacity: 1;
+        }
+    }
+
+    &--page {
+        height: fit-content;
+    }
+    
+    &__pic {
+        width: 100%;
+        height: em(210);
+
+        background: #EEEEEE;
+
+        position: relative;
+
+        @media(max-width: 750px) {
+            height: em(192);
+
+            .brands_slide--page & {
+                height: em(110);
+            }
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.06);
+            opacity: 0;
+            transition: opacity .2s;
+        }
+    }
+
+    &__info {
+        width: 100%;
+
+        padding-top: em(14);
+
+        @media(max-width: 750px) {
+            padding-top: em(6);
+        }
+    }
+
+    &__text {
+        font-family: $text-font;
+        font-weight: 400;
+        font-size: em(12);
+        line-height: em(16,12);
+        color: #000000;
+
+        &--big {
+            font-size: em(14);
+            line-height: em(22);
+        }
+
+        & + & {
+            margin-top: 2px;
+        }
+    }
+}

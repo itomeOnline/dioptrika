@@ -1,0 +1,132 @@
+.glasses_making_block {
+	display: flex;
+    flex-direction: column;
+    
+    padding: em(26) em(24) em(22) em(38);
+
+    position: relative;
+
+    width: 25%;
+
+    @media(max-width: 750px) {
+        width: 100%;
+
+        padding: em(20) em(14);
+    }
+
+    &:first-of-type {
+        padding-left: em(24);
+
+        @media(max-width: 750px) {
+            padding-left: em(14);
+            padding-top: em(14);
+        }
+    }
+
+    &:last-of-type {
+
+        @media(max-width: 750px) {
+            padding-bottom: em(14);
+        }
+    }
+
+    &__title {
+        font-family: $title-font;
+        font-weight: 500;
+        font-size: em(18);
+        line-height: em(26,18);
+        color: #000000;
+
+        margin-bottom: .5rem;
+
+        @media(max-width: 750px) {
+            font-size: em(18);
+            line-height: em(20,18);
+
+            margin-bottom: .4rem;
+        }
+    }
+
+    &__text {
+        font-family: $text-font;
+        font-weight: 400;
+        font-size: em(14);
+        line-height: em(22,14);
+        color: #000000;
+
+        margin-bottom: auto;
+
+        @media(max-width: 750px) {
+            max-width: fit-content;
+        }
+    }
+
+    &__buttons {
+        margin-top: em(20);
+
+        width: 100%;
+
+        display: flex;
+
+        @media(max-width: 750px) {
+            flex-direction: column;
+        }
+    }
+
+    &__btn {
+        width: 100%;
+
+        &--half {
+            width: calc((100% - .5rem) / 2);
+
+            @media(max-width: 750px) {
+                width: 100%;
+                height: em(36,14);
+            }
+        }
+
+        & + & {
+            margin-left: .5rem;
+
+            @media(max-width: 750px) {
+                margin-left: 0;
+                margin-top: .75rem;
+            }
+        }
+    }
+
+
+    & + & {
+
+        border-left: 1px solid #000000;
+
+        @media(max-width: 750px) {
+            border-left: none;
+
+            border-top: 1px solid #000000;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: -16px;
+            top: 50%;
+            width: 18px;
+            height: 18px;
+            border-top: 1px solid #000000;
+            border-right: 1px solid #000000;
+            background: #ffffff;
+            z-index: 3;
+            transform: rotate(45deg) translateY(-50%);
+            
+
+            @media(max-width: 750px) {
+                left: 50%;
+                top: -3px;
+
+                transform: rotate(135deg) translate3d(-50%, 0, 0);
+            }
+        }
+    }
+}

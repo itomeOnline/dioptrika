@@ -1,0 +1,134 @@
+.modal_page {
+    height: 100vh;
+
+    &__container {
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: em(148) 0 em(30);
+
+        @media(max-width: 750px) {
+            padding: em(60) em(10) 0;
+        }
+
+        &--center {
+            justify-content: center;
+
+            padding-top: 0;
+        }
+    }
+
+    &__access_buttons {
+        display: flex;
+        align-items: center;
+    }
+
+    &__access_wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & + & {
+            margin-left: 14vw;
+        }
+    }
+
+    &__access_btn {
+        width: 17vw;
+        height: 17vw;
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+
+        background-color: #EEEEEE;
+
+        transition: background .2s;
+
+        @media(max-width: 750px) {
+            width: em(120);
+            height: em(120);
+        }
+
+        &:hover {
+
+            .icon {
+                fill: #ffffff;
+            }
+        }
+
+        &--no:hover {
+            background: #FF0101;
+        }
+
+        &--yes:hover {
+            background: #0FB60B;
+        }
+
+        .icon {
+            width: 50%;
+            height: 50%;
+
+            transform: fill .2s;
+        }
+    }
+
+    &__access_caption {
+        font-family: $button-font;
+        font-weight: 400;
+        text-transform: uppercase;
+
+        font-size: em(14);
+        line-height: 1rem;
+
+        margin-top: 1.25rem;
+    }
+
+    &__form {
+        width: 20vw;
+
+        margin-top: em(20);
+
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: em(14);
+
+        @media(max-width: 750px) {
+            width: 70vw;
+        }
+
+        &.on-request {
+            pointer-events: none;
+            opacity: .5;
+        }
+    }
+
+    &__button {
+        text-decoration: underline;
+
+        @media(max-width: 750px) {
+            // margin-top: auto;
+            margin-bottom: em(20);
+        }
+
+        &--absolute {
+            position: absolute;
+            bottom: 1.875rem;
+            left: 50%;
+
+            transform: translateX(-50%);
+        }
+    }
+
+    &__success_btn {
+        margin-top: em(18,14);
+        width: em(150,14);
+        height: em(36,14);
+    }
+}

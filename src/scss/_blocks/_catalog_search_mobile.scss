@@ -1,0 +1,54 @@
+.catalog_search_mobile {
+	position: relative;
+    
+    margin-top: em(30);
+
+    width: 100%;
+
+    // display: none;
+
+    @media(max-width: 750px) {
+        margin-top: em(14);
+    }
+
+    &--margin20 {
+        margin-top: em(20);
+    }
+
+    &--mobile {
+        margin-top: em(20);
+        display: none;
+
+        @media(max-width: 750px) {
+            display: block;
+        }
+    }
+
+    &__input {
+        width: calc(100% - 4.5em);
+
+        background: #ffffff;
+        border: 1px solid #C8C8C8;
+        border-radius: 4px;
+
+        padding: .5rem .5rem .5em 2.75rem;
+
+        font-family: $text-font;
+        font-weight: 400;
+        font-size: em(12);
+        line-height: 1.25rem;
+        color: #000000;
+    }
+
+    .icon {
+        width: em(20);
+        height: em(20);
+
+        position: absolute;
+
+        top: .5rem;
+        left: .875rem;
+
+        pointer-events: none;
+    }
+}

@@ -1,0 +1,48 @@
+.catalog_section_list {
+	//position: relative;
+
+    @media(max-width: 750px) {
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    
+    &__wrap {
+        width: 100%;
+
+        position: relative;
+        z-index: 2;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        font-family: $button-font;
+        font-weight: 400;
+        font-size: em(12);
+
+        width: 100%;
+        padding: 0 0 0 2em;
+        background: #EEEEEE;
+
+        cursor: pointer;
+
+        transition: background .2s;
+
+        &:hover {
+            background: #F4E8FF;
+        }
+
+        .image {
+            width: em(82,12);
+            height: em(80,12);
+
+            flex: none;
+        }
+
+        & + & {
+            margin-top: 1em;
+        }
+    }
+}

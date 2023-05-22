@@ -1,0 +1,381 @@
+extends _base/_layout
+block settings 
+
+	- title = 'Диоптрика — Солнцезащитные очки Prada';
+
+
+mixin newsSectionCard(img, text, date)
+	a.news_section_card(href="/news_card")
+		.news_section_card__img 
+			+img(img, '', 'image')
+		p.news_section_card__text!= text
+		p.news_section_card__date= date
+
+
+
+mixin hitsSlideHvr(pic1, pic2, pic3, name, model, price)
+	a.hits_slide(data-linked-modal="modal_card")
+		.hits_slide__pic
+			.hits_slide__pic_wrap(data-hover-images="")
+				img.image(data-lazy, data-src= pic1, alt="")
+				img.image(data-lazy, data-src= pic2, alt="")
+				img.image(data-lazy, data-src= pic3, alt="")
+			+imgSvg(`${assetsPath}/img/loader.svg`, '', 'loader')
+			.hits_slide__hover_btn.btn.btn--filled Быстрый просмотр
+			button.hits_slide__btn.hits_slide__btn--mob
+				+imgSvg(`${assetsPath}/img/icon_fav_empty.svg`, '', 'image image__empty')
+				+imgSvg(`${assetsPath}/img/icon_fav_active.svg`, '', 'image image__active')
+		.hits_slide__info
+			.hits_slide__left
+				p.hits_slide__text.hits_slide__text--big= name
+				p.hits_slide__text= model
+				p.hits_slide__text= price
+			.hits_slide__right
+				button.hits_slide__btn
+					+imgSvg(`${assetsPath}/img/icon_cart_empty.svg`, '', 'image image__empty')
+					+imgSvg(`${assetsPath}/img/icon_cart_active.svg`, '', 'image image__active')
+				button.hits_slide__btn
+					+imgSvg(`${assetsPath}/img/icon_fav_empty.svg`, '', 'image image__empty')
+					+imgSvg(`${assetsPath}/img/icon_fav_active.svg`, '', 'image image__active')
+
+
+block content
+	main.view(data-app-layout="view", data-app-layout-namespace="examples")
+
+		.home__tabs
+			a.home__tab(href="/")
+				+svg('tab_1', 'icon')
+				span.text Главная
+			a.home__tab.is-active(href="/catalog")
+				+svg('tab_2', 'icon')
+				span.text Каталог
+			a.home__tab(href="/cart")
+				+svg('tab_3', 'icon')
+				span.text Корзина
+			a.home__tab(href="/favorites")
+				+svg('tab_4', 'icon')
+				span.text Избранное
+			a.home__tab(href="/account")
+				+svg('tab_5', 'icon')
+				span.text Войти
+
+		section.catalog_inner
+			.catalog__breadcrumbs.breadcrumbs
+				a.breadcrumbs__link(href="/") Диоптрика
+				span.slash /
+				a.breadcrumbs__link(href="/") Солнцезащитные очки
+				span.slash /
+				a.breadcrumbs__link.is-active Prada
+
+			h1.section_block__title Prada
+
+			.catalog_inner__categories
+				button.catalog_inner__cat_btn Мужские (359)
+				button.catalog_inner__cat_btn Женские (614)
+
+			.catalog_inner__buttons 
+				button.catalog_inner__filter_btn.news__sort_btn.btn.btn--filled.btn--icon_right(data-filter-btn="")
+					span.btn__text фильтрация
+					+svg('icon_filter', "btn__initial btn__icon btn__icon--white btn__icon--right")
+					+svg('icon_cross', "btn__clicked btn__icon btn__icon--black btn__icon--left")
+				//- button.catalog_inner__filter_btn_mob.news__sort_btn.btn.btn--filled.btn--icon_right(data-linked-modal="modal_filters")
+				//- 	span.btn__text фильтрация
+				//- 	+svg('icon_filter', "btn__initial btn__icon btn__icon--white btn__icon--right")
+
+				button.news__sort_btn.btn.btn--grey.btn--icon_right(data-sort-btn="")
+					span.btn__text сначала дорогие
+					+svg('icon_sort', "btn__icon btn__icon--black btn__icon--right")
+
+			.catalog_inner__content
+				.catalog_filters
+
+					.catalog_filters_aside
+						.catalog_filters_aside__top
+							+svg('arrow_back', 'icon') 
+							p.catalog_filters__title.catalog_filters__title--nopad Бренд
+
+							button.catalog_filters_aside__reset_btn Сбросить всё
+
+						//- .catalog_search_mobile.catalog_search_mobile--margin20
+						//- 	+svg('icon_search', 'icon')
+						//- 	input.catalog_search_mobile__input(type="search", name="catalog_search", placeholder="Искать бренд...")
+						
+						.catalog_filters_aside__content 
+							
+							.catalog_filters_aside_range(data-range-block="")
+								p.catalog_filters_aside_range__caption Длина заушника (в мм)
+								.catalog_filters_aside_range__inputs
+									.input_wrapper.input_wrapper--outlined
+										input.input_wrapper__input.input_wrapper__input--left(type="text" name="parametr" data-input-left="")
+									.input_wrapper.input_wrapper--outlined
+										input.input_wrapper__input.input_wrapper__input--right(type="text" name="parametr" data-input-right="")
+								.catalog_filters_aside_range__slider(data-range-slider="")
+							
+							.catalog_filters_aside_range(data-range-block="")
+								p.catalog_filters_aside_range__caption Диаметр линзы (в мм)
+								.catalog_filters_aside_range__inputs
+									.input_wrapper.input_wrapper--outlined
+										input.input_wrapper__input.input_wrapper__input--left(type="text" name="parametr" data-input-left="")
+									.input_wrapper.input_wrapper--outlined
+										input.input_wrapper__input.input_wrapper__input--right(type="text" name="parametr" data-input-right="")
+								.catalog_filters_aside_range__slider(data-range-slider="")
+							
+							.catalog_filters_aside_range(data-range-block="")
+								p.catalog_filters_aside_range__caption Ширина переносицы (в мм)
+								.catalog_filters_aside_range__inputs
+									.input_wrapper.input_wrapper--outlined
+										input.input_wrapper__input.input_wrapper__input--left(type="text" name="parametr" data-input-left="")
+									.input_wrapper.input_wrapper--outlined
+										input.input_wrapper__input.input_wrapper__input--right(type="text" name="parametr" data-input-right="")
+								.catalog_filters_aside_range__slider(data-range-slider="")
+
+							//- label.catalog_filters_aside_item
+							//- 	input.checkbox(type="checkbox", name="brand", value ="", hidden="")
+							//- 	.catalog_filters_aside_item__block
+							//- 		.catalog_filters_aside_item__checkbox
+							//- 			+svg('checkmark', 'icon')
+							//- 		p.catalog_filters_aside_item__text Ray-Ban
+							//- 		p.catalog_filters_aside_item__text 4
+							//- label.catalog_filters_aside_item
+							//- 	input.checkbox(type="checkbox", name="brand", value ="", hidden="")
+							//- 	.catalog_filters_aside_item__block
+							//- 		.catalog_filters_aside_item__checkbox
+							//- 			+svg('checkmark', 'icon')
+							//- 		p.catalog_filters_aside_item__text Ray-Ban
+							//- 		p.catalog_filters_aside_item__text 4
+							//- label.catalog_filters_aside_item
+							//- 	input.checkbox(type="checkbox", name="brand", value ="", hidden="")
+							//- 	.catalog_filters_aside_item__block
+							//- 		.catalog_filters_aside_item__checkbox
+							//- 			+svg('checkmark', 'icon')
+							//- 		p.catalog_filters_aside_item__text Ray-Ban
+							//- 		p.catalog_filters_aside_item__text 4
+							//- label.catalog_filters_aside_item
+							//- 	input.checkbox(type="checkbox", name="brand", value ="", hidden="")
+							//- 	.catalog_filters_aside_item__block
+							//- 		.catalog_filters_aside_item__checkbox
+							//- 			+svg('checkmark', 'icon')
+							//- 		p.catalog_filters_aside_item__text Ray-Ban
+							//- 		p.catalog_filters_aside_item__text 4
+							//- label.catalog_filters_aside_item
+							//- 	input.checkbox(type="checkbox", name="brand", value ="", hidden="")
+							//- 	.catalog_filters_aside_item__block
+							//- 		.catalog_filters_aside_item__checkbox
+							//- 			+svg('checkmark', 'icon')
+							//- 		p.catalog_filters_aside_item__text Ray-Ban
+							//- 		p.catalog_filters_aside_item__text 4
+							//- label.catalog_filters_aside_item
+							//- 	input.checkbox(type="checkbox", name="brand", value ="", hidden="")
+							//- 	.catalog_filters_aside_item__block
+							//- 		.catalog_filters_aside_item__checkbox
+							//- 			+svg('checkmark', 'icon')
+							//- 		p.catalog_filters_aside_item__text Ray-Ban
+							//- 		p.catalog_filters_aside_item__text 4
+							//- label.catalog_filters_aside_item
+							//- 	input.checkbox(type="checkbox", name="brand", value ="", hidden="")
+							//- 	.catalog_filters_aside_item__block
+							//- 		.catalog_filters_aside_item__checkbox
+							//- 			+svg('checkmark', 'icon')
+							//- 		p.catalog_filters_aside_item__text Ray-Ban
+							//- 		p.catalog_filters_aside_item__text 4
+							//- label.catalog_filters_aside_item
+							//- 	input.checkbox(type="checkbox", name="brand", value ="", hidden="")
+							//- 	.catalog_filters_aside_item__block
+							//- 		.catalog_filters_aside_item__checkbox
+							//- 			+svg('checkmark', 'icon')
+							//- 		p.catalog_filters_aside_item__text Ray-Ban
+							//- 		p.catalog_filters_aside_item__text 4
+
+						button.catalog_filters__bottom_btn.catalog_filters__bottom_btn--aside.btn.btn--filled
+							span.btn__text применить
+
+
+					.catalog_filters__block
+						button.catalog_filters__close(data-filters-close="")
+							+svg('icon_cross', 'icon')
+						p.catalog_filters__title Фильтрация
+						.catalog_filters__wrap
+
+							.catalog_filters__buttons
+								button.catalog_filters__main_btn
+									.text бренд
+									+svg('link_arrow', "icon")
+								button.catalog_filters__main_btn
+									.text страна
+									+svg('link_arrow', "icon")
+								button.catalog_filters__main_btn
+									.text пол
+									+svg('link_arrow', "icon")
+								button.catalog_filters__main_btn
+									.text возраст
+									+svg('link_arrow', "icon")
+								button.catalog_filters__main_btn
+									.text форма оправы
+									+svg('link_arrow', "icon")
+								button.catalog_filters__main_btn
+									.text цвет оправы
+									+svg('link_arrow', "icon")
+								button.catalog_filters__main_btn
+									.text материал оправы
+									+svg('link_arrow', "icon")
+								button.catalog_filters__main_btn
+									.text конструкция оправы
+									+svg('link_arrow', "icon")
+								button.catalog_filters__main_btn
+									.text размер
+									+svg('link_arrow', "icon")
+								button.catalog_filters__main_btn
+									.text тип тонировки линз
+									+svg('link_arrow', "icon")
+								button.catalog_filters__main_btn
+									.text материал линз
+									+svg('link_arrow', "icon")
+								button.catalog_filters__main_btn
+									.text цвет линз
+									+svg('link_arrow', "icon")
+								button.catalog_filters__main_btn
+									.text уф-защита линз
+									+svg('link_arrow', "icon")
+								button.catalog_filters__main_btn
+									.text наличие футляра
+									+svg('link_arrow', "icon")
+								button.catalog_filters__main_btn
+									.text наличие салфетки
+									+svg('link_arrow', "icon")
+
+						
+
+							.catalog_filters_sort
+								label.catalog_filters_sort__label
+									input.radio(type="radio", name="product_sort", value ="", hidden="")
+									.catalog_filters_sort__radio
+										+svg('checkmark', 'icon')
+									p.catalog_filters_sort__text Новинка
+								label.catalog_filters_sort__label
+									input.radio(type="radio", name="product_sort", value ="", hidden="")
+									.catalog_filters_sort__radio
+										+svg('checkmark', 'icon')
+									p.catalog_filters_sort__text Акция
+								label.catalog_filters_sort__label
+									input.radio(type="radio", name="product_sort", value ="", hidden="")
+									.catalog_filters_sort__radio
+										+svg('checkmark', 'icon')
+									p.catalog_filters_sort__text Хит
+
+						.catalog_filters__bottom(data-filters-close="") 
+							button.catalog_filters__bottom_btn.btn.btn--filled
+								span.btn__text применить
+
+
+
+
+				.catalog_inner__content_cards
+
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
+
+			.catalog_inner__pagination.pagination
+				button.pagination__btn_more.btn.btn--grey
+					span.btn__text Показать ещё
+				
+				.pagination__wrap 
+					button.pagination__num.is-active 1
+					button.pagination__num 2
+					button.pagination__num 3
+					button.pagination__num ...
+					button.pagination__num 12
+
+			.catalog_inner__also 
+				h2.section_block__title.section_block__title--small Также ищут
+
+				.catalog_inner__also_wrap
+					button.catalog_inner__cat_btn Мужские (359)
+					button.catalog_inner__cat_btn Женские (614)
+
+
+		section.catalog_inner_additional
+			p.catalog_inner_additional__text Предлагаем в каталоге официального магазина выбрать солнцезащитные очки Chopard или оправу для зрения точно по размеру, параметрам и форме и купить с доставкой по Москве на бесплатную примерку (до 4-х моделей), в любой город России – до 2-х пар.
+			p.catalog_inner_additional__text Chopard - это люксовое элитное направление в оптике, все изделия производят в Италии на итальянской фабрике De Rigo. В наличии представлены женские и мужские модели очков Шопард в которых используются декоративные элементы украшений из основной линейки продукции модного бренда. Линзы выполнены из оптического материала CR39 и имеют наивысшие показатели по защите глаз от вредных солнечных лучей UV UF, в некоторых используется прочный поликарбонат, подходит для винтовых оправ на леске.
+			p.catalog_inner_additional__text Есть и классические оправы (с покрытием из 23-х каратного золота), декорированные стразами Swarovski – очень удобно сидят на лице за счет флексов и продуманного дизайна, и сочетают в себе изысканность ювелирной мысли основателя Луи-Уиллиса Шопарда.
+
+			.catalog_inner_additional__faq
+
+				.faq_dropdown(data-dropdown-block="")
+					.faq_dropdown__top(data-dropdown-block-btn) 
+						h3.faq_dropdown__title Какие бывают очки для зрения?
+						+svg('link_arrow', 'icon')
+					.faq_dropdown__info
+						p.faq_dropdown__text Дальтонизм — это отклонение от цветовосприятия, невозможность отличить некоторые цвета и оттенки в областях желто-зеленых и пурпурных цветов, встречается у 8 процентов белых мужчин и 0,5 процентов белых женщин, это связано с отсутствием в колбочках сетчатки глаза фоточувствительного пигмента, это генетическое заболевание и в настоящее время неизлечимо. Наиболее частым случаем является неразличение красного цвета.
+
+				.faq_dropdown(data-dropdown-block="")
+					.faq_dropdown__top(data-dropdown-block-btn) 
+						h3.faq_dropdown__title Разные диоптрии на глазах — как правильно подобрать очки?
+						+svg('link_arrow', 'icon')
+					.faq_dropdown__info
+						p.faq_dropdown__text Дальтонизм — это отклонение от цветовосприятия, невозможность отличить некоторые цвета и оттенки в областях желто-зеленых и пурпурных цветов, встречается у 8 процентов белых мужчин и 0,5 процентов белых женщин, это связано с отсутствием в колбочках сетчатки глаза фоточувствительного пигмента, это генетическое заболевание и в настоящее время неизлечимо. Наиболее частым случаем является неразличение красного цвета.
+
+				.faq_dropdown(data-dropdown-block="")
+					.faq_dropdown__top(data-dropdown-block-btn) 
+						h3.faq_dropdown__title Что такое Дальтонизм?
+						+svg('link_arrow', 'icon')
+					.faq_dropdown__info
+						p.faq_dropdown__text Дальтонизм — это отклонение от цветовосприятия, невозможность отличить некоторые цвета и оттенки в областях желто-зеленых и пурпурных цветов, встречается у 8 процентов белых мужчин и 0,5 процентов белых женщин, это связано с отсутствием в колбочках сетчатки глаза фоточувствительного пигмента, это генетическое заболевание и в настоящее время неизлечимо. Наиболее частым случаем является неразличение красного цвета.
+
+				.faq_dropdown(data-dropdown-block="")
+					.faq_dropdown__top(data-dropdown-block-btn) 
+						h3.faq_dropdown__title Как узнать размер очков для себя?
+						+svg('link_arrow', 'icon')
+					.faq_dropdown__info
+						p.faq_dropdown__text Дальтонизм — это отклонение от цветовосприятия, невозможность отличить некоторые цвета и оттенки в областях желто-зеленых и пурпурных цветов, встречается у 8 процентов белых мужчин и 0,5 процентов белых женщин, это связано с отсутствием в колбочках сетчатки глаза фоточувствительного пигмента, это генетическое заболевание и в настоящее время неизлечимо. Наиболее частым случаем является неразличение красного цвета.
+
+				.faq_dropdown(data-dropdown-block="")
+					.faq_dropdown__top(data-dropdown-block-btn) 
+						h3.faq_dropdown__title Почему вредно подбирать очки для зрения в домашних условиях?
+						+svg('link_arrow', 'icon')
+					.faq_dropdown__info
+						p.faq_dropdown__text Дальтонизм — это отклонение от цветовосприятия, невозможность отличить некоторые цвета и оттенки в областях желто-зеленых и пурпурных цветов, встречается у 8 процентов белых мужчин и 0,5 процентов белых женщин, это связано с отсутствием в колбочках сетчатки глаза фоточувствительного пигмента, это генетическое заболевание и в настоящее время неизлечимо. Наиболее частым случаем является неразличение красного цвета.
+
+				.faq_dropdown(data-dropdown-block="")
+					.faq_dropdown__top(data-dropdown-block-btn) 
+						h3.faq_dropdown__title Стекло или пластик — какие линзы для очков лучше?
+						+svg('link_arrow', 'icon')
+					.faq_dropdown__info
+						p.faq_dropdown__text Дальтонизм — это отклонение от цветовосприятия, невозможность отличить некоторые цвета и оттенки в областях желто-зеленых и пурпурных цветов, встречается у 8 процентов белых мужчин и 0,5 процентов белых женщин, это связано с отсутствием в колбочках сетчатки глаза фоточувствительного пигмента, это генетическое заболевание и в настоящее время неизлечимо. Наиболее частым случаем является неразличение красного цвета.
+
+
+
+		section.news_section.blog
+
+			.news_section__top 
+				h2.section_block__title.section_block__title--small Блог
+				a.news_section__btn.btn.btn--grey.btn--icon_right(href="/news")
+					span.btn__text перейти в блог
+					+svg('link_arrow', "btn__icon btn__icon--black btn__icon--right")
+
+			.news_section__content
+				+newsSectionCard(`${assetsPath}/img/news_pic_1.jpg`, 'Вы их искали: прямые черные брюки, как у Кайи Гербер', '8 марта, 2023')
+				+newsSectionCard(`${assetsPath}/img/news_pic_1.jpg`, 'Вы их искали: прямые черные брюки, как у Кайи Гербер', '8 марта, 2023')
+				+newsSectionCard(`${assetsPath}/img/news_pic_1.jpg`, 'Вы их искали: прямые черные брюки, как у Кайи Гербер', '8 марта, 2023')
+				+newsSectionCard(`${assetsPath}/img/news_pic_1.jpg`, 'Вы их искали: прямые черные брюки, как у Кайи Гербер', '8 марта, 2023')

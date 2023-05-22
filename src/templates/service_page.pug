@@ -1,0 +1,96 @@
+extends _base/_layout
+block settings 
+
+	- title = 'Диоптрика — Изготовление рецептурных очков';
+
+
+
+block content
+	main.view(data-app-layout="view", data-app-layout-namespace="examples")
+
+		.home__tabs
+			a.home__tab(href="/")
+				+svg('tab_1', 'icon')
+				span.text Главная
+			a.home__tab(href="/catalog")
+				+svg('tab_2', 'icon')
+				span.text Каталог
+			a.home__tab(href="/cart")
+				+svg('tab_3', 'icon')
+				span.text Корзина
+			a.home__tab(href="/favorites")
+				+svg('tab_4', 'icon')
+				span.text Избранное
+			a.home__tab(href="/account")
+				+svg('tab_5', 'icon')
+				span.text Войти
+
+		section.rules.service_page
+			.rules__breadcrumbs.breadcrumbs
+				a.breadcrumbs__link(href="/") Диоптрика
+				span.slash /
+				a.breadcrumbs__link.is-active Изготовление рецептурных очков
+
+			.rules__content 
+
+				.rules__block
+					h1.rules__title.rules__title--big Изготовление рецептурных очков
+					
+					p.rules__text.rules__text--nomargin У нас вы можете заказать изготовление корригирующих очков для зрения различной степени сложности (по рецепту). Наша мастерская оптика в Москве устанавливает в очки линзы с диоптриями, астигматические в любую оправу заказчика.
+					p.rules__text.rules__text--nomargin Цена - наверное это один из основных параметров из-за которого большинство наших клиентов оказывается перед экраном монитора. Самый распространенный пример - это когда в оптике вам называют такую цену за линзы, которая заставляет вас задуматься - а может посмотреть в интернете, вдруг есть дешевле?
+					p.rules__text.rules__text--nomargin И действительно есть, скорее всего вы найдете несколько предложений нужных вам линз по более выгодной цене, но как и где выбрать? Стоит ли доверять предложениям в интернете, если дело касается ваших глаз и зрения? - Наш ответ - стоит, но как и в любом другом деле нужно соблюдать определенные правила.
+
+
+				.rules__block
+					p.rules__title Качество
+					p.rules__text.rules__text--nomargin Мы придерживаемся философии "делать хорошо, либо не делать никак". В современном конкурентном мире достичь успеха можно только предлагая сервис высшего уровня. Наша Мастеркая специализируется на изготовлении очков для многих известных магазинов салонов оптики в Москве.
+					ul.rules__list.rules__list--margin
+						li.rules__text.rules__text--dot Профессиональное дорогостоящее оборудование по обточке линз, которое зачастую, по финансовым соображениям, не может себе позволить обычный салон оптики. /NIDEK Япония - одно из лучших на рынке.
+						li.rules__text.rules__text--dot Высокая проходимость. В день в нашу мастерскую поступают сотни заказов с оправами разного типа, и линзами различных категорий, что позволяет Лаборатории не терять навык в обточке и установке линз.
+						li.rules__text.rules__text--dot Срок готовности заказа: от 30 минут до 1-2 рабочих дня (на сложные рецептурные заказы срок может быть больше). Мы сделаем Вам очки качественно и с гарантией!
+
+					
+				.rules__block
+					p.rules__title Цены на вставку линз в очки
+					ul.rules__list
+						li.rules__text.rules__text--dot.rules__text--listmargin Оправа ободковая - 1100 руб.
+						li.rules__text.rules__text--dot.rules__text--listmargin Оправа лесочного типа - 1300 руб.
+						li.rules__text.rules__text--dot.rules__text--listmargin Оправа на винтах, втулках - 1700 руб.
+					ul.rules__list.rules__list--margin
+						li.rules__text.rules__text--dot Модели с драгоценным покрытием или заказы с рецептурными линзами - 1900 руб.
+						li.rules__text.rules__text--dot Наши мастера работают на новейших станках по обточке линз Японской марки NIDEK, модели МЕ-1200 и МЕ-900. Данное оборудование практически полностью автоматизирует процесс. Эти станки обтачивают линзы, сверлят отверстия, каналы для лески, снимают фасет, полируют. Специалист корректно вводит изначальные данные, а потом бережно собирает ваши очки.
+						li.rules__text.rules__text--dot Мы также занимаемся окраской и установкой диоптрийных линз без покрытий, как в однотонные цвета, так и градиентом. Стоимость данной услуги - уточняйте у менеджеров по телефону: #[a.link(href="tel:+7 (499) 506 89 64") +7 (499) 506 89 64].
+				
+				.rules__block
+					p.rules__title Сможем изготовить очки по рецепту #[br.desktop] и сделать на заказ
+					p.rules__text.rules__text--nomargin Существует огромное множество вариаций очковых линз и оправ разного типа. В каждом конкретном случае, зная медицинский рецепт и оправу - наши консультанты помогут выбрать оптимальный вариант линз к вашим очкам, а Вам останется только заказать их у нас! Зачастую параметр цены не является определяющим в качестве будущих очков. Основные свойства, на которые стоит обратить внимание при выборе линз:
+					ul.rules__list.rules__list--margin
+						li.rules__text.rules__text--dot.rules__text--listmargin Степень утончения
+						li.rules__text.rules__text--dot.rules__text--listmargin Материал изготовления (особенно для винтовых оправ, чтобы линзы не трескались / не скалывались)
+						li.rules__text.rules__text--dot.rules__text--listmargin Тип и количество покрытий.
+
+			
+			.service_page_form
+				h2.service_page_form__title Заказать очки или проконсультироваться
+				p.service_page_form__text Если вы обратитесь в наш центр, наши врачи проведут ультразвуковую диагностика глаз с помощью нового аппарата LASIK, которая позволит определить состояние ваших глаз, выявить возможные аномалии рефракции. 
+				form.service_page_form__form(action="/mailer" data-mailer="" data-form-id="service_page_form")
+					input(type="hidden", name="form", value="Заказать очки или проконсультироваться (страница услуги)")
+					
+					.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+						input.input_wrapper__input(type="text" name="name" required autocomplete="off")
+						label.input_wrapper__label Ваше имя
+						.input_wrapper__tooltip(data-input-tooltip="")
+
+					.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+						input.input_wrapper__input(type="tel" name="phone" required autocomplete="off")
+						label.input_wrapper__label Номер телефона
+						.input_wrapper__tooltip(data-input-tooltip="")
+					
+					.input_wrapper.input_wrapper--textarea(data-input-wrapper="")
+						textarea.input_wrapper__textarea(name="comment", placeholder="Комментарий")
+					button.footer_table__form_btn.btn.btn--white
+						span.btn__text оставить ЗАЯВКУ
+					
+				.service_page_form__img 
+					+img(`${assetsPath}/img/asian_girl.png`, '', 'image')
+					

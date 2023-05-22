@@ -1,0 +1,23 @@
+.modal_phone_confirm.modal_delete_account.modal_form.modal(data-modal="modal_phone_confirm")
+
+	button.modal_close.modal_form__close(data-modal-close="")
+		+svg('icon_cross', 'icon')
+
+	h3.modal_form__title Подтвердить номер телефона
+	p.modal_form__text В целях безопасности мы просим вас подтвердить ваш номер телефона.
+
+	.modal_checkout_moscow__input.modal_checkout_moscow__input--margin
+		p.modal_checkout_moscow__input_caption Телефон
+
+		.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+			input.input_wrapper__input(type="tel" name="phone" required autocomplete="off")
+			label.input_wrapper__label Номер телефона 
+			.input_wrapper__tooltip(data-input-tooltip="")
+		
+		p.modal_form__text.modal_form__text--12 На этот номер мы отправим SMS с кодом
+
+	.modal_form__buttons.modal_form__buttons--20
+		button.modal_form__btn.btn.btn--filled
+			span.btn__text Получить код
+
+	

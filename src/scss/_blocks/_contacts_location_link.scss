@@ -1,0 +1,46 @@
+.contacts_location_link {
+	display: flex;
+    align-items: center;
+    
+    background: #EEEEEE;
+    border-radius: 4px;
+
+    padding: em(6) em(16);
+
+    transition: background .2s;
+
+    @media(max-width: 750px) {
+        padding: em(8) em(14);
+    }
+
+    &:hover {
+        background: darken($color: #eeeeee, $amount: 5%);
+    }
+
+    .icon {
+        width: em(24);
+        height: em(24);
+
+        margin-right: em(6);
+
+        @media(max-width: 750px) {
+            width: em(20);
+            height: em(20);
+        }
+    }
+
+    .text {
+        font-family: $button-font;
+        font-weight: 400;
+        font-size: em(14);
+        text-transform: uppercase;
+
+        @media(max-width: 750px) {
+            font-size: em(12);
+        }
+    }
+
+    & + & {
+        margin-left: .5rem;
+    }
+}

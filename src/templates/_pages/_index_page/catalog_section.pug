@@ -1,0 +1,137 @@
+section.catalog_section
+
+	.catalog_infinite_slider.swiper
+		.swiper-wrapper 
+			.catalog_infinite_slider__slide.swiper-slide
+				.catalog_infinite_slider__slide_text Самый большой выбор
+			.catalog_infinite_slider__slide.swiper-slide
+				.catalog_infinite_slider__slide_text Профессиональная консультация
+			.catalog_infinite_slider__slide.swiper-slide
+				.catalog_infinite_slider__slide_text Примерка и проверка зрения
+			.catalog_infinite_slider__slide.swiper-slide
+				.catalog_infinite_slider__slide_text Изготовление очков за 30 минут
+			.catalog_infinite_slider__slide.swiper-slide
+				.catalog_infinite_slider__slide_text Гарантия от производителя
+
+
+	.catalog_section__content
+		.catalog_section_list
+			.catalog_section_list__wrap
+				a.catalog_section_list__item
+					span.text Солнцезащитные очки
+					+img(`${assetsPath}/img/catalog_index_icon_1.png`, '', 'image')
+
+				a.catalog_section_list__item
+					span.text Оправы для очков
+					+img(`${assetsPath}/img/catalog_index_icon_2.png`, '', 'image')
+
+				a.catalog_section_list__item
+					span.text Линзы для очков
+					+img(`${assetsPath}/img/catalog_index_icon_3.png`, '', 'image')
+
+				a.catalog_section_list__item
+					span.text Контактные линзы
+					+img(`${assetsPath}/img/catalog_index_icon_4.png`, '', 'image')
+
+				a.catalog_section_list__item
+					span.text Аксессуары и средства по уходу
+					+img(`${assetsPath}/img/catalog_index_icon_5.png`, '', 'image')
+
+			.catalog_section_list_inner
+				.catalog_section_list_inner__top
+					p.section_block__title Солнцезащитные очки
+
+				.catalog_section_list_inner__table
+					.catalog_section_list_inner__column 
+						p.catalog_section_list_inner__title Пол
+						a.catalog_section_list_inner__link Мужской
+						a.catalog_section_list_inner__link Женский
+						a.catalog_section_list_inner__link Унисекс
+						a.catalog_section_list_inner__link Детские
+
+					.catalog_section_list_inner__column 
+						p.catalog_section_list_inner__title Бренды
+						a.catalog_section_list_inner__link Ray-Ban
+						a.catalog_section_list_inner__link Ray-Ban
+						a.catalog_section_list_inner__link Ray-Ban
+						a.catalog_section_list_inner__link Ray-Ban
+						a.catalog_section_list_inner__link Ray-Ban
+						a.catalog_section_list_inner__link Ray-Ban
+						a.catalog_section_list_inner__link Ray-Ban
+						a.catalog_section_list_inner__link Ray-Ban
+						a.catalog_section_list_inner__link Ray-Ban
+						a.catalog_section_list_inner__link Ray-Ban
+						
+						a.catalog_section_list_inner__link.catalog_section_list_inner__link--all Смотреть все
+
+
+
+					.catalog_section_list_inner__column 
+						p.catalog_section_list_inner__title Материал
+						a.catalog_section_list_inner__link Металл
+						a.catalog_section_list_inner__link Пластик
+						a.catalog_section_list_inner__link Комбинированный
+
+					.catalog_section_list_inner__column 
+						p.catalog_section_list_inner__title Форма
+						a.catalog_section_list_inner__link Авиатор 
+						a.catalog_section_list_inner__link Авиатор
+						a.catalog_section_list_inner__link Авиатор
+						a.catalog_section_list_inner__link Авиатор
+						a.catalog_section_list_inner__link Авиатор 
+						a.catalog_section_list_inner__link Авиатор
+						a.catalog_section_list_inner__link Авиатор
+						a.catalog_section_list_inner__link Авиатор
+
+					.catalog_section_list_inner__column 
+						p.catalog_section_list_inner__title Линзы
+						a.catalog_section_list_inner__link Фотохромные
+						a.catalog_section_list_inner__link Поляризационные
+
+					.catalog_section_list_inner__column 
+						p.catalog_section_list_inner__title Тип
+						a.catalog_section_list_inner__link Ободковые
+						a.catalog_section_list_inner__link Полуободковые
+						a.catalog_section_list_inner__link Безободковые
+
+		.catalog_section_slider_main.slider.swiper 
+			.swiper-wrapper
+				.catalog_section_slider__slide.swiper-slide
+					.catalog_section_slider__slide_img
+						+img(`${assetsPath}/img/catalog_slider_pic.jpg`, '', 'image')
+						span.text new
+					.catalog_section_slider__slide_info
+						p.section_block__title.section_block__title--small Коллекция Prada F/W 2023
+						p.catalog_section_slider__slide_text Новинки от французского модного дома уже в нашем каталоге
+				.catalog_section_slider__slide.swiper-slide
+					.catalog_section_slider__slide_img
+						+img(`${assetsPath}/img/about_main_pic.jpg`, '', 'image')
+						span.text new
+					.catalog_section_slider__slide_info
+						p.section_block__title.section_block__title--small Коллекция Prada F/W 2023
+						p.catalog_section_slider__slide_text Новинки от французского модного дома уже в нашем каталоге
+				.catalog_section_slider__slide.swiper-slide
+					.catalog_section_slider__slide_img
+						+img(`${assetsPath}/img/catalog_slider_pic.jpg`, '', 'image')
+						span.text new
+					.catalog_section_slider__slide_info
+						p.section_block__title.section_block__title--small Коллекция Prada F/W 2023
+						p.catalog_section_slider__slide_text Новинки от французского модного дома уже в нашем каталоге
+				.catalog_section_slider__slide.swiper-slide
+					.catalog_section_slider__slide_img
+						+img(`${assetsPath}/img/about_main_pic.jpg`, '', 'image')
+						span.text new
+					.catalog_section_slider__slide_info
+						p.section_block__title.section_block__title--small Коллекция Prada F/W 2023
+						p.catalog_section_slider__slide_text Новинки от французского модного дома уже в нашем каталоге
+
+			
+			.catalog_section_slider__nav.slider__buttons
+				button.slider__button.slider__button--prev.catalog_section_slider__btn--prev
+					+svg('link_arrow', 'icon')
+				.catalog_section_slider__pagination.slider__pagination
+				button.slider__button.slider__button--next.catalog_section_slider__btn--next
+					+svg('link_arrow', 'icon')
+
+
+	

@@ -1,0 +1,34 @@
+extends _base/_layout
+block settings 
+
+	- title = 'Диоптрика — Магазин очков и оптики';
+
+
+
+block content
+	main.view(data-app-layout="view", data-app-layout-namespace="examples")
+
+		.home__tabs
+			a.home__tab.is-active(href="/")
+				+svg('tab_1', 'icon')
+				span.text Главная
+			a.home__tab(href="/catalog")
+				+svg('tab_2', 'icon')
+				span.text Каталог
+			a.home__tab(href="/cart")
+				+svg('tab_3', 'icon')
+				span.text Корзина
+			a.home__tab(href="/favorites")
+				+svg('tab_4', 'icon')
+				span.text Избранное
+			a.home__tab(href="/account")
+				+svg('tab_5', 'icon')
+				span.text Войти
+
+		include _pages/_index_page/home
+		include _pages/_index_page/catalog_section
+		include _pages/_index_page/hits
+		include _pages/_index_page/brands_section
+		include _pages/_index_page/glasses_making
+		include _pages/_index_page/services_section
+	

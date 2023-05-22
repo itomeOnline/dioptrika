@@ -1,0 +1,23 @@
+.glasses_making {
+	padding: em(120) em(30) 0;	
+
+    @media(max-width: 750px) {
+        padding: em(60) em(10) 0;
+    }	
+    
+    &__content {
+        margin-top: em(30);
+
+        display: flex;
+        justify-content: space-between;
+
+        border: 1px solid #000000;
+        border-radius: 4px;
+
+        @media(max-width: 750px) {
+            margin-top: em(14);
+
+            flex-direction: column;
+        }
+    }
+}

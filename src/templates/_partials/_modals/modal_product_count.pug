@@ -1,0 +1,33 @@
+.modal_product_count.modal_form.modal(data-modal="modal_product_count")
+
+	button.modal_close.modal_form__close(data-modal-close="")
+		+svg('icon_cross', 'icon')
+
+	h3.modal_form__title Добавлено в корзину
+
+	.modal_video__content
+		.cart_card
+
+			.cart_card__pic 
+				+img(`${assetsPath}/img/cart_pic.jpg`, '', 'image')
+
+			.cart_card__wrap
+			
+				.cart_card__column
+					p.cart__left_text.cart__left_text--big Palette 01
+					p.cart__left_text Prada
+					p.cart__left_text арт. 7478621
+					p.cart__left_text Оранжевый
+
+				.cart_card__prices 
+					p.cart_total__price 17 500 руб
+
+				.cart_card__amount
+					button.cart_card__amount_icon.cart_card__amount_icon--left
+						+svg('minus', 'icon')
+					span.cart_card__amount_number 1
+					button.cart_card__amount_icon.cart_card__amount_icon--right
+						+svg('plus', 'icon')
+
+		a.modal_form__btn_add.btn.btn--filled(href="/cart")
+			span.btn__text Перейти в корзину

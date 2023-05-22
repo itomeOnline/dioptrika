@@ -1,0 +1,109 @@
+.preloader {
+	position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    transition: opacity .2s;
+    opacity: 0;
+
+    .on-loaded & {
+        opacity: 1;
+    }
+
+    .disabled & {
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__num {
+        color: #000000;
+        font-family: $title-font;
+        font-weight: 500;
+        font-size: 30px;
+        letter-spacing: -1px;
+    }
+
+    &__load {
+        margin-top: auto;
+        margin-bottom: em(80);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+        bottom: 0;
+
+        @media(max-width: 500px) {
+            margin-bottom: 3em;
+        }
+    }
+
+    &__load_text {
+        font-size: em(16);
+        font-weight: 400;
+        line-height: em(20,16);
+        color: #242424;
+
+        margin-bottom: em(20,16);
+
+        @media(max-width: 500px) {
+            font-size: em(14);
+            line-height: em(20,14);
+
+            margin-bottom: em(16,14);
+        }
+    }
+
+    &__load_line {
+        position: relative;
+        width: em(320);
+        height: 2px;
+        background: #ECECEC;
+
+        @media(max-width: 500px) {
+            width: 70vw;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: $c-primary;
+            top: 0;
+            left: 0;
+            transform: scale3d(0,1,1);
+            transform-origin: left;
+            transition: transform 3.5s;
+            animation: loading 3.5s .5s forwards;
+        }
+    }
+
+}
+
+
+@keyframes loading {
+
+	from {
+		transform: scale3d(0, 1, 1);
+	}
+
+	to {
+		transform: scale3d(1, 1, 1);   
+	}
+}

@@ -1,0 +1,65 @@
+.modal_checkout_moscow_radio {
+	display: block;	
+
+    &__block {
+        display: flex;
+        align-items: center;
+
+        background: #EEEEEE;
+        border-radius: 4px;
+
+        padding: em(10) em(16);
+
+        cursor: pointer;
+
+        transition: background .2s;
+
+        .radio:checked ~ & {
+            background: #F4E8FF;
+        }
+    }
+
+    &__radio {
+        width: 14px;
+        height: 14px;
+
+        flex: none;
+
+        border-radius: 50%;
+        border: 2px solid #000000;
+
+        position: relative;
+
+        .radio:checked ~ .modal_checkout_moscow_radio__block & {
+            
+            &::before {
+                opacity: 1;
+            }
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 6px;
+            background: #000000;
+            border-radius: 50%;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            transform: translate3d(-50%,-50%,0);
+
+            opacity: 0;
+
+            transition: opacity .2s;
+        }
+    }
+
+    &__text {
+        font-size: em(14);
+
+        margin-left: 1em;
+    }
+}

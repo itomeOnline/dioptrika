@@ -1,0 +1,339 @@
+@import "_includes/_reset";
+
+@import "_includes/_globals";
+
+@import "_includes/_fonts";
+
+@import "_includes/_bundle";
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+
+	@media(max-width: 750px) {
+		
+		position: relative;
+	}
+}
+
+body {
+	font-size: 1em;
+
+	opacity: 0;
+
+	transition: opacity 0s;
+
+	&.on-loaded {
+		transition: opacity .2s;
+
+		opacity: 1;
+	}
+
+	@media(max-width: 750px) {
+		overflow-x: hidden;
+		position: relative;
+	}
+}
+
+.content {
+	opacity: 0;
+
+	body.disabled & {
+		opacity: 1;
+	}
+}
+
+.dropzone > * {
+    display: none;
+}
+.dropzone * {
+    pointer-events: none;
+}
+
+
+.pace .pace-progress {
+	background: $c-primary !important;
+}
+
+button,
+a {
+	transition: color .2s, background .2s; 
+}
+
+input,
+textarea {
+	-webkit-appearance: none;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+br.desktop {
+
+	@media(max-width: 750px) {
+		display: none;
+	}
+}
+
+br.mobile {
+	display: none;
+
+	@media(max-width: 750px) {
+		display: initial;
+	}
+}
+
+[data-lazy] {
+	opacity: 0;
+
+	transition: opacity .125s;
+
+	&.loaded {
+		opacity: 1;
+	}
+}
+
+[data-scroll-fadeup] {
+	transform: translate3d(0, 3rem, 0);
+	opacity: 0;
+
+	transition: transform .5s, opacity .5s;
+
+	will-change: transform, opacity;
+
+	&.is-inview {
+		transform: translate3d(0, 0 ,0);
+		opacity: 1;
+	}
+}
+
+
+[data-scroll-fadeup] .highlighted_text {
+	color: black;
+
+	transition: color .3s .15s;
+	
+}
+
+[data-scroll-fadeup].is-inview .highlighted_text {
+	color: $c-primary;
+}
+
+[data-scroll-fadedown] {
+	transform: translate3d(0, -5rem, 0);
+	opacity: 0;
+
+	transition: transform .5s .25s, opacity .5s .25s;
+
+	will-change: transform, opacity;
+
+	&.is-inview {
+		transform: translate3d(0, 0 ,0);
+		opacity: 1;
+	}
+}
+
+
+
+@import "_blocks/container";
+
+@import "_blocks/input_wrapper";
+
+@import "_blocks/btn";
+
+@import "_blocks/multi_select";
+
+@import "_blocks/multi_option";
+
+@import "_blocks/section";
+
+@import "_blocks/section_block";
+
+@import "_blocks/privacy";
+
+@import "_blocks/modal";
+
+@import "_blocks/modals";
+
+@import "_blocks/modal_close";
+
+@import "_blocks/modal_form";
+
+@import "_blocks/modal_menu";
+
+@import "_blocks/itome";
+
+@import "_blocks/not_found";
+
+@import "_blocks/preloader";
+
+@import "_blocks/cookie";
+
+@import "_blocks/slider";
+
+@import "_blocks/slider_gallery";
+
+@import "_blocks/header";
+
+@import "_blocks/footer";
+
+@import "_blocks/footer_table";
+
+@import "_blocks/footer_web_block";
+
+@import "_blocks/home";
+
+@import "_blocks/catalog_section";
+
+@import "_blocks/catalog_infinite_slider";
+
+@import "_blocks/hits";
+
+@import "_blocks/hits_slide";
+
+@import "_blocks/brands_section";
+
+@import "_blocks/brands_slide";
+
+@import "_blocks/services_section";
+
+@import "_blocks/services_card";
+
+@import "_blocks/glasses_making";
+
+@import "_blocks/glasses_making_block";
+
+@import "_blocks/catalog";
+
+@import "_blocks/breadcrumbs";
+
+@import "_blocks/catalog_search_mobile";
+
+@import "_blocks/contacts";
+
+@import "_blocks/contacts_link";
+
+@import "_blocks/contacts_location_link";
+
+@import "_blocks/contacts_slider";
+
+@import "_blocks/documents";
+
+@import "_blocks/faq";
+
+@import "_blocks/faq_dropdown";
+
+@import "_blocks/rules";
+
+@import "_blocks/about";
+
+@import "_blocks/news_section";
+
+@import "_blocks/news_section_card";
+
+@import "_blocks/news";
+
+@import "_blocks/news_card";
+
+@import "_blocks/pagination";
+
+@import "_blocks/news_card_page";
+
+@import "_blocks/brands";
+
+@import "_blocks/service_page_form";
+
+@import "_blocks/catalog_inner";
+
+@import "_blocks/catalog_inner_additional";
+
+@import "_blocks/catalog_filters";
+
+@import "_blocks/catalog_filters_sort";
+
+@import "_blocks/product_page";
+
+@import "_blocks/product_page_info";
+
+@import "_blocks/product_page_info_dropdown";
+
+@import "_blocks/product_page_size_block";
+
+@import "_blocks/product_page_characteristics_block";
+
+@import "_blocks/product_page_delivery";
+
+@import "_blocks/product_page_info_form";
+
+@import "_blocks/favorites";
+
+@import "_blocks/cart";
+
+@import "_blocks/cart_total";
+
+@import "_blocks/cart_card";
+
+@import "_blocks/modal_try_on";
+
+@import "_blocks/modal_card";
+
+@import "_blocks/checkout";
+
+@import "_blocks/checkout_option";
+
+@import "_blocks/checkout_total";
+
+@import "_blocks/header_catalog";
+
+@import "_blocks/login";
+
+@import "_blocks/account";
+
+@import "_blocks/account_card";
+
+@import "_blocks/account_order_card";
+
+@import "_blocks/account_personal_info";
+
+@import "_blocks/account_additional_info";
+
+@import "_blocks/product_page_info_lenses";
+
+@import "_blocks/catalog_section_list";
+
+@import "_blocks/catalog_section_list_inner";
+
+@import "_blocks/catalog_section_slider";
+
+@import "_blocks/checkout_dropdown";
+
+@import "_blocks/modal_checkout_moscow";
+
+@import "_blocks/modal_checkout_moscow_radio";
+
+@import "_blocks/catalog_filters_aside_item";
+
+@import "_blocks/catalog_filters_aside";
+
+@import "_blocks/catalog_filters_aside_range";
+
+@import "_blocks/modal_page";
+
+@import "_blocks/modal_page_dropzone";
+
+@import "_blocks/modal_video";
+
+@import "_blocks/header_search";
+
+@import "_blocks/header_search_card";
+
+@import "_blocks/modal_phone";
+
+@import "_blocks/product_page_counter";

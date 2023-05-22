@@ -1,0 +1,15 @@
+.faq {
+	padding: em(148) em(30) em(120);
+
+    @media(max-width: 750px) {
+        padding: em(60) em(10) em(30);
+    }	
+
+    &__content {
+        margin-top: em(34);
+
+        @media(max-width: 750px) {
+            margin-top: em(14);
+        }
+    }	
+}

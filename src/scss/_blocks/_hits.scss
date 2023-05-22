@@ -1,0 +1,84 @@
+.hits {
+	padding: em(120) em(30) 0;	
+
+    @media(max-width: 750px) {
+        padding: em(30) em(10) 0;
+    }
+
+    &--last {
+        padding-bottom: em(120);
+
+        @media(max-width: 750px) {
+            padding-bottom: em(36);
+        }
+    }
+
+    &__top {
+        display: flex;
+        align-items: center;
+
+        justify-content: space-between;
+    }
+
+    &__nav {
+
+        @media(max-width: 750px) {
+            display: none;
+        }
+    }
+
+    &__tabs {
+        margin-top: em(18);
+
+        display: flex;
+        align-items: center;
+
+        @media(max-width: 750px) {
+            margin-top: em(14);
+        }
+
+        .slash {
+            font-family: $button-font;
+            font-size: em(12);
+            line-height: em(16,12);
+            font-weight: 400;
+            color: #000000;
+
+            margin: 0 2px;
+        }
+    }
+
+    &__tabs_btn {
+        padding: 0;
+
+        font-family: $button-font;
+        font-size: em(12);
+        line-height: em(16,12);
+        font-weight: 400;
+        color: #5E5E5E;
+
+        &.is-active {
+            color: #000000;
+        }
+    }
+
+    &__slider,
+    &__slider_1, 
+    &__slider_2 {
+        margin-top: em(30);
+
+        @media(max-width: 750px) {
+            margin-top: em(14);
+        }
+    }
+
+    &__btn_more {
+        width: 100%;
+        height: em(44,12);
+        margin-top: em(30,12);
+
+        @media(max-width: 750px) {
+            margin-top: 1em;
+        }
+    }
+}

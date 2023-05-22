@@ -1,0 +1,36 @@
+.account_additional_info {
+	
+    &__content {
+        margin-top: em(30);
+
+        width: 100%;
+        max-width: em(670);
+
+        @media(max-width: 750px) {
+            margin-top: em(14);
+            max-width: 100%;
+        }
+    }
+
+    &__caption {
+        font-family: $title-font;
+        font-weight: 500;
+        font-size: em(18);
+        line-height: em(26,18);
+
+        margin-bottom: em(6,18);
+    }
+
+    &__text {
+        font-size: em(16);
+        line-height: em(24,16);
+    }
+
+    &__btn {
+        margin-top: 1.25rem;
+
+        @media(max-width: 750px) {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.checkout_dropdown {
+	margin-top: em(14);	
+    border: 1px solid #000000;
+    border-radius: 4px;
+    overflow: hidden;
+
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0), 0px 4px 32px rgba(0, 0, 0, 0);
+
+    transition: box-shadow .2s;
+
+    &.is-open {
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.04), 0px 4px 32px rgba(0, 0, 0, 0.16);
+    }
+
+    &__new {
+        border-top: 1px solid #000000;
+
+        padding: 0;
+        text-align: left;
+    }
+
+    &__list {
+        height: 0;
+        opacity: 0;
+        pointer-events: none;
+
+        transition: height .2s, opacity .2s;
+
+        .is-open & {
+            height: fit-content;
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+}

@@ -1,0 +1,101 @@
+
+mixin button_filled(text)
+	button.btn.btn--filled(anim="ripple")
+		span.btn__text= text
+
+mixin button_filled_icon_left(text, svg)
+	button.btn.btn--filled.btn--icon_left(anim="ripple")
+		+svg(svg, "btn__icon btn__icon--white btn__icon--left")
+		span.btn__text= text
+
+mixin button_filled_icon_right(text, svg)
+	button.btn.btn--filled.btn--icon_right(anim="ripple")
+		span.btn__text= text
+		+svg(svg, "btn__icon btn__icon--white btn__icon--right")
+
+mixin button_filled_pic(text, svg)
+	button.btn.btn--filled.btn--pic(anim="ripple")
+		span.btn__text= text
+		+svg(svg, "btn__pic btn__pic--white")
+
+mixin button_outlined(text)
+	button.btn.btn--outlined(anim="ripple")
+		span.btn__text= text
+
+mixin button_outlined_icon_left(text, svg)
+	button.btn.btn--outlined(anim="ripple")
+		+svg(svg, "btn__icon btn__icon--black btn__icon--left")
+		span.btn__text= text
+
+mixin button_outlined_icon_right(text, svg)
+	button.btn.btn--outlined(anim="ripple")
+		span.btn__text= text
+		+svg(svg, "btn__icon btn__icon--black btn__icon--right")
+
+mixin button_outlined_pic(text, svg)
+	button.btn.btn--outlined(anim="ripple")
+		span.btn__text= text
+		+svg(svg, "btn__pic btn__pic--black")
+
+
+mixin button_error(text)
+	button.btn.btn--error(anim="ripple")
+		span.btn__text= text
+
+mixin button_error_icon_left(text, svg)
+	button.btn.btn--error(anim="ripple")
+		+svg(svg, "btn__icon btn__icon--white btn__icon--left")
+		span.btn__text= text
+
+mixin button_error_icon_right(text, svg)
+	button.btn.btn--error(anim="ripple")
+		span.btn__text= text
+		+svg(svg, "btn__icon btn__icon--white btn__icon--right")
+
+mixin button_error_pic(text, svg)
+	button.btn.btn--error(anim="ripple")
+		span.btn__text= text
+		+svg(svg, "btn__pic btn__pic--white")
+
+mixin button_succes(text)
+	button.btn.btn--succes(anim="ripple")
+		span.btn__text= text
+
+mixin button_succes_icon_left(text, svg)
+	button.btn.btn--succes(anim="ripple")
+		+svg(svg, "btn__icon btn__icon--white btn__icon--left")
+		span.btn__text= text
+
+mixin button_succes_icon_right(text, svg)
+	button.btn.btn--succes(anim="ripple")
+		span.btn__text= text
+		+svg(svg, "btn__icon btn__icon--white btn__icon--right")
+
+mixin button_succes_pic(text, svg)
+	button.btn.btn--succes(anim="ripple")
+		span.btn__text= text
+		+svg(svg, "btn__pic btn__pic--white")
+
+.container.buttons_container
+	+button_filled('Button')
+	+button_filled_icon_left('Button', 'plus')
+	+button_filled_icon_right('Button', 'arrow_short')
+	+button_filled_pic('Button', 'pic')
+
+.container.buttons_container
+	+button_outlined('Button')
+	+button_outlined_icon_left('Button', 'plus')
+	+button_outlined_icon_right('Button', 'arrow_short')
+	+button_outlined_pic('Button', 'pic')
+
+.container.buttons_container
+	+button_error('Button')
+	+button_error_icon_left('Button', 'plus')
+	+button_error_icon_right('Button', 'arrow_short')
+	+button_error_pic('Button', 'pic')
+
+.container.buttons_container
+	+button_succes('Button')
+	+button_succes_icon_left('Button', 'plus')
+	+button_succes_icon_right('Button', 'arrow_short')
+	+button_succes_pic('Button', 'pic')

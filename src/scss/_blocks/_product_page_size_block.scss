@@ -1,0 +1,48 @@
+.product_page_size_block {
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+
+	&__pic {
+		width: em(74);
+		height: em(74);
+
+		margin-right: em(24);
+
+		@media(max-width: 750px) {
+			width: em(48);
+			height: em(48);
+
+			margin-right: em(14);
+		}
+	}
+
+	&__text {
+		font-family: $text-font;
+		font-weight: 400;
+		font-size: em(16);
+		line-height: em(24,16);
+
+		@media(max-width: 750px) {
+			font-size: em(14);
+			line-height: em(22,14);
+		}
+
+		& + & {
+			margin-left: auto;
+		}
+	}
+
+	& + & {
+		margin-top: em(14);
+
+		@media(max-width: 750px) {
+			margin-top: 0;
+		}
+
+		.modal_card & {
+			margin-top: 0;
+		}
+	}
+}

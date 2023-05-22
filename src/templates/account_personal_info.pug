@@ -1,0 +1,93 @@
+extends _base/_layout
+block settings 
+
+	- title = 'Диоптрика — Личный кабинет';
+
+
+block content
+	main.view(data-app-layout="view", data-app-layout-namespace="examples")
+
+		.home__tabs
+			a.home__tab(href="/")
+				+svg('tab_1', 'icon')
+				span.text Главная
+			a.home__tab(href="/catalog")
+				+svg('tab_2', 'icon')
+				span.text Каталог
+			a.home__tab(href="/cart")
+				+svg('tab_3', 'icon')
+				span.text Корзина
+			a.home__tab(href="/favorites")
+				+svg('tab_4', 'icon')
+				span.text Избранное
+			a.home__tab.is-active(href="/account")
+				+svg('tab_5', 'icon')
+				span.text Войти
+
+		section.account
+			.account__column
+				.account__column_wrap
+					.account__breadcrumbs.breadcrumbs
+						a.breadcrumbs__link(href="/") Диоптрика
+						span.slash /
+						a.breadcrumbs__link.is-active Личный кабинет
+					
+					h1.section_block__title Личный кабинет
+				
+				.account__tabs 
+					a.account__tab(href="/account")
+						+svg('acc_icon_1', 'icon_main')
+						span.text.text--desk история заказов
+						span.text.text--mob заказы
+						+svg('link_arrow', 'icon_arrow')
+					a.account__tab.is-active(href="/account_personal_info")
+						+svg('acc_icon_2', 'icon_main')
+						span.text.text--desk личные данные
+						span.text.text--mob данные
+						+svg('link_arrow', 'icon_arrow')
+					a.account__tab(href="/account_additional_info")
+						+svg('acc_icon_3', 'icon_main')
+						span.text.text--desk доп. информация
+						span.text.text--mob аккаунт
+						+svg('link_arrow', 'icon_arrow')
+
+					button.account__btn_leave
+						+svg('acc_icon_4', 'icon_main')
+						span.text.text--desk выйти из аккаунта
+						span.text.text--mob выход
+
+			.account__content
+
+				h2.section_block__title.section_block__title--small Личные данные
+
+				.account_personal_info__content
+					.account_personal_info__inputs 
+						.account_personal_info__wrap
+							p.account_personal_info__caption Фамилия
+							.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+								input.input_wrapper__input(type="text" name="name" placeholder="Фамилия" required autocomplete="off")
+
+						.account_personal_info__wrap
+							p.account_personal_info__caption Имя
+							.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+								input.input_wrapper__input(type="text" name="name" placeholder="Имя" required autocomplete="off")
+
+						.account_personal_info__wrap
+							p.account_personal_info__caption Отчество
+							.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+								input.input_wrapper__input(type="text" name="name" placeholder="Отчество" required autocomplete="off")
+
+						.account_personal_info__wrap
+							p.account_personal_info__caption Email
+							.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+								input.input_wrapper__input(type="text" name="name" placeholder="Email" required autocomplete="off")
+
+						.account_personal_info__wrap
+							p.account_personal_info__caption Телефон
+							.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+								input.input_wrapper__input(type="text" name="name" placeholder="Телефон" required autocomplete="off")
+
+					button.account_personal_info__btn.btn.btn--filled
+						span.btn__text Сохранить изменения
+
+

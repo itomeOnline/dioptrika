@@ -1,0 +1,46 @@
+.account_personal_info {
+	
+    &__content {
+        margin-top: em(30);
+
+        width: 100%;
+        max-width: em(904);
+
+        @media(max-width: 750px) {
+            margin-top: em(14);
+
+            max-width: 100%;
+        }
+    }
+
+    &__inputs {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: em(30) em(14);
+
+        margin-bottom: em(30);
+
+        @media(max-width: 750px) {
+            grid-template-columns: 100%;
+            gap: em(12);
+
+            margin-bottom: em(14);
+        }
+    }
+
+    &__caption {
+        font-family: $title-font;
+        font-weight: 500;
+        font-size: em(18);
+        line-height: em(26,18);
+
+        margin-bottom: em(6,18);
+    }
+
+    &__btn {
+
+        @media(max-width: 750px) {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+mixin svg (name, className)
+	svg(class= className)
+		use(xlink:href=`#${name}`)
+
+mixin img(src, alt, className)
+	- var ext = src.split('.').pop();
+	picture(class= className)
+		source(data-lazy, data-srcset= src.replace(ext, 'webp'), type="image/webp")
+		source(data-lazy, data-srcset= src, type=`image/${ext}`)
+		img(class= className, data-lazy, data-src= src, alt= alt)
+
+mixin imgSvg(src, alt, className)
+	- var ext = src.split('.').pop();
+	img(class= className, data-src= src, alt= alt, data-lazy="")
+
+mixin imgSvgNolazy(src, alt, className)
+	- var ext = src.split('.').pop();
+	img(class= className, src= src, alt= alt)
+
+
+- const projectName = '#айтуми'
+- const assetsPath = '/assets';
+
+- 
+	const links = {
+		services: '/services',
+		audit: '/audit',
+		empty: '#0'
+
+	};	

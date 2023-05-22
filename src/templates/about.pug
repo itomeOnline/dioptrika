@@ -1,0 +1,88 @@
+extends _base/_layout
+block settings 
+
+	- title = 'Диоптрика — О компании';
+
+
+mixin newsSectionCard(img, text, date)
+	a.news_section_card(href="/news_card")
+		.news_section_card__img 
+			+img(img, '', 'image')
+		p.news_section_card__text!= text
+		p.news_section_card__date= date
+
+
+block content
+	main.view(data-app-layout="view", data-app-layout-namespace="examples")
+
+		.home__tabs
+			a.home__tab(href="/")
+				+svg('tab_1', 'icon')
+				span.text Главная
+			a.home__tab(href="/catalog")
+				+svg('tab_2', 'icon')
+				span.text Каталог
+			a.home__tab(href="/cart")
+				+svg('tab_3', 'icon')
+				span.text Корзина
+			a.home__tab(href="/favorites")
+				+svg('tab_4', 'icon')
+				span.text Избранное
+			a.home__tab(href="/account")
+				+svg('tab_5', 'icon')
+				span.text Войти
+
+		section.about
+
+			.section_block.section_block--center
+				h1.section_block__title Добро пожаловать #[br] в сеть салонов #[br.mobile] оптики «Диоптрика»
+				p.section_block__text Поможем вам увидеть мир. Своими глазами.
+
+			.about__main_pic
+				video.video(poster=`${assetsPath}/img/about_main_pic.jpg`, autoplay="", loop="", muted="")
+				//- +img(`${assetsPath}/img/about_main_pic.jpg`, '', 'image')
+
+			p.section_block__text.section_block__text--center Мы знаем, как сделать так, чтобы вы в полной мере любовались окружающим миром. Поможем лучше видеть тем, у кого проблемы со зрением, и предоставим огромный выбор солнцезащитных очков для тех, кто стремится к ярким образам. За качеством и индивидуальным подходом приглашаем всех в салоны оптики «Диоптрика».
+
+			.about__table
+			
+				.about__table_cell 
+					p.about__table_text Подбор очков и #[br.desktop] средств контактной #[br.desktop] коррекции
+
+				.about__table_cell 
+					p.about__table_text Изготовление медицинских #[br.desktop] и солнцезащитных очков с линзами любой #[br.desktop] сложности
+
+				.about__table_cell 
+					p.about__table_text Оправы и солнцезащитные #[br.desktop] очки для взрослых и детей
+
+				.about__table_cell 
+					p.about__table_text Аксессуары для #[br.desktop] очков и контактных #[br.desktop] линз
+
+				.about__table_cell 
+					p.about__table_text Изготовление очков для #[br.desktop] детей разного возраста
+
+			.about__gallery
+				.about__gallery_wrap
+					.about__gallery_pic
+						+img(`${assetsPath}/img/about_pic_1.jpg`, '', 'image')
+					.about__gallery_pic
+						+img(`${assetsPath}/img/about_pic_2.jpg`, '', 'image')
+				.about__gallery_wrap
+					.about__gallery_pic
+						+img(`${assetsPath}/img/about_pic_3.jpg`, '', 'image')
+					.about__gallery_pic
+						+img(`${assetsPath}/img/about_pic_4.jpg`, '', 'image')
+
+		section.news_section
+
+			.news_section__top 
+				h2.section_block__title.section_block__title--small Новости
+				a.news_section__btn.btn.btn--grey.btn--icon_right(href="/news")
+					span.btn__text перейти в новости
+					+svg('link_arrow', "btn__icon btn__icon--black btn__icon--right")
+
+			.news_section__content
+				+newsSectionCard(`${assetsPath}/img/news_pic_1.jpg`, 'Вы их искали: прямые черные брюки, как у Кайи Гербер', '8 марта, 2023')
+				+newsSectionCard(`${assetsPath}/img/news_pic_1.jpg`, 'Вы их искали: прямые черные брюки, как у Кайи Гербер', '8 марта, 2023')
+				+newsSectionCard(`${assetsPath}/img/news_pic_1.jpg`, 'Вы их искали: прямые черные брюки, как у Кайи Гербер', '8 марта, 2023')
+				+newsSectionCard(`${assetsPath}/img/news_pic_1.jpg`, 'Вы их искали: прямые черные брюки, как у Кайи Гербер', '8 марта, 2023')

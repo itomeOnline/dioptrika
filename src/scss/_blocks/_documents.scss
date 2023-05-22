@@ -1,0 +1,41 @@
+.documents {
+	padding: em(148) em(30) em(366);
+
+    @media(max-width: 750px) {
+        padding: em(60) em(10) em(376);
+    }	
+
+    &__content {
+        margin-top: em(34);
+
+        @media(max-width: 750px) {
+            margin-top: em(14);
+        }
+    }
+
+    &__btn {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: .5rem 0;
+
+        border-bottom: 1px solid #000000;
+
+        .text {
+            font-family: $button-font;
+            font-weight: 400;
+            font-size: em(12);
+        }
+
+        .icon {
+            width: em(20);
+            height: em(20);
+        }
+
+        & + & {
+            margin-top: em(14);
+        }
+    }
+}

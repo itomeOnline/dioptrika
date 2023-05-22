@@ -1,0 +1,19 @@
+extends _base/_layout
+block settings 
+
+	- title = 'Диоптрика — Регистрация';
+
+
+
+block content
+	main.view(data-app-layout="view", data-app-layout-namespace="examples")
+
+		section.login
+
+			form.login__form
+
+				h1.section_block__title Спасибо!
+				p.section_block__text Благодарим за регистрацию, входим #[br.mobile] в личный кабинет...
+					
+				+imgSvg(`${assetsPath}/img/loader.svg`, '', 'loading_icon')
+					

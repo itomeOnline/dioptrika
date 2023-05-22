@@ -1,0 +1,32 @@
+extends _base/_layout
+block settings 
+
+	- title = 'Диоптрика — Регистрация';
+
+
+
+block content
+	main.view(data-app-layout="view", data-app-layout-namespace="examples")
+
+		section.login
+
+			form.login__form
+				input(type="hidden", name="form", value=" Форма - Регистрация")
+
+				.login__wrap
+					+imgSvg(`${assetsPath}/img/loader.svg`, '', 'loader')
+
+					h1.section_block__title Регистрация
+					
+					.login__inputs
+						.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+							input.input_wrapper__input(type="email" name="email" required autocomplete="off")
+							label.input_wrapper__label Email
+							.input_wrapper__tooltip(data-input-tooltip="")
+
+						button.footer_table__form_btn.btn.btn--filled
+							span.btn__text сгенерировать пароль
+					
+					p.login__text #[a.link(href="/login") Войдите], если у вас уже есть аккаунт
+			
+			p.login__text.login__text--bottom #[a.link(href="/password_recovery") Забыли пароль?]

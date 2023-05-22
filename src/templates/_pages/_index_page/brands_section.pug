@@ -1,0 +1,30 @@
+mixin brandsSlide(pic, name, country)
+	a.brands_slide.swiper-slide(href="/brand_card")
+		.brands_slide__pic 
+			+img(pic, '', 'image')
+		.brands_slide__info
+			p.brands_slide__text.brands_slide__text--big= name
+			p.brands_slide__text= country
+
+section.brands_section
+	.brands_section__top
+		h2.section_block__title Бренды
+
+		.brands_section__nav.slider__buttons
+			button.slider__button.slider__button--prev.brands_section__nav_btn--prev
+				+svg('link_arrow', 'icon')
+			button.slider__button.slider__button--next.brands_section__nav_btn--next
+				+svg('link_arrow', 'icon')
+
+	.brands_section__slider.slider.swiper
+		.swiper-wrapper
+			+brandsSlide(`${assetsPath}/img/brands_pic_1.jpg`, 'Dolce&Gabbana', 'Италия')
+			+brandsSlide(`${assetsPath}/img/brands_pic_2.jpg`, 'Balenciaga', 'Франция')
+			+brandsSlide(`${assetsPath}/img/brands_pic_3.jpg`, 'Emporio Armani', 'Италия')
+			+brandsSlide(`${assetsPath}/img/brands_pic_4.jpg`, 'Givenchy', 'Франция')
+			+brandsSlide(`${assetsPath}/img/brands_pic_5.jpg`, 'Gucci', 'Италия')
+			+brandsSlide(`${assetsPath}/img/brands_pic_6.jpg`, 'Burberry', 'Великобритания')
+			+brandsSlide(`${assetsPath}/img/brands_pic_7.jpg`, 'Prada', 'Италия')
+			+brandsSlide(`${assetsPath}/img/brands_pic_8.jpg`, 'Dior', 'Франция')
+			+brandsSlide(`${assetsPath}/img/brands_pic_7.jpg`, 'Prada', 'Италия')
+			+brandsSlide(`${assetsPath}/img/brands_pic_8.jpg`, 'Dior', 'Франция')

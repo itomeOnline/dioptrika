@@ -1,0 +1,841 @@
+extends _base/_layout
+block settings 
+
+	- title = 'Диоптрика — Prada Palette 01';
+
+
+
+mixin hitsSlideHvr(pic1, pic2, pic3, name, model, price)
+	a.hits_slide.swiper-slide(data-linked-modal="modal_card")
+		.hits_slide__pic
+			.hits_slide__pic_wrap(data-hover-images="")
+				img.image(data-lazy, data-src= pic1, alt="")
+				img.image(data-lazy, data-src= pic2, alt="")
+				img.image(data-lazy, data-src= pic3, alt="")
+			+imgSvg(`${assetsPath}/img/loader.svg`, '', 'loader')
+			.hits_slide__hover_btn.btn.btn--filled Быстрый просмотр
+			button.hits_slide__btn.hits_slide__btn--mob
+				+imgSvg(`${assetsPath}/img/icon_fav_empty.svg`, '', 'image image__empty')
+				+imgSvg(`${assetsPath}/img/icon_fav_active.svg`, '', 'image image__active')
+		.hits_slide__info
+			.hits_slide__left
+				p.hits_slide__text.hits_slide__text--big= name
+				p.hits_slide__text= model
+				p.hits_slide__text= price
+			.hits_slide__right
+				button.hits_slide__btn
+					+imgSvg(`${assetsPath}/img/icon_cart_empty.svg`, '', 'image image__empty')
+					+imgSvg(`${assetsPath}/img/icon_cart_active.svg`, '', 'image image__active')
+				button.hits_slide__btn
+					+imgSvg(`${assetsPath}/img/icon_fav_empty.svg`, '', 'image image__empty')
+					+imgSvg(`${assetsPath}/img/icon_fav_active.svg`, '', 'image image__active')
+
+
+block content
+	main.view(data-app-layout="view", data-app-layout-namespace="examples")
+
+		.home__tabs
+			a.home__tab(href="/")
+				+svg('tab_1', 'icon')
+				span.text Главная
+			a.home__tab(href="/catalog")
+				+svg('tab_2', 'icon')
+				span.text Каталог
+			a.home__tab(href="/cart")
+				+svg('tab_3', 'icon')
+				span.text Корзина
+			a.home__tab(href="/favorites")
+				+svg('tab_4', 'icon')
+				span.text Избранное
+			a.home__tab(href="/account")
+				+svg('tab_5', 'icon')
+				span.text Войти
+
+		section#beginning.product_page(data-scroll-id="beginning")
+			.product_page__breadcrumbs.breadcrumbs
+				a.breadcrumbs__link(href="/") Диоптрика
+				span.slash /
+				a.breadcrumbs__link(href="/") Солнцезащитные очки
+				span.slash /
+				a.breadcrumbs__link(href="/") Prada
+				span.slash /
+				a.breadcrumbs__link.is-active Prada Palette 01
+
+			h1.section_block__title Prada Palette 01
+
+			.product_page__content
+				.product_page__gallery
+					.product_page__tag.is-new 
+						+svg('tag', 'bg')
+						.text новинка
+
+					.product_page__gallery_wrap 
+						.product_page__gallery_pic 
+							+img(`${assetsPath}/img/product_page_pic_1.jpg`, '', 'image')
+						.product_page__gallery_pic 
+							+img(`${assetsPath}/img/product_page_pic_2.jpg`, '', 'image')
+						.product_page__gallery_pic
+							+img(`${assetsPath}/img/product_page_pic_3.jpg`, '', 'image')
+						.product_page__gallery_pic 
+							+img(`${assetsPath}/img/product_page_pic_4.jpg`, '', 'image')
+						.product_page__gallery_pic 
+							+img(`${assetsPath}/img/product_page_pic_5.jpg`, '', 'image')
+
+					.product_page__slider.slider.swiper 
+						.swiper-wrapper 
+							.product_page__gallery_pic.swiper-slide 
+								+img(`${assetsPath}/img/product_page_pic_1.jpg`, '', 'image')
+							.product_page__gallery_pic.swiper-slide 
+								+img(`${assetsPath}/img/product_page_pic_2.jpg`, '', 'image')
+							.product_page__gallery_pic.swiper-slide
+								+img(`${assetsPath}/img/product_page_pic_3.jpg`, '', 'image')
+							.product_page__gallery_pic.swiper-slide 
+								+img(`${assetsPath}/img/product_page_pic_4.jpg`, '', 'image')
+							.product_page__gallery_pic.swiper-slide 
+								+img(`${assetsPath}/img/product_page_pic_5.jpg`, '', 'image')
+						
+						.product_page__slider_pagination
+
+
+				.product_page_info
+					.product_page_info__container
+						.product_page_info__block.product_page_info__block--fix
+							span.product_page_info__text.product_page_info__text--small.green В наличии
+
+							p.product_page_info__title Prada Palette 01
+							.product_page_info__line 
+								span.product_page_info__price 17 900 руб
+								span.product_page_info__price.old 24 000 руб
+							p.product_page_info__text Очки солнцезащитные от премиум-бренда выполнены из пластика. Особенности: нерегулируемые носовые упоры, фотохромные линзы, высокая степень светозащиты, в комплекте футляр.
+							
+							.product_page_info__buttons.product_page_info__buttons--page
+								.product_page_info__buttons_wrap
+									.product_page_counter
+										button.product_page_counter__btn.product_page_counter__btn--minus
+											+svg('minus', 'icon')
+										p.product_page_counter__text количество: #[span.number 1]
+										button.product_page_counter__btn.product_page_counter__btn--plus
+											+svg('plus', 'icon')
+
+									button.product_page_info__btn.product_page_info__btn--cart.btn.btn--filled.btn--icon_right
+										span.btn__text.btn__text--initial добавить в корзину
+										span.btn__text.btn__text--added в корзине
+										+svg('cart', "btn__icon btn__icon--initial btn__icon--white btn__icon--right")
+										+svg('icon_okay', "btn__icon btn__icon--added btn__icon--black btn__icon--right")
+
+								button.product_page_info__btn.product_page_info__btn--fav.btn.btn--grey.btn--icon_right
+									span.btn__text.btn__text--initial избранное
+									span.btn__text.btn__text--added в избранном
+									+svg('heart', "btn__icon btn__icon--initial btn__icon--black btn__icon--right")
+									+svg('heart_red', "btn__icon btn__icon--added btn__icon--red btn__icon--right")
+
+
+						.product_page_info__block.product_page_info__block--lenses.product_page_info_lenses(data-tab-wrapper="")
+							.product_page_info_lenses__top
+								p.product_page_info__title Варианты товара
+								.product_page_info_lenses__tabs 
+									button.product_page_info_lenses__tabs_btn.is-active(data-tab-id='1') Одинаковые линзы
+									button.product_page_info_lenses__tabs_btn(data-tab-id='2') Различающиеся линзы
+
+							.product_page_info_lenses__container 
+								.product_page_info_lenses__inner.is-active(data-tab='1')
+
+									.product_page_info_lenses__dropdown
+										.product_page_info_dropdown(data-dropdown-block="")
+											.product_page_info_dropdown__top(data-dropdown-block-btn) 
+												p.product_page_info__caption Оптическая сила (PWR / D)
+												+svg('link_arrow', 'icon')
+											.product_page_info_dropdown__content.product_page_info_lenses__dropdown_content 
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+											.select.select--outlined.product_page_info__select(data-dropdown="", data-dropdown-name="colors", data-dropdown-placeholder="Выбрать", data-dropdown-readonly="true", data-dropdown-options='[{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"}]')
+
+									.product_page_info_lenses__dropdown
+										.product_page_info_dropdown(data-dropdown-block="")
+											.product_page_info_dropdown__top(data-dropdown-block-btn) 
+												p.product_page_info__caption Радиус кривизны (BC)
+												+svg('link_arrow', 'icon')
+											.product_page_info_dropdown__content.product_page_info_lenses__dropdown_content 
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="BC", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="BC", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="BC", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="BC", value ="", hidden="")
+													p.text -8.50
+											.select.select--outlined.product_page_info__select(data-dropdown="", data-dropdown-name="colors", data-dropdown-placeholder="Выбрать", data-dropdown-readonly="true", data-dropdown-options='[{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"}]')
+
+									.product_page_info_lenses__dropdown
+										.product_page_info_dropdown(data-dropdown-block="")
+											.product_page_info_dropdown__top(data-dropdown-block-btn) 
+												p.product_page_info__caption Оптическая сила цилиндра (CYL)
+												+svg('link_arrow', 'icon')
+											.product_page_info_dropdown__content.product_page_info_lenses__dropdown_content 
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="CYL", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="CYL", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="CYL", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="CYL", value ="", hidden="")
+													p.text -8.50
+											.select.select--outlined.product_page_info__select(data-dropdown="", data-dropdown-name="colors", data-dropdown-placeholder="Выбрать", data-dropdown-readonly="true", data-dropdown-options='[{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"}]')
+
+									.product_page_info_lenses__dropdown
+										.product_page_info_dropdown(data-dropdown-block="")
+											.product_page_info_dropdown__top(data-dropdown-block-btn) 
+												p.product_page_info__caption Ось (AX)
+												+svg('link_arrow', 'icon')
+											.product_page_info_dropdown__content.product_page_info_lenses__dropdown_content 
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="AX", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="AX", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="AX", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="AX", value ="", hidden="")
+													p.text -8.50
+											.select.select--outlined.product_page_info__select(data-dropdown="", data-dropdown-name="colors", data-dropdown-placeholder="Выбрать", data-dropdown-readonly="true", data-dropdown-options='[{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"}]')
+
+									.product_page_info_lenses__dropdown
+										.product_page_info_dropdown(data-dropdown-block="")
+											.product_page_info_dropdown__top(data-dropdown-block-btn) 
+												p.product_page_info__caption Диаметр (DIA)
+												+svg('link_arrow', 'icon')
+											.product_page_info_dropdown__content.product_page_info_lenses__dropdown_content 
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="DIA", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="DIA", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="DIA", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="DIA", value ="", hidden="")
+													p.text -8.50
+											.select.select--outlined.product_page_info__select(data-dropdown="", data-dropdown-name="colors", data-dropdown-placeholder="Выбрать", data-dropdown-readonly="true", data-dropdown-options='[{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"}]')
+
+									.product_page_info_lenses__dropdown
+										.product_page_info_dropdown(data-dropdown-block="")
+											.product_page_info_dropdown__top(data-dropdown-block-btn) 
+												p.product_page_info__caption Аддидация (ADD)
+												+svg('link_arrow', 'icon')
+											.product_page_info_dropdown__content.product_page_info_lenses__dropdown_content 
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="ADD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="ADD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="ADD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="ADD", value ="", hidden="")
+													p.text -8.50
+											.select.select--outlined.product_page_info__select(data-dropdown="", data-dropdown-name="colors", data-dropdown-placeholder="Выбрать", data-dropdown-readonly="true", data-dropdown-options='[{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"}]')
+
+						
+								.product_page_info_lenses__inner(data-tab='2')
+
+									.product_page_info_lenses__dropdown
+										.product_page_info_dropdown(data-dropdown-block="")
+											.product_page_info_dropdown__top(data-dropdown-block-btn) 
+												p.product_page_info__caption.product_page_info__caption--grey Левый глаз
+												p.product_page_info__caption Оптическая сила (PWR / D)
+												+svg('link_arrow', 'icon')
+											.product_page_info_dropdown__content.product_page_info_lenses__dropdown_content 
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+											.select.select--outlined.product_page_info__select(data-dropdown="", data-dropdown-name="colors", data-dropdown-placeholder="Выбрать", data-dropdown-readonly="true", data-dropdown-options='[{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"}]')
+
+									.product_page_info_lenses__dropdown
+										.product_page_info_dropdown(data-dropdown-block="")
+											.product_page_info_dropdown__top(data-dropdown-block-btn) 
+												p.product_page_info__caption.product_page_info__caption--grey Правый глаз
+												p.product_page_info__caption Оптическая сила (PWR / D)
+												+svg('link_arrow', 'icon')
+											.product_page_info_dropdown__content.product_page_info_lenses__dropdown_content 
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="pwrD", value ="", hidden="")
+													p.text -8.50
+											.select.select--outlined.product_page_info__select(data-dropdown="", data-dropdown-name="colors", data-dropdown-placeholder="Выбрать", data-dropdown-readonly="true", data-dropdown-options='[{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"}]')
+
+									.product_page_info_lenses__dropdown
+										.product_page_info_dropdown(data-dropdown-block="")
+											.product_page_info_dropdown__top(data-dropdown-block-btn) 
+												p.product_page_info__caption.product_page_info__caption--grey Левый глаз
+												p.product_page_info__caption Радиус кривизны (BC)
+												+svg('link_arrow', 'icon')
+											.product_page_info_dropdown__content.product_page_info_lenses__dropdown_content 
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="BC", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="BC", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="BC", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="BC", value ="", hidden="")
+													p.text -8.50
+											.select.select--outlined.product_page_info__select(data-dropdown="", data-dropdown-name="colors", data-dropdown-placeholder="Выбрать", data-dropdown-readonly="true", data-dropdown-options='[{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"}]')
+
+									.product_page_info_lenses__dropdown
+										.product_page_info_dropdown(data-dropdown-block="")
+											.product_page_info_dropdown__top(data-dropdown-block-btn) 
+												p.product_page_info__caption.product_page_info__caption--grey Правый глаз
+												p.product_page_info__caption Радиус кривизны (BC)
+												+svg('link_arrow', 'icon')
+											.product_page_info_dropdown__content.product_page_info_lenses__dropdown_content 
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="BC", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="BC", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="BC", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="BC", value ="", hidden="")
+													p.text -8.50
+											.select.select--outlined.product_page_info__select(data-dropdown="", data-dropdown-name="colors", data-dropdown-placeholder="Выбрать", data-dropdown-readonly="true", data-dropdown-options='[{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"}]')
+
+									.product_page_info_lenses__dropdown
+										.product_page_info_dropdown(data-dropdown-block="")
+											.product_page_info_dropdown__top(data-dropdown-block-btn) 
+												p.product_page_info__caption.product_page_info__caption--grey Левый глаз
+												p.product_page_info__caption Оптическая сила цилиндра (CYL)
+												+svg('link_arrow', 'icon')
+											.product_page_info_dropdown__content.product_page_info_lenses__dropdown_content 
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="CYL", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="CYL", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="CYL", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="CYL", value ="", hidden="")
+													p.text -8.50
+											.select.select--outlined.product_page_info__select(data-dropdown="", data-dropdown-name="colors", data-dropdown-placeholder="Выбрать", data-dropdown-readonly="true", data-dropdown-options='[{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"}]')
+
+									.product_page_info_lenses__dropdown
+										.product_page_info_dropdown(data-dropdown-block="")
+											.product_page_info_dropdown__top(data-dropdown-block-btn) 
+												p.product_page_info__caption.product_page_info__caption--grey Правый глаз
+												p.product_page_info__caption Оптическая сила цилиндра (CYL)
+												+svg('link_arrow', 'icon')
+											.product_page_info_dropdown__content.product_page_info_lenses__dropdown_content 
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="CYL", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="CYL", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="CYL", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="CYL", value ="", hidden="")
+													p.text -8.50
+
+											.select.select--outlined.product_page_info__select(data-dropdown="", data-dropdown-name="colors", data-dropdown-placeholder="Выбрать", data-dropdown-readonly="true", data-dropdown-options='[{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"}]')
+
+									.product_page_info_lenses__dropdown
+										.product_page_info_dropdown(data-dropdown-block="")
+											.product_page_info_dropdown__top(data-dropdown-block-btn) 
+												p.product_page_info__caption.product_page_info__caption--grey Левый глаз
+												p.product_page_info__caption Ось (AX)
+												+svg('link_arrow', 'icon')
+											.product_page_info_dropdown__content.product_page_info_lenses__dropdown_content 
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="AX", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="AX", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="AX", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="AX", value ="", hidden="")
+													p.text -8.50
+
+											.select.select--outlined.product_page_info__select(data-dropdown="", data-dropdown-name="colors", data-dropdown-placeholder="Выбрать", data-dropdown-readonly="true", data-dropdown-options='[{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"}]')
+
+									.product_page_info_lenses__dropdown
+										.product_page_info_dropdown(data-dropdown-block="")
+											.product_page_info_dropdown__top(data-dropdown-block-btn) 
+												p.product_page_info__caption.product_page_info__caption--grey Правый глаз
+												p.product_page_info__caption Ось (AX)
+												+svg('link_arrow', 'icon')
+											.product_page_info_dropdown__content.product_page_info_lenses__dropdown_content 
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="AX", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="AX", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="AX", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="AX", value ="", hidden="")
+													p.text -8.50
+											.select.select--outlined.product_page_info__select(data-dropdown="", data-dropdown-name="colors", data-dropdown-placeholder="Выбрать", data-dropdown-readonly="true", data-dropdown-options='[{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"}]')
+
+									.product_page_info_lenses__dropdown
+										.product_page_info_dropdown(data-dropdown-block="")
+											.product_page_info_dropdown__top(data-dropdown-block-btn) 
+												p.product_page_info__caption.product_page_info__caption--grey Левый глаз
+												p.product_page_info__caption Диаметр (DIA)
+												+svg('link_arrow', 'icon')
+											.product_page_info_dropdown__content.product_page_info_lenses__dropdown_content 
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="DIA", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="DIA", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="DIA", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="DIA", value ="", hidden="")
+													p.text -8.50
+											.select.select--outlined.product_page_info__select(data-dropdown="", data-dropdown-name="colors", data-dropdown-placeholder="Выбрать", data-dropdown-readonly="true", data-dropdown-options='[{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"}]')
+
+									.product_page_info_lenses__dropdown
+										.product_page_info_dropdown(data-dropdown-block="")
+											.product_page_info_dropdown__top(data-dropdown-block-btn) 
+												p.product_page_info__caption.product_page_info__caption--grey Правый глаз
+												p.product_page_info__caption Диаметр (DIA)
+												+svg('link_arrow', 'icon')
+											.product_page_info_dropdown__content.product_page_info_lenses__dropdown_content 
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="DIA", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="DIA", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="DIA", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="DIA", value ="", hidden="")
+													p.text -8.50
+
+											.select.select--outlined.product_page_info__select(data-dropdown="", data-dropdown-name="colors", data-dropdown-placeholder="Выбрать", data-dropdown-readonly="true", data-dropdown-options='[{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"}]')
+											
+									.product_page_info_lenses__dropdown
+										.product_page_info_dropdown(data-dropdown-block="")
+											.product_page_info_dropdown__top(data-dropdown-block-btn) 
+												p.product_page_info__caption.product_page_info__caption--grey Левый глаз
+												p.product_page_info__caption Аддидация (ADD)
+												+svg('link_arrow', 'icon')
+											.product_page_info_dropdown__content.product_page_info_lenses__dropdown_content 
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="ADD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="ADD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="ADD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="ADD", value ="", hidden="")
+													p.text -8.50
+											.select.select--outlined.product_page_info__select(data-dropdown="", data-dropdown-name="colors", data-dropdown-placeholder="Выбрать", data-dropdown-readonly="true", data-dropdown-options='[{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"}]')
+
+									.product_page_info_lenses__dropdown
+										.product_page_info_dropdown(data-dropdown-block="")
+											.product_page_info_dropdown__top(data-dropdown-block-btn) 
+												p.product_page_info__caption.product_page_info__caption--grey Правый глаз
+												p.product_page_info__caption Аддидация (ADD)
+												+svg('link_arrow', 'icon')
+											.product_page_info_dropdown__content.product_page_info_lenses__dropdown_content 
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="ADD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="ADD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="ADD", value ="", hidden="")
+													p.text -8.50
+												label.product_page_info__colors_btn.product_page_info__colors_btn--lenses
+													input.radio(type="radio", name="ADD", value ="", hidden="")
+													p.text -8.50
+
+											.select.select--outlined.product_page_info__select(data-dropdown="", data-dropdown-name="colors", data-dropdown-placeholder="Выбрать", data-dropdown-readonly="true", data-dropdown-options='[{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"},{"key":"-8.50","value":"-8.50"}]')
+						
+
+						.product_page_info__block.product_page_info__block--scroll 
+							p.product_page_info__caption Выберите цвет
+							.product_page_info__colors
+								label.product_page_info__colors_btn
+									input.radio(type="radio", name="color", value ="", hidden="")
+									p.text чёрный
+								label.product_page_info__colors_btn
+									input.radio(type="radio", name="color", value ="", hidden="")
+									p.text красный
+								label.product_page_info__colors_btn
+									input.radio(type="radio", name="color", value ="", hidden="")
+									p.text белый
+								label.product_page_info__colors_btn
+									input.radio(type="radio", name="color", value ="", hidden="")
+									p.text оранжевый
+							.select.select--outlined.product_page_info__select(data-dropdown="", data-dropdown-name="colors", data-dropdown-placeholder="Выбрать", data-dropdown-readonly="true", data-dropdown-options='[{"key":"Чёрный","value":"Чёрный"},{"key":"Красный","value":"Красный"},{"key":"Белый","value":"Белый"},{"key":"Оранжевый","value":"Оранжевый"}]')
+						
+						.product_page_info__block.product_page_info__block--scroll
+
+							.product_page_info_dropdown(data-dropdown-block="")
+								.product_page_info_dropdown__top(data-dropdown-block-btn) 
+									p.product_page_info__caption Размер
+									+svg('link_arrow', 'icon')
+								.product_page_info_dropdown__content
+									.product_page_size_block
+										.product_page_size_block__pic
+											+imgSvg(`${assetsPath}/img/glasses_size_1.svg`, '', 'image')
+										p.product_page_size_block__text Ширина:
+										p.product_page_size_block__text 142 мм
+									.product_page_size_block
+										.product_page_size_block__pic
+											+imgSvg(`${assetsPath}/img/glasses_size_2.svg`, '', 'image')
+										p.product_page_size_block__text Длина дужки:
+										p.product_page_size_block__text 140 мм
+									.product_page_size_block
+										.product_page_size_block__pic
+											+imgSvg(`${assetsPath}/img/glasses_size_3.svg`, '', 'image')
+										p.product_page_size_block__text Высота линзы:
+										p.product_page_size_block__text 54 мм
+									.product_page_size_block
+										.product_page_size_block__pic
+											+imgSvg(`${assetsPath}/img/glasses_size_4.svg`, '', 'image')
+										p.product_page_size_block__text Ширина линзы:
+										p.product_page_size_block__text 65 мм
+									.product_page_size_block
+										.product_page_size_block__pic
+											+imgSvg(`${assetsPath}/img/glasses_size_5.svg`, '', 'image')
+										p.product_page_size_block__text Длина моста:
+										p.product_page_size_block__text 9 мм
+						
+						
+						.product_page_info__block.product_page_info__block--scroll
+
+							.product_page_info_dropdown(data-dropdown-block="")
+								.product_page_info_dropdown__top(data-dropdown-block-btn) 
+									p.product_page_info__caption Характеристики
+									+svg('link_arrow', 'icon')
+								.product_page_info_dropdown__content
+									.product_page_characteristics_block
+										p.product_page_characteristics_block__text УФ-защита
+										p.product_page_characteristics_block__text 100%
+									.product_page_characteristics_block
+										p.product_page_characteristics_block__text Цвет заушника
+										p.product_page_characteristics_block__text Красный
+									.product_page_characteristics_block
+										p.product_page_characteristics_block__text Материал солнцезащитных линз
+										p.product_page_characteristics_block__text Пластик
+									.product_page_characteristics_block
+										p.product_page_characteristics_block__text Тип окраски линз
+										p.product_page_characteristics_block__text Однотонная
+									.product_page_characteristics_block
+										p.product_page_characteristics_block__text Возраст
+										p.product_page_characteristics_block__text.link Взрослый
+									.product_page_characteristics_block
+										p.product_page_characteristics_block__text Страна производства
+										p.product_page_characteristics_block__text.link Италия
+									.product_page_characteristics_block
+										p.product_page_characteristics_block__text Бренд
+										p.product_page_characteristics_block__text.link Prada
+									.product_page_characteristics_block
+										p.product_page_characteristics_block__text Пол
+										p.product_page_characteristics_block__text.link Для мужчин
+									.product_page_characteristics_block
+										p.product_page_characteristics_block__text Форма оправы
+										p.product_page_characteristics_block__text.link Трапеция
+									.product_page_characteristics_block
+										p.product_page_characteristics_block__text Материал оправы
+										p.product_page_characteristics_block__text.link Пластик
+									.product_page_characteristics_block
+										p.product_page_characteristics_block__text Цвет оправы
+										p.product_page_characteristics_block__text.link Красный
+									.product_page_characteristics_block
+										p.product_page_characteristics_block__text Наличие футляра
+										p.product_page_characteristics_block__text Есть
+									.product_page_characteristics_block
+										p.product_page_characteristics_block__text Наличие салфетки
+										p.product_page_characteristics_block__text Есть
+									.product_page_characteristics_block
+										p.product_page_characteristics_block__text Цвет солнцезащитных линз
+										p.product_page_characteristics_block__text Красный
+									.product_page_characteristics_block
+										p.product_page_characteristics_block__text Номер модели
+										p.product_page_characteristics_block__text 0AX4115SU 807 887
+									.product_page_characteristics_block
+										p.product_page_characteristics_block__text Конструкция оправы
+										p.product_page_characteristics_block__text.link Ободковая
+
+						.product_page_info__block.product_page_info__block--scroll
+
+							.product_page_info_dropdown(data-dropdown-block="")
+								.product_page_info_dropdown__top(data-dropdown-block-btn) 
+									p.product_page_info__caption Гарантия
+									+svg('link_arrow', 'icon')
+								.product_page_info_dropdown__content.product_page_info_dropdown__content--38
+									p.product_page_characteristics_block__text Гарантия на все очки и на данную модель распространяется на все очки и линзы, как изготовленные в нашей компании, так и от сторонних производителей, в том числе и на продукцию заводов «Оптикс» и «Гелиос».
+									
+						.product_page_info__block.product_page_info__block--scroll
+
+							.product_page_info_dropdown(data-dropdown-block="")
+								.product_page_info_dropdown__top(data-dropdown-block-btn) 
+									p.product_page_info__caption Оплата и доставка
+									+svg('link_arrow', 'icon')
+								.product_page_info_dropdown__content
+									.product_page_delivery
+										.product_page_delivery__block 
+											.product_page_delivery__icon 
+												+svg('delivery_icon_1', 'svg_icon')
+											.product_page_delivery__info
+												p.product_page_delivery__text.product_page_delivery__text--bold Доставка курьером по Москве
+												p.product_page_delivery__text При заказе до 3000 руб. — 350 руб, при заказе от 3000 руб. — бесплатно.
+												p.product_page_delivery__text Оплата картой, наличными или по QR-коду.
+									
+										.product_page_delivery__block 
+											.product_page_delivery__icon 
+												+svg('delivery_icon_2', 'svg_icon')
+											.product_page_delivery__info
+												p.product_page_delivery__text.product_page_delivery__text--bold Доставка по России (СДЭК или Почта России)
+												p.product_page_delivery__text Доставка рассчитывается менеджером после оформления заказа.
+												p.product_page_delivery__text Оплата онлайн на сайте.
+									
+										.product_page_delivery__block 
+											.product_page_delivery__icon 
+												+svg('delivery_icon_3', 'svg_icon')
+											.product_page_delivery__info
+												p.product_page_delivery__text.product_page_delivery__text--bold Самовывоз
+												p.product_page_delivery__text Оплата картой, наличными или по QR-коду.
+
+										a.product_page_delivery__btn.btn.btn--filled(href="/delivery_payment")
+											span.btn__text Подробнее о доставке и оплате
+
+						.product_page_info__block.product_page_info__block--scroll 
+							p.product_page_info__caption Помощь
+							.product_page_info__help_buttons
+								button.product_page_info__help_btn.btn.btn--outlined(data-linked-modal="modal_try_on")
+									span.btn__text Как померить?
+								a.product_page_info__help_btn.btn.btn--outlined(href="/modal_receipt")
+									span.btn__text изготовление по рецепту
+						
+						.product_page_info__block.product_page_info__block--scroll 
+							p.product_page_info__caption Поделиться с друзьями
+							.product_page_info__help_buttons.product_page_info__help_buttons--socials
+								a.product_page_info__socials_btn(href="/")
+									+imgSvg(`${assetsPath}/img/icon_inst.svg`, '', 'image')
+								a.product_page_info__socials_btn(href="")
+									+imgSvg(`${assetsPath}/img/icon_tg.svg`, '', 'image')
+								a.product_page_info__socials_btn(href="/")
+									+imgSvg(`${assetsPath}/img/icon_vk.svg`, '', 'image')
+								a.product_page_info__socials_btn(href="")
+									+imgSvg(`${assetsPath}/img/icon_fb.svg`, '', 'image')
+								a.product_page_info__socials_btn(href="/")
+									+imgSvg(`${assetsPath}/img/icon_ok.svg`, '', 'image')
+								a.product_page_info__socials_btn(href="")
+									+imgSvg(`${assetsPath}/img/icon_tw.svg`, '', 'image')
+								a.product_page_info__socials_btn(href="/")
+									+imgSvg(`${assetsPath}/img/icon_pin.svg`, '', 'image')
+								a.product_page_info__socials_btn(href="")
+									+imgSvg(`${assetsPath}/img/icon_wa.svg`, '', 'image')
+
+			
+
+					.product_page_info__container
+						.product_page_info__block.product_page_info__block--scroll
+
+							p.product_page_info__title Бесплатная консультация
+							p.product_page_info__text.product_page_info__text--margin14 Оставьте заявку на консультацию, #[br.mobile] и мы перезвоним вам.
+
+							form.product_page_info_form(action="/mailer" data-mailer="" data-form-id="product_page_form")
+								input(type="hidden", name="form", value="Бесплатная консультация (страница товара)")
+
+								.product_page_info_form__inputs
+
+									.input_wrapper.input_wrapper--textarea_grey(data-input-wrapper="")
+										textarea.input_wrapper__textarea(name="question", placeholder="Ваш вопрос")
+
+									.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+										input.input_wrapper__input.input_wrapper__input--12(type="text" name="name" required autocomplete="off")
+										label.input_wrapper__label.input_wrapper__label--12 Ваше имя
+										.input_wrapper__tooltip(data-input-tooltip="")
+
+									.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+										input.input_wrapper__input.input_wrapper__input--12(type="tel" name="phone" required autocomplete="off")
+										label.input_wrapper__label.input_wrapper__label--12 Номер телефона
+										.input_wrapper__tooltip(data-input-tooltip="")
+
+								.product_page_info_form__bottom
+									p.product_page_info_form__text Нажимая на кнопку, вы даёте своё соглашение #[br.desktop] на обработку персональных данных
+
+									button.product_page_info_form__btn.btn.btn--filled
+										span.btn__text отправить
+					
+					.product_page_info__block.product_page_info__block--last
+						a.product_page_info__up_btn.btn.btn--filled(href="/#beginning", data-anchor="beginning") 
+							.text подняться наверх
+							+svg('link_arrow', 'icon_up')
+										
+		section.hits
+			.hits__top
+				h2.section_block__title.section_block__title--small Похожие товары
+
+				.hits__nav.slider__buttons
+					button.slider__button.slider__button--prev.hits__nav_btn--prev
+						+svg('link_arrow', 'icon')
+					button.slider__button.slider__button--next.hits__nav_btn--next
+						+svg('link_arrow', 'icon')
+
+			.hits__slider.slider.swiper
+				.swiper-wrapper
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
+
+											
+		section.hits
+			.hits__top
+				h2.section_block__title.section_block__title--small Подобрать аксессуары
+
+				.hits__nav.slider__buttons
+					button.slider__button.slider__button--prev.hits_1__nav_btn--prev
+						+svg('link_arrow', 'icon')
+					button.slider__button.slider__button--next.hits_1__nav_btn--next
+						+svg('link_arrow', 'icon')
+
+			.hits__slider_1.slider.swiper
+				.swiper-wrapper
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
+											
+		section.hits.hits--last
+			.hits__top
+				h2.section_block__title.section_block__title--small Вы недавно смотрели
+
+				.hits__nav.slider__buttons
+					button.slider__button.slider__button--prev.hits_2__nav_btn--prev
+						+svg('link_arrow', 'icon')
+					button.slider__button.slider__button--next.hits_2__nav_btn--next
+						+svg('link_arrow', 'icon')
+
+			.hits__slider_2.slider.swiper
+				.swiper-wrapper
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
+
+												
+											
+
+

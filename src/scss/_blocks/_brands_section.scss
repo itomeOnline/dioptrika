@@ -1,0 +1,31 @@
+.brands_section {
+	padding: em(120) em(30) 0;	
+
+    @media(max-width: 750px) {
+        padding: em(30) em(10) 0;
+    }	
+
+    &__top {
+        margin-bottom: em(30);
+
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__nav {
+
+        @media(max-width: 750px) {
+            display: none;
+        }
+    }
+
+    &__slider {
+        height: 34em;
+
+        @media(max-width: 750px) {
+            height: auto;
+        }
+    }
+}

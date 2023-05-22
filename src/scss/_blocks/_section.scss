@@ -1,0 +1,12 @@
+.section {
+	
+	& + & {
+		margin-top: 6.25em;
+	}
+    
+	// &:last-child,
+	// &:first-child {
+	// 	margin-bottom: 5em;
+	// }
+
+}

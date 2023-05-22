@@ -1,0 +1,63 @@
+.news_card {
+	display: flex;
+    flex-direction: column;
+
+    height: auto;
+    
+    &__img {
+        height: em(160);
+
+        margin-bottom: em(14);
+
+        @media(max-width: 750px) {
+            height: em(192);
+
+            margin-bottom: em(6);
+        }
+
+        .image {
+            object-fit: cover;
+        }
+    }
+
+    &__date {
+        font-family: $text-font;
+        font-weight: 400;
+        font-size: em(12);
+        line-height: em(16,12);
+
+        margin-bottom: .5rem;
+
+        @media(max-width: 750px)  {
+            margin-bottom: .5em;
+        }
+    }
+
+    &__title {
+        font-family: $title-font;
+        font-weight: 500;
+        font-size: em(18);
+        line-height: em(26,18);
+
+        @media(max-width: 750px) {
+            line-height: 1.5rem;
+        }
+    }
+
+    &__text {
+        font-family: $text-font;
+        font-weight: 400;
+        font-size: em(14);
+        line-height: em(22,14);
+
+        max-height: em(66,14);
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        margin-top: .5rem;
+
+        @media(max-width: 750px) {
+            margin-top: .45em;
+        }
+    }	
+}

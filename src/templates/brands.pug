@@ -1,0 +1,77 @@
+extends _base/_layout
+block settings 
+
+	- title = 'Диоптрика — Бренды';
+
+mixin brandsSlide(pic, name, country)
+	a.brands_slide.brands_slide--page(href="/brand_card")
+		.brands_slide__pic 
+			+img(pic, '', 'image')
+		.brands_slide__info
+			p.brands_slide__text.brands_slide__text--big= name
+			p.brands_slide__text= country
+
+block content
+	main.view(data-app-layout="view", data-app-layout-namespace="examples")
+
+		.home__tabs
+			a.home__tab(href="/")
+				+svg('tab_1', 'icon')
+				span.text Главная
+			a.home__tab(href="/catalog")
+				+svg('tab_2', 'icon')
+				span.text Каталог
+			a.home__tab(href="/cart")
+				+svg('tab_3', 'icon')
+				span.text Корзина
+			a.home__tab(href="/favorites")
+				+svg('tab_4', 'icon')
+				span.text Избранное
+			a.home__tab(href="/account")
+				+svg('tab_5', 'icon')
+				span.text Войти
+
+		section.brands
+			.brands__breadcrumbs.breadcrumbs
+				a.breadcrumbs__link(href="/") Диоптрика
+				span.slash /
+				a.breadcrumbs__link.is-active Бренды
+
+			h1.section_block__title Каталог брендов
+
+			.catalog_search_mobile
+				+svg('icon_search', 'icon')
+				input.catalog_search_mobile__input(type="search", name="catalog_search", placeholder="Искать бренд...")
+
+			.brands__content
+				+brandsSlide(`${assetsPath}/img/brands_pic_1.jpg`, 'Dolce&Gabbana', 'Италия')
+				+brandsSlide(`${assetsPath}/img/brands_pic_2.jpg`, 'Balenciaga', 'Франция')
+				+brandsSlide(`${assetsPath}/img/brands_pic_3.jpg`, 'Emporio Armani', 'Италия')
+				+brandsSlide(`${assetsPath}/img/brands_pic_4.jpg`, 'Givenchy', 'Франция')
+				+brandsSlide(`${assetsPath}/img/brands_pic_5.jpg`, 'Gucci', 'Италия')
+				+brandsSlide(`${assetsPath}/img/brands_pic_6.jpg`, 'Burberry', 'Великобритания')
+				+brandsSlide(`${assetsPath}/img/brands_pic_7.jpg`, 'Prada', 'Италия')
+				+brandsSlide(`${assetsPath}/img/brands_pic_8.jpg`, 'Dior', 'Франция')
+				+brandsSlide(`${assetsPath}/img/brands_pic_7.jpg`, 'Prada', 'Италия')
+				+brandsSlide(`${assetsPath}/img/brands_pic_8.jpg`, 'Dior', 'Франция')
+				+brandsSlide(`${assetsPath}/img/brands_pic_1.jpg`, 'Dolce&Gabbana', 'Италия')
+				+brandsSlide(`${assetsPath}/img/brands_pic_2.jpg`, 'Balenciaga', 'Франция')
+				+brandsSlide(`${assetsPath}/img/brands_pic_3.jpg`, 'Emporio Armani', 'Италия')
+				+brandsSlide(`${assetsPath}/img/brands_pic_4.jpg`, 'Givenchy', 'Франция')
+				+brandsSlide(`${assetsPath}/img/brands_pic_5.jpg`, 'Gucci', 'Италия')
+				+brandsSlide(`${assetsPath}/img/brands_pic_6.jpg`, 'Burberry', 'Великобритания')
+				+brandsSlide(`${assetsPath}/img/brands_pic_7.jpg`, 'Prada', 'Италия')
+				+brandsSlide(`${assetsPath}/img/brands_pic_8.jpg`, 'Dior', 'Франция')
+				+brandsSlide(`${assetsPath}/img/brands_pic_7.jpg`, 'Prada', 'Италия')
+				+brandsSlide(`${assetsPath}/img/brands_pic_8.jpg`, 'Dior', 'Франция')
+
+			.brands__pagination.pagination
+				button.pagination__btn_more.btn.btn--grey
+					span.btn__text Показать ещё
+				
+				.pagination__wrap 
+					button.pagination__num.is-active 1
+					button.pagination__num 2
+					button.pagination__num 3
+					button.pagination__num ...
+					button.pagination__num 12

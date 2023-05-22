@@ -1,0 +1,12 @@
+.modal_video.modal_form.modal(data-modal="modal_video")
+
+	button.modal_close.modal_form__close(data-modal-close="")
+		+svg('icon_cross', 'icon')
+
+	h3.modal_try_on__title Видеоинструкция
+	p.modal_try_on__text Для достижения максимального комфорта стоит #[br.desktop] знать основные принципы подбора очков.
+
+	.modal_video__content
+		video.video(poster=`${assetsPath}/img/video_pic.jpg`, controls="") 
+		//- +img(`${assetsPath}/img/video_pic.jpg`, '', 'image')
+

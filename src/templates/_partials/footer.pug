@@ -1,0 +1,256 @@
+footer.footer
+
+	.footer_table.footer_table--first
+		.footer_table__cell
+			h4.footer_table__title Каталог
+			a.footer_table__link(href="/catalog_inner", data-active-link="") Солнцезащитные очки
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="/catalog_inner", data-active-link="") Оправы для очков
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="/catalog_inner", data-active-link="") Линзы для очков
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="/catalog_inner", data-active-link="") Контактные линзы
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="/accessories", data-active-link="") Аксессуары
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="/brands", data-active-link="") Бренды
+				+svg('link_arrow', 'icon')
+	
+		.footer_table__cell
+			h4.footer_table__title Услуги
+			a.footer_table__link(href="/service_page", data-active-link="") Подбор солнцезащитных очков
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="/service_page", data-active-link="") Проверка очков
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="/service_page", data-active-link="") Изготовление медицинских очков
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="/service_page", data-active-link="") Ремонт очков
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="/service_page", data-active-link="") Подбор контактных линз
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="/service_page", data-active-link="") Индивидуальный сервис
+				+svg('link_arrow', 'icon')
+	
+		.footer_table__cell
+			h4.footer_table__title Диоптрика
+			a.footer_table__link(href="/about", data-active-link="") О компании
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="/documents", data-active-link="") Документы
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="/news", data-active-link="") Блог
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="/news", data-active-link="") Новости
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="/rules", data-active-link="") Правила магазина
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="/contacts", data-active-link="") Контакты
+				+svg('link_arrow', 'icon')
+	
+		.footer_table__cell
+			h4.footer_table__title Покупателям
+			a.footer_table__link(href="/delivery_payment", data-active-link="") Доставка и оплата
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="/promotions", data-active-link="") Акции и промо
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="/faq", data-active-link="") Ответы на вопросы
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="/account", data-active-link="") Войти
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="/favorites", data-active-link="") Избранное
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="/cart", data-active-link="") Корзина
+				+svg('link_arrow', 'icon')
+	
+		.footer_table__cell
+			h4.footer_table__title Контакты
+			a.footer_table__link(href="tel:8 (901) 930–08–08") 8 (901) 930–08–08
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="mailto:dioptrikashop@yandex.ru") dioptrikashop@yandex.ru
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="https://yandex.ru/maps/-/CCU8y8XUDB" target="_blank") Москва, Островная 2, оф. 303
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="https://wa.me/79019300808" target="_blank") WhatsApp
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="/modal_return_call") Обратный звонок
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="/contacts") Все контакты
+				+svg('link_arrow', 'icon')
+	
+		.footer_table__cell
+			h4.footer_table__title.footer_table__title--24 Follow Us
+			a.footer_table__link(href="" target="_blank") Instagram
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="" target="_blank") Telegram
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="" target="_blank") ВКонтакте
+				+svg('link_arrow', 'icon')
+			a.footer_table__link(href="" target="_blank") Facebook
+				+svg('link_arrow', 'icon')
+
+		form.footer_table__cell.footer_table__form(action="/mailer" data-mailer="" data-form-id="footer_form")
+			input(type="hidden", name="form", value="Бесплатная консультация или помощь с выбором (футер)")
+
+			h4.footer_table__title.footer_table__title--4 Бесплатная консультация
+			p.footer_table__text Нужна помощь с выбором #[br.mobile] или консультация специалиста?
+
+			.footer_table__form_wrap
+				.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+					input.input_wrapper__input(type="text" name="name" required autocomplete="off")
+					label.input_wrapper__label Ваше имя
+					.input_wrapper__tooltip(data-input-tooltip="")
+
+				.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+					input.input_wrapper__input(type="tel" name="phone" required autocomplete="off")
+					label.input_wrapper__label Номер телефона
+					.input_wrapper__tooltip(data-input-tooltip="")
+				button.footer_table__form_btn.btn.btn--filled.btn--icon_right
+					span.btn__text отправить ЗАЯВКУ
+					+svg('icon_send', "btn__icon btn__icon--white btn__icon--right")
+
+			p.footer_table__text Или пишите в WhatsApp по номеру: #[br.mobile] #[a.link(href="https://wa.me/79019300808" target="_blank") 8 (901) 930–08–08]
+	
+
+	.footer__wrap.footer__wrap--brands 
+		h4.footer_table__title Популярные бренды
+
+		.footer__brands 
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Gucci
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Balenciaga
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Prada
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Givenchy
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Versace
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Saint Laurent
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Alexander McQueen
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Bottega Veneta
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Bluemarine
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Tom Ford
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Moncler
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Puma
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Carolina Herrera
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Celine
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Emporio Armani
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Guess
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Jimmy Choo
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Kenzo
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Marc Jacobs
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Burberry
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Miu Miu
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") MaxMara
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Boss
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Armani Exchange
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Swarovski
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Furla
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--brands(href="brand_card") Hugo
+				+svg('link_arrow', 'icon')
+
+
+	.footer__wrap
+		h4.footer_table__title Способы оплаты
+		p.footer_table__text Принимаем к оплате карты зарубежных и российских банков. В салонах или при доставке курьером вы можете #[br.desktop] оплатить заказ картой, наличными или переводом с карты на карту с помощью QR-кода.
+		p.footer_table__text Сайту подключён сертификат безопасности SSL, а также мы подключены к системе платежей ЮKassa — все данные платежей #[br.desktop] зашифрованы через протокол HTTPS, каждый год ЮKassa проходит проверку безопасности по стандарту Visa и MasterCard (PCI DSS). 
+
+		.footer__cards
+			+imgSvg(`${assetsPath}/img/card_visa.svg`, '', 'image')
+			+imgSvg(`${assetsPath}/img/card_mir.svg`, '', 'image')
+			+imgSvg(`${assetsPath}/img/card_master.svg`, '', 'image')
+			+imgSvg(`${assetsPath}/img/card_maestro.svg`, '', 'image')
+
+
+	.footer__wrap
+		h4.footer_table__title Техническая информация
+		.footer__wrap_line 
+			a.footer_table__link.footer_table__link--right(href="/privacy") Конфиденциальность
+				+svg('link_arrow', 'icon')
+			a.footer_table__link.footer_table__link--right(href="/rules") Правила магазина
+				+svg('link_arrow', 'icon')
+			button.footer_table__link.footer_table__link--mob.footer_table__link--right(data-search-start="") Поиск по сайту
+				+svg('link_arrow', 'icon')
+
+		p.footer_table__text.footer_table__text--small Бренды: #[a.link(href='/catalog_inner') Nike], #[a.link(href='/catalog_inner') Massimo Dutti], #[a.link(href='/catalog_inner') Levi's®], #[a.link(href='/catalog_inner') Converse], #[a.link(href='/catalog_inner') Vans], #[a.link(href='/catalog_inner') Polo Ralph Lauren], #[a.link(href='/catalog_inner') Ray-Ban®], #[a.link(href='/catalog_inner') Tommy Hilfiger], #[a.link(href='/catalog_inner') PUMA], #[a.link(href='/catalog_inner') Under Armour], #[a.link(href='/catalog_inner') Guess], #[a.link(href='/catalog_inner') Karl Lagerfeld], #[a.link(href='/catalog_inner') Koton], #[a.link(href='/catalog_inner') adidas], #[a.link(href='/catalog_inner') Zolla], #[a.link(href='/catalog_inner') Pull&Bear], #[a.link(href='/catalog_inner') Lacoste], #[a.link(href='/catalog_inner') Marks & Spencer], #[a.link(href='/catalog_inner') Coach], #[a.link(href='/catalog_inner') Armani Exchange], #[a.link(href='/catalog_inner') Diesel], #[a.link(href='/catalog_inner') Jack & Jones], #[a.link(href='/catalog_inner') Befree], #[a.link(href='/catalog_inner') River Island], #[a.link(href='/catalog_inner') Baldinini], #[a.link(href='/catalog_inner') United Colors of Benetton], #[a.link(href='/catalog_inner') Sela], #[a.link(href='/catalog_inner') Keddo], #[a.link(href='/catalog_inner') Mascotte], #[a.link(href='/catalog_inner') Aldo]
+		p.footer_table__text.footer_table__text--small Основной материал: #[a.link(href='/catalog_inner') Из акрила], #[a.link(href='/catalog_inner') Из натуральной кожи], #[a.link(href='/catalog_inner') Из полиамида], #[a.link(href='/catalog_inner') Из полиэстера], #[a.link(href='/catalog_inner') Из вискозы], #[a.link(href='/catalog_inner') Из шелка], #[a.link(href='/catalog_inner') Из другого волокна], #[a.link(href='/catalog_inner') Из металла], #[a.link(href='/catalog_inner') Из полимера], #[a.link(href='/catalog_inner') Из целлюлозы], #[a.link(href='/catalog_inner') Из стекла], #[a.link(href='/catalog_inner') Из искусственной кожи], #[a.link(href='/catalog_inner') Из ацетата], #[a.link(href='/catalog_inner') Из искусственных материалов], #[a.link(href='/catalog_inner') Из люрекса]
+		p.footer_table__text.footer_table__text--small Цвет: #[a.link(href='/catalog_inner') Коралловые], #[a.link(href='/catalog_inner') Бирюзовые], #[a.link(href='/catalog_inner') Серебряные], #[a.link(href='/catalog_inner') Хаки], #[a.link(href='/catalog_inner') Золотые], #[a.link(href='/catalog_inner') Бордовые], #[a.link(href='/catalog_inner') Желтые], #[a.link(href='/catalog_inner') Белые], #[a.link(href='/catalog_inner') Красные], #[a.link(href='/catalog_inner') Розовые], #[a.link(href='/catalog_inner') Прозрачные], #[a.link(href='/catalog_inner') Оранжевые], #[a.link(href='/catalog_inner') Цветные], #[a.link(href='/catalog_inner') Серые], #[a.link(href='/catalog_inner') Зеленые], #[a.link(href='/catalog_inner') Коричневые], #[a.link(href='/catalog_inner') Синие], #[a.link(href='/catalog_inner') Черные], #[a.link(href='/catalog_inner') Бежевые], #[a.link(href='/catalog_inner') Фиолетовые], #[a.link(href='/catalog_inner') Голубые]
+		p.footer_table__text.footer_table__text--small Скидки: #[a.link(href='/catalog_inner') Распродажа]
+		p.footer_table__text.footer_table__text--small Узор: #[a.link(href='/catalog_inner') С животными принтами], #[a.link(href='/catalog_inner') С принтами]
+		p.footer_table__text.footer_table__text--small Сезон: #[a.link(href='/catalog_inner') Мультисезонные], #[a.link(href='/catalog_inner') Зимние], #[a.link(href='/catalog_inner') Летние], #[a.link(href='/catalog_inner') Демисизонные]
+		p.footer_table__text.footer_table__text--small Стиль: #[a.link(href='/catalog_inner') Повседевные], #[a.link(href='/catalog_inner') Вечерние], #[a.link(href='/catalog_inner') Спортивные], #[a.link(href='/catalog_inner') Деловые]
+		p.footer_table__text.footer_table__text--small Материал верха: #[a.link(href='/catalog_inner') Из натуральной кожи], #[a.link(href='/catalog_inner') Из полимера], #[a.link(href='/catalog_inner') Из текстиля]
+
+
+	.footer__wrap.footer__wrap--line 
+		p.footer_table__text © ООО Диоптрика. Все права защищены. Разработано командой #[a.link(href="https://itome.online/", target="_blank") itome.online] в 2023 году.
+
+		a.itome(href="https://itome.online/", target="_blank")
+			+imgSvg(`${assetsPath}/img/itome_logo.svg`, '', 'image')
+
+	.footer__wrap.footer__wrap--web
+
+		.footer_web_block
+			p.footer_web_block__title Owners
+			.footer_web_block__card 
+				+img(`${assetsPath}/img/i_team_1.png`, '', 'icon')
+				p.footer_web_block__text #[a.underline(href="https://t.me/seregato" target="_blank") Сергей Мещеряков]
+			.footer_web_block__card 
+				+img(`${assetsPath}/img/i_team_2.png`, '', 'icon')
+				p.footer_web_block__text #[a.underline(href="https://t.me/germanskr" target="_blank") Герман Кривец]
+		
+		.footer_web_block
+			p.footer_web_block__title Marketing Team
+			.footer_web_block__card 
+				+img(`${assetsPath}/img/i_team_7.png`, '', 'icon')
+				p.footer_web_block__text Chief Marketing Officer: #[br.mobile] #[a.underline(href="https://t.me/mercool" target="_blank") Егор Меркулов]
+			.footer_web_block__card 
+				+img(`${assetsPath}/img/i_team_8.png`, '', 'icon')
+				p.footer_web_block__text Marketing Specialist: #[br.mobile] #[a.underline(href="https://t.me/KaterinaKatyKat" target="_blank") Екатерина Горбачёва]
+		
+		.footer_web_block
+			p.footer_web_block__title Managment
+			.footer_web_block__card 
+				+img(`${assetsPath}/img/i_team_4.png`, '', 'icon')
+				p.footer_web_block__text Managing Director: #[br.mobile] #[a.underline(href="https://t.me/andreyItome" target="_blank") Андрей Корсунский]
+			.footer_web_block__card 
+				+img(`${assetsPath}/img/i_team_5.png`, '', 'icon')
+				p.footer_web_block__text Assisting Project Manager: #[br.mobile] #[a.underline(href="https://t.me/NLizaveta" target="_blank") Елизавета Никиенко]
+
+		.footer_web_block
+			p.footer_web_block__title Development Team
+			.footer_web_block__card 
+				+img(`${assetsPath}/img/i_team_6.png`, '', 'icon')
+				p.footer_web_block__text Front-end Developer: #[br.mobile] #[a.underline(href="https://t.me/gerdasAri" target="_blank") Арина Гердасова]
+
+		.footer_web_block
+			p.footer_web_block__title Design Team
+			.footer_web_block__card 
+				+img(`${assetsPath}/img/i_team_3.png`, '', 'icon')
+				p.footer_web_block__text Design Communication Director: #[br.mobile] #[a.underline(href="https://t.me/jenyamake" target="_blank") Евгений Боев]
+
+		.footer_web_block
+			p.footer_web_block__title Made with Love
+			.footer_web_block__card 
+				+img(`${assetsPath}/img/i_team_9.png`, '', 'icon')
+				p.footer_web_block__text  Разработано командой #[br.mobile] #[a.underline(href="https://t.me/itome" target="_blank") itome.online]

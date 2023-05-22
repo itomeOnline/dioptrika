@@ -1,0 +1,121 @@
+.catalog_filters_sort {
+	border-top: 1px solid #000000;
+    
+    padding: em(22);
+
+    display: flex;
+    flex-direction: column;
+
+    @media(max-width: 750px) {
+        border-top: none;
+
+        flex-direction: row;
+        align-items: center;
+
+        padding: em(10);
+    }
+
+    &__label {
+        display: flex;
+        align-items: center;
+
+        cursor: pointer;
+
+        &--margin {
+            margin-right: em(36);
+        }
+
+        &--cart_card {
+
+            @media(max-width: 750px) {
+                display: none;
+            }
+        }
+
+        & + & {
+            margin-top: em(14);
+
+            @media(max-width: 750px) {
+                margin-top: 0;
+
+                margin-left: em(20);
+            }
+        }
+    }
+
+    &__radio {
+        flex: none;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 2px solid #000000;
+        background: white;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-right: em(8);
+
+        cursor: pointer;
+
+        transition: border .2s, background .2s;
+
+        .icon {
+            width: em(8);
+            height: em(6);
+            fill: white;
+        }
+
+        .radio:checked ~ & {
+            background: #000000;
+		}
+    }
+
+    &__checkbox {
+        flex: none;
+        width: 16px;
+        height: 16px;
+        border-radius: 2px;
+        border: 2px solid #000000;
+        background: white;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-right: em(8);
+
+        cursor: pointer;
+
+        transition: border .2s, background .2s;
+
+        &--grey {
+            background: #eeeeee;
+        }
+
+        .icon {
+            width: em(8);
+            height: em(6);
+            fill: white;
+
+            &--grey {
+                fill: #eeeeee;
+            }
+        }
+
+        .checkbox:checked ~ & {
+            background: #000000;
+		}
+    }
+
+    &__text {
+        font-family: $button-font;
+        font-weight: 500;
+        font-size: em(12);
+        line-height: em(16,12);
+        color: #000000;
+
+        white-space: nowrap;
+    }
+}

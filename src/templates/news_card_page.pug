@@ -1,0 +1,44 @@
+extends _base/_layout
+block settings 
+
+	- title = 'Диоптрика — Приводите друзей и получайте бонусы за их первую покупку в мобильном приложении';
+	
+
+block content
+	main.view(data-app-layout="view", data-app-layout-namespace="examples")
+
+		.home__tabs
+			a.home__tab(href="/")
+				+svg('tab_1', 'icon')
+				span.text Главная
+			a.home__tab(href="/catalog")
+				+svg('tab_2', 'icon')
+				span.text Каталог
+			a.home__tab(href="/cart")
+				+svg('tab_3', 'icon')
+				span.text Корзина
+			a.home__tab(href="/favorites")
+				+svg('tab_4', 'icon')
+				span.text Избранное
+			a.home__tab(href="/account")
+				+svg('tab_5', 'icon')
+				span.text Войти
+
+		section.news_card_page
+			.news_card_page__bg
+				+imgSvg(`${assetsPath}/img/big_cover_pic.svg`, '', 'image')
+
+			.news_card_page__container
+
+				.news_card_page__breadcrumbs.breadcrumbs
+					a.breadcrumbs__link(href="/") Диоптрика
+					span.slash /
+					a.breadcrumbs__link(href="/news") Новости
+					span.slash /
+					a.breadcrumbs__link.is-active Приводите друзей и получайте бонусы за их первую покупку в мобильном приложении
+
+				.news_card_page__content 
+					h1.news_card_page__title Приводите друзей и получайте бонусы за их первую покупку в мобильном приложении
+					p.news_card_page__text Отправьте вашу ссылку на установку мобильного приложения другу, который еще не является пользователем мобильного приложения Спортмастер. Ссылку возможно отправить из личного кабинета приложения через мессенджер или электронную почту.
+					p.news_card_page__text В частности уточняется требование о прохождении работниками внепланового обучения по охране труда при вступлении в силу нормативных правовых актов, содержащих государственные нормативные требования охраны труда, только при наличии в соответствующих нормативных правовых актах Министерства труда и социальной защиты Российской Федерации положений о проведении внепланового обучения работников требованиям охраны труда.
+					p.news_card_page__text Также документом уточняются особенности учета дистанционных работников при расчете минимального количества работников, подлежащих обучению требованиям охраны труда в организации или у ИП, оказывающих услуги по обучению работодателей и работников вопросам охраны труда.

@@ -1,0 +1,82 @@
+.faq_dropdown {
+    border-bottom: 1px solid #000000;
+
+    padding: em(12) 0;
+
+    @media(max-width: 750px) {
+        padding: .5rem 0;
+    }
+
+    &.is-active {
+        .faq_dropdown__info {
+            max-height: 40em;
+            margin-top: em(18);
+            opacity: 1;
+            pointer-events: all;
+
+            @media(max-width: 750px) {
+                margin-top: em(14);
+                max-height: 100em;
+            }
+        }
+
+        .icon {
+            transform: rotate(270deg);
+        }
+    }
+	
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        cursor: pointer;
+
+        .icon {
+            width: em(20);
+            height: em(20);
+
+            transform: rotate(90deg);
+            transition: fill .5s, transform .5s;
+        }
+    }
+
+    &__title {
+        font-family: $title-font;
+        font-weight: 500;
+        font-size: em(18);
+
+        @media(max-width: 750px) {
+            font-size: em(14);
+            font-weight: 600;
+        }
+    }
+
+    &__info {
+        margin-top: 0;
+        max-height: 0;
+        opacity: 0;
+        pointer-events: none;
+        transition: max-height .5s, opacity .5s, margin .5s;
+    }
+
+    &__text {
+        font-family: $text-font;
+        font-weight: 400;
+        font-size: em(16);
+        line-height: 1.5em;
+
+        @media(max-width: 750px) {
+            font-size: em(14);
+            line-height: em(22,14);
+        }
+
+        & + & {
+            margin-top: 1.5em;
+        }
+    }
+
+    & + & {
+        margin-top: em(14);
+    }
+}

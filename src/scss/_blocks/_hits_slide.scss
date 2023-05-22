@@ -1,0 +1,241 @@
+.hits_slide {
+	display: flex;
+    flex-direction: column;
+    cursor: pointer;
+
+    &:hover {
+
+        .hits_slide__pic::before {
+            opacity: 1;
+        }
+
+        .hvr__dots,
+        .hits_slide__hover_btn {
+            opacity: 1;
+        }
+    }
+    
+    &__pic {
+        width: 100%;
+        height: em(420);
+
+        background: #EEEEEE;
+
+        position: relative;
+
+        @media(max-width: 750px) {
+            height: em(192);
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.06);
+            opacity: 0;
+            z-index: 3;
+            transition: opacity .2s;
+        }
+
+        .image {
+            position: relative;
+            z-index: 2;
+        }
+
+        .loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            width: em(32);
+            height: em(32);
+            z-index: 0;
+
+            transform: translate3d(-50%,-50%,0);
+        }
+    }
+
+    &__pic_wrap {
+        position: relative;
+
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+
+        .image {
+            display: none;
+
+            &:first-child {
+                display: block;
+            }
+        }
+    }
+
+    .hvr {
+        height: 100%;
+
+        &__images {
+            height: 100%;
+        }
+    }
+
+    .hvr__sectors {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        z-index: 5;
+    }
+      
+    .hvr__sector {
+        flex-grow: 1;
+    }
+
+    
+    .hvr__dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        padding: .5rem .875rem;
+
+        position: absolute;
+
+        left: 0;
+        top: 0;
+        z-index: 6;
+
+        opacity: 0;
+        pointer-events: none;
+
+        @media(max-width: 750px) {
+            display: none;
+        }
+    }
+    
+    .hvr__dot {
+        flex: 1;
+        height: 2px;
+        background: #fff;
+
+        & + .hvr__dot {
+            margin-left: .5rem;
+        }
+    }
+    
+    .hvr__dot--active {
+        background: #000;
+    }
+
+    &__hover_btn {
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
+        width: calc(100% - 2em);
+        z-index: 3;
+
+        opacity: 0;
+
+        @media(max-width: 750px) {
+            display: none;
+        }
+    }
+
+    &__info {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        padding-top: em(14);
+
+        @media(max-width: 750px) {
+            padding-top: em(6);
+        }
+    }
+
+    &__text {
+        font-family: $text-font;
+        font-weight: 400;
+        font-size: em(12);
+        line-height: em(16,12);
+        color: #000000;
+
+        &--big {
+            font-weight: 600;
+            font-size: em(14);
+            line-height: em(22);
+        }
+
+        & + & {
+            margin-top: 2px;
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+
+        @media(max-width: 750px) {
+            display: none;
+        }
+    }
+
+    &__btn {
+        padding: 0;
+
+        width: em(20);
+        height: em(20);
+
+        position: relative;
+
+        &--mob {
+            position: absolute;
+
+            top: em(10);
+            left: em(10);
+
+            display: none;
+
+            @media(max-width: 750px) {
+                display: initial;
+            }
+        }
+
+        .image {
+            transition: opacity .1s;
+
+            &__active {
+                position: absolute;
+                left: 0;
+                top: 0;
+
+                opacity: 0;
+            }
+        }
+
+        &.is-active,
+        &:hover {
+
+            .image__active {
+                opacity: 1;
+            }
+
+            .image__empty {
+                opacity: 0;
+            }
+        }
+
+        & + & {
+            margin-left: em(8);
+        }
+    }
+}

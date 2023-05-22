@@ -1,0 +1,15 @@
+section.home
+    .home__container
+        .home__bg
+            video.video(poster=`${assetsPath}/img/main_pic.jpg`, autoplay="", loop="", muted="")
+            //- +img(`${assetsPath}/img/main_pic.jpg`, '', 'image image__desk')
+            //- +img(`${assetsPath}/img/main_pic_mob.jpg`, '', 'image image__mob')
+        
+        .home__bottom 
+            .home__wrap 
+                h1.section_block__title.section_block__title--white Диоптрика — магазин #[br.mobile] очков и оптики
+                p.section_block__text.section_block__text--12.section_block__text--white Мы покажем тебе мир. Своими глазами.
+
+            a.home__btn.btn.btn--white.btn--icon_left(href="/modal_make_appointment")
+                +svg('eye', "btn__icon btn__icon--black btn__icon--left")
+                span.btn__text Проверить зрение

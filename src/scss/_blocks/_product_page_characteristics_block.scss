@@ -1,0 +1,29 @@
+.product_page_characteristics_block {
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__text {
+        font-family: $text-font;
+        font-weight: 400;
+        font-size: em(16);
+        line-height: em(24);
+
+        @media(max-width: 750px) {
+            font-size: em(14);
+            line-height: em(22,14);
+        }
+
+        &.link {
+            text-decoration: underline;
+        }
+    }
+
+    & + & {
+        margin-top: em(12);
+
+        @media(max-width: 750px) {
+            margin-top: em(14);
+        }
+    }
+}

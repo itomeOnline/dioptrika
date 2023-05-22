@@ -1,0 +1,33 @@
+
+mixin input_outlined(type, name, label, required)
+	.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+		input.input_wrapper__input(type=type, name=name, required, autocomplete="off")
+		label.input_wrapper__label= label
+		.input_wrapper__tooltip(data-input-tooltip="")
+
+mixin input_filled(type, name, label, required)
+	.input_wrapper.input_wrapper--filled(data-input-wrapper="")
+		input.input_wrapper__input(type=type, name=name, required, autocomplete="off")
+		label.input_wrapper__label= label
+		.input_wrapper__tooltip(data-input-tooltip="")
+
+mixin input_minimalistic(type, name, label, required)
+	.input_wrapper.input_wrapper--minimalistic(data-input-wrapper="")
+		input.input_wrapper__input(type=type, name=name, required, autocomplete="off")
+		label.input_wrapper__label= label
+		.input_wrapper__tooltip(data-input-tooltip="")
+
+.container.inputs_container.inputs_container--filled
+	+input_filled('phone', 'phone', 'Номер телефона*')
+	+input_filled('text', 'name', 'Ваше имя*')
+	+input_filled('email', 'email', 'Ваш email*')
+
+.container.inputs_container.inputs_container--outlined
+	+input_outlined('phone', 'phone', 'Номер телефона*')
+	+input_outlined('text', 'name', 'Ваше имя*')
+	+input_outlined('email', 'email', 'Ваш email*')
+
+.container.inputs_container.inputs_container--minimalistic
+	+input_minimalistic('phone', 'phone', 'Номер телефона*')
+	+input_minimalistic('text', 'name', 'Ваше имя*')
+	+input_minimalistic('email', 'email', 'Ваш email*')

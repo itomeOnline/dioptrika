@@ -1,0 +1,20 @@
+.contacts_slider {
+	margin-top: em(14);
+    height: em(414);
+
+    width: 100%;
+
+    display: none;
+
+    @media(max-width: 750px) {
+        display: initial;
+    }
+
+    &__slide {
+        width: auto;
+
+        .image {
+            object-fit: cover;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+.modal_phone.modal_form.modal(data-modal="modal_phone")
+
+	button.modal_close.modal_form__close(data-modal-close="")
+		+svg('icon_cross', 'icon')
+
+	h3.modal_form__title Связаться с Диоптрикой
+
+	.modal_phone__content 
+		a.modal_phone__link(href="tel:8 (800) 500-53-29") 8 (800) 500-53-29
+			+svg('link_arrow', 'icon')
+		a.modal_phone__link(href="https://wa.me/79019300808" target="_blank") WhatsApp
+			+svg('link_arrow', 'icon') 
+		a.modal_phone__link(href="/modal_make_appointment") Запись на приём
+			+svg('link_arrow', 'icon')
+		a.modal_phone__link(href="/modal_return_call") Обратный звонок
+			+svg('link_arrow', 'icon') 
+		a.modal_phone__link(href="/contacts") Контакты
+			+svg('link_arrow', 'icon')

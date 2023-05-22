@@ -1,0 +1,75 @@
+extends _base/_layout
+block settings 
+
+	- title = 'Диоптрика — Акции и промо';
+
+
+mixin newsCard(img, date, title, text)
+	a.news_card(href="/promotions_card_page")
+		.news_card__img 
+			+imgSvg(img, '', 'image')
+		p.news_card__date= date
+		p.news_card__title!= title
+		p.news_card__text!= text
+
+
+block content
+	main.view(data-app-layout="view", data-app-layout-namespace="examples")
+
+		.home__tabs
+			a.home__tab(href="/")
+				+svg('tab_1', 'icon')
+				span.text Главная
+			a.home__tab(href="/catalog")
+				+svg('tab_2', 'icon')
+				span.text Каталог
+			a.home__tab(href="/cart")
+				+svg('tab_3', 'icon')
+				span.text Корзина
+			a.home__tab(href="/favorites")
+				+svg('tab_4', 'icon')
+				span.text Избранное
+			a.home__tab(href="/account")
+				+svg('tab_5', 'icon')
+				span.text Войти
+
+		section.news.promotions
+			.news__breadcrumbs.breadcrumbs
+				a.breadcrumbs__link(href="/") Диоптрика
+				span.slash /
+				a.breadcrumbs__link.is-active Акции и промо
+
+			h1.section_block__title Акции и промо
+			
+			.news__buttons 
+				button.news__sort_btn.btn.btn--grey.btn--icon_right(data-sort-btn="")
+					span.btn__text сначала новые
+					+svg('icon_sort', "btn__icon btn__icon--black btn__icon--right")
+
+			.news__content 
+				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы за их первую покупку в мобильном приложении', 'Отправьте вашу ссылку на установку мобильного приложения другу, который еще не является пользователем мобильного.')
+				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы за их первую покупку в мобильном', 'Отправьте вашу ссылку на установку мобильного приложения другу, который еще не является пользователем мобильного.')
+				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы', 'Отправьте вашу ссылку на установку мобильного приложения другу, который еще не является пользователем мобильного.')
+				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы', 'Отправьте вашу ссылку на установку')
+		   
+				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы за их первую покупку в мобильном приложении', 'Отправьте вашу ссылку на установку мобильного приложения другу, который еще не является пользователем мобильного.')
+				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы за их первую покупку в мобильном', 'Отправьте вашу ссылку на установку мобильного приложения другу, который еще не является пользователем мобильного.')
+				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы', 'Отправьте вашу ссылку на установку мобильного приложения другу, который еще не является пользователем мобильного.')
+				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы', 'Отправьте вашу ссылку на установку')
+		   
+				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы за их первую покупку в мобильном приложении', 'Отправьте вашу ссылку на установку мобильного приложения другу, который еще не является пользователем мобильного.')
+				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы за их первую покупку в мобильном', 'Отправьте вашу ссылку на установку мобильного приложения другу, который еще не является пользователем мобильного.')
+				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы', 'Отправьте вашу ссылку на установку мобильного приложения другу, который еще не является пользователем мобильного.')
+				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы', 'Отправьте вашу ссылку на установку')
+		   
+					  
+			.news__pagination.pagination
+				button.pagination__btn_more.btn.btn--grey
+					span.btn__text Показать ещё
+				
+				.pagination__wrap 
+					button.pagination__num.is-active 1
+					button.pagination__num 2
+					button.pagination__num 3
+					button.pagination__num ...
+					button.pagination__num 12

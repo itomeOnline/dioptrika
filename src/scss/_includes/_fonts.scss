@@ -1,0 +1,49 @@
+@font-face {
+  font-family:'RobotoCondensed';src:url(fonts/RobotoCondensed-400.woff2) format("woff2"),url(fonts/RobotoCondensed-400.woff) format("woff");font-weight:400;font-style:normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family:'Inter';src:url(fonts/Inter-400.woff2) format("woff2"),url(fonts/Inter-400.woff) format("woff");font-weight:400;font-style:normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family:'Inter';src:url(fonts/Inter-600.woff2) format("woff2"),url(fonts/Inter-600.woff) format("woff");font-weight:600;font-style:normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family:'GolosUI';src:url(fonts/GolosUI-500.woff2) format("woff2"),url(fonts/GolosUI-500.woff) format("woff");font-weight:500;font-style:normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family:'GolosUI';src:url(fonts/GolosUI-700.woff2) format("woff2"),url(fonts/GolosUI-700.woff) format("woff");font-weight:700;font-style:normal;
+  font-display: swap;
+}
+
+
+@mixin fluid-type($min-vw, $max-vw, $min-value, $max-value) {
+  $factor: calc(1 / ($max-vw - $min-vw)) * ($max-value - $min-value);
+  $calc-value: unquote("#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }");
+
+  font-size: $min-value;
+  font-size: clamp(#{ if($min-value > $max-value, $max-value, $min-value) }, #{ $calc-value }, #{ if($min-value > $max-value, $min-value, $max-value) });
+}
+
+$min-vw: 320px;
+$max-vw: 1920px;
+$min-value: 14px;
+$max-value: 16px;
+
+html, body {
+   font-family: 'Inter', sans-serif;	
+   font-weight: 400;
+  @include fluid-type($min-vw, $max-vw, $min-value, $max-value);
+
+  @media(max-width:500px) {
+    font-size: 16px;
+  }
+}

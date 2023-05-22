@@ -1,0 +1,120 @@
+.modal_menu.modal(data-modal="modal_menu")
+	
+	.modal_menu__bg
+		+img(`${assetsPath}/img/menu_lady.png`, '', 'image')
+	
+
+	.modal_menu__top
+		button.modal_close.modal_menu__close(data-modal-close)
+			+svg('icon_cross', 'icon')
+
+		.modal_menu__links 
+			a.modal_menu__link(href="/modal_make_appointment") Запись на приём
+			a.modal_menu__link(href="/modal_return_call") Обратный звонок
+			a.modal_menu__link(href="tel:8 (901) 930–08–08") 8 (901) 930–08–08
+			
+	.modal_menu__content(data-simplebar="") 
+
+		a.modal_menu__logo(href="/")
+			+imgSvg(`${assetsPath}/img/menu_logo.svg`, '', 'image')
+		p.modal_menu__text Мы знаем, как сделать так, чтобы вы в полной мере любовались окружающим миром. #[br.desktop] Поможем лучше видеть тем, у кого проблемы со зрением, и предоставим огромный выбор #[br.desktop] солнцезащитных очков для тех, кто стремится к ярким образам.
+
+		.modal_menu__table 
+			.modal_menu__cell 
+				p.modal_menu__caption Каталог
+				a.modal_menu__link(href="/catalog_inner") Солнцезащитные очки
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="/catalog_inner") Оправы для очков
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="/catalog_inner") Линзы для очков
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="/catalog_inner") Контактные линзы
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="/accessories") Аксессуары
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="/brands") Бренды
+					+svg('link_arrow', 'icon')
+
+			.modal_menu__cell 
+				p.modal_menu__caption Услуги
+				a.modal_menu__link(href="") Подбор солнцезащитных очков
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="") Проверка очков
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="") Изготовление медицинских очков
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="") Ремонт очков
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="") Подбор контактных линз
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="") Индивидуальный сервис
+					+svg('link_arrow', 'icon')
+
+			.modal_menu__cell.modal_menu__cell--grid1 
+				p.modal_menu__caption Диоптрика
+				a.modal_menu__link(href="/about") О компании
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="/documents") Документы
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="/blog") Блог
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="/news") Новости
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="/rules") Правила магазина
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="/contacts") Контакты
+					+svg('link_arrow', 'icon')
+
+			.modal_menu__cell.modal_menu__cell--grid2 
+				p.modal_menu__caption Покупателям
+				a.modal_menu__link(href="/delivery_payment") Доставка и оплата
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="/promotions") Акции и промо
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="/faq") Ответы на вопросы
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="/account") Личный кабинет
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="/favorites") Избранное
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="/cart") Корзина
+					+svg('link_arrow', 'icon')
+
+			.modal_menu__cell.modal_menu__cell--grid3 
+				p.modal_menu__caption Контакты
+				a.modal_menu__link(href="tel:8 (901) 930–08–08") 8 (901) 930–08–08
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="mailto:dioptrikashop@yandex.ru") dioptrikashop@yandex.ru
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="https://yandex.ru/maps/-/CCU8y8XUDB" target="_blank") Москва, Островная 2, оф. 303
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="https://wa.me/79019300808" target="_blank") WhatsApp
+					+svg('link_arrow', 'icon') 
+				a.modal_menu__link(href="/modal_return_call") Обратный звонок
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="/contacts") Все контакты
+					+svg('link_arrow', 'icon')
+
+			.modal_menu__cell.modal_menu__cell--mob 
+				p.modal_menu__caption Связаться
+				a.modal_menu__link(href="/modal_make_appointment") Запись на приём
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="/modal_return_call") Обратный звонок
+					+svg('link_arrow', 'icon') 
+				a.modal_menu__link(href="tel:8 (800) 500-53-29") 8 (800) 500-53-29
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="" target="_blank") Instagram
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="" target="_blank") Telegram
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="" target="_blank") ВКонтакте
+					+svg('link_arrow', 'icon')
+				a.modal_menu__link(href="" target="_blank") Facebook
+					+svg('link_arrow', 'icon')
+
+	.modal_menu__bottom
+		.modal_menu__links 
+			a.modal_menu__link(href="" target="_blank") Instagram
+			a.modal_menu__link(href="" target="_blank") Telegram
+			a.modal_menu__link(href="" target="_blank") ВКонтакте
+			a.modal_menu__link(href="" target="_blank") Facebook

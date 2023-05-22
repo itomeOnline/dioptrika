@@ -1,0 +1,32 @@
+.modal_phone_confirm.modal_delete_account.modal_form.modal(data-modal="modal_phone_confirm_2")
+
+	button.modal_close.modal_form__close(data-modal-close="")
+		+svg('icon_cross', 'icon')
+
+	h3.modal_form__title Введите код #[br] подтверждения
+	p.modal_form__text Код подтверждения мы отправили #[br.desktop] на указанный вами номер.
+
+	.modal_checkout_moscow__input.modal_checkout_moscow__input--margin
+		p.modal_checkout_moscow__input_caption Код
+
+		.modal_form__inputs_wrap
+
+			.input_wrapper.input_wrapper--outlined
+				input.input_wrapper__input.input_wrapper__input--square(type="number" name="number" required autocomplete="off")
+			.input_wrapper.input_wrapper--outlined
+				input.input_wrapper__input.input_wrapper__input--square(type="number" name="number" required autocomplete="off")
+			.input_wrapper.input_wrapper--outlined
+				input.input_wrapper__input.input_wrapper__input--square(type="number" name="number" required autocomplete="off")
+			.input_wrapper.input_wrapper--outlined
+				input.input_wrapper__input.input_wrapper__input--square(type="number" name="number" required autocomplete="off")
+			
+			
+		p.modal_form__text.modal_form__text--red.modal_form__text--12 Неверный код, попробуйте ещё раз
+
+	.modal_form__buttons.modal_form__buttons--44
+		button.modal_form__btn.btn.btn--filled
+			span.btn__text подтвердить номер
+		button.modal_form__btn.btn.btn--grey
+			span.btn__text отправить код ещё раз
+
+	

@@ -1,0 +1,47 @@
+.header_search_card {
+
+    
+    &__img {
+        width: 100%;
+        height: em(420);
+
+        background: #EEEEEE;
+
+        position: relative;
+
+        @media(max-width: 750px) {
+            height: em(192);
+        }
+
+        .image {
+            object-fit: cover;
+        }
+
+        .logo {
+            width: em(166);
+            height: em(16);
+
+            position: absolute;
+            top: em(20);
+            left: em(20);
+
+            z-index: 2;
+        }
+    }
+
+    &__btn {
+        width: calc(100% - 2em);
+
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
+        z-index: 2;
+    }
+
+    &__text {
+        font-size: em(14);
+        line-height: em(22,14);
+
+        margin-top: 1em;
+    }
+}

@@ -1,0 +1,31 @@
+extends _base/_layout_empty
+block settings 
+
+	- title = 'Страница не найдена';
+
+block content
+	section.not_found
+		.not_found__container
+			
+			.section_block.section_block--center
+				h1.section_block__title Эта страница не найдена
+				p.section_block__text Скорее всего её больше не существует #[br.mobile] или вы #[br.desktop] ввели неверный URL-адрес. 
+			
+			a.not_found__button(href='/') На главную страницу
+
+			.home__tabs
+				a.home__tab(href="/")
+					+svg('tab_1', 'icon')
+					span.text Главная
+				a.home__tab(href="/catalog")
+					+svg('tab_2', 'icon')
+					span.text Каталог
+				a.home__tab(href="/cart")
+					+svg('tab_3', 'icon')
+					span.text Корзина
+				a.home__tab(href="/favorites")
+					+svg('tab_4', 'icon')
+					span.text Избранное
+				a.home__tab(href="/account")
+					+svg('tab_5', 'icon')
+					span.text Войти

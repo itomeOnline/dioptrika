@@ -1,0 +1,42 @@
+section#glassesMaking.glasses_making(data-scroll-id="glassesMaking")
+	.glasses_making__top
+		h2.section_block__title Изготовление медицинских очков
+		p.section_block__text.section_block__text--8 Очки для зрения могут не только функциональными, но и стильными. Закажите очки, которые раскроют вашу уникальность.
+	
+	.glasses_making__content
+
+		.glasses_making_block
+			p.glasses_making_block__title 1. Выбрать оправу для очков  
+			p.glasses_making_block__text Выбор зависит исключительно от вашего бюджета и предпочтений, но заранее стоит учитывать, что некоторые типы линз не встанут в некоторые оправы. 
+
+			.glasses_making_block__buttons 
+				a.glasses_making_block__btn.btn.btn--grey(href="/catalog_inner")
+					span.btn__text перейти в каталог
+					
+		.glasses_making_block
+			p.glasses_making_block__title 2. Добавьте рецепт
+			p.glasses_making_block__text Добавьте рецепт на изготовление очков, который вы получили от врача
+
+			.glasses_making_block__buttons 
+				a.glasses_making_block__btn.btn.btn--grey(href="/modal_receipt")
+					span.btn__text Где получить рецепт?
+					
+		.glasses_making_block
+			p.glasses_making_block__title 3. Выберите линзы для очков
+			p.glasses_making_block__text В нашем каталоге представлен большой выбор линз как иностранного производства, так и Российского
+
+			.glasses_making_block__buttons 
+				a.glasses_making_block__btn.btn.btn--grey(href="/catalog_inner")
+					span.btn__text Каталог линз
+					
+		.glasses_making_block
+			p.glasses_making_block__title 4. Готово
+			p.glasses_making_block__text Очки для зрения, сделанные по вашим параметрам, уже у вас
+
+			.glasses_making_block__buttons 
+				a.glasses_making_block__btn.glasses_making_block__btn--half.btn.btn--filled(href="/catalog_inner")
+					span.btn__text выбрать оправу
+
+				button.glasses_making_block__btn.glasses_making_block__btn--half.btn.btn--grey.btn--icon_left(data-linked-modal="modal_video")
+					+svg('icon_play', "btn__icon btn__icon--black btn__icon--left")
+					span.btn__text инструкция

@@ -1,0 +1,219 @@
+extends _base/_layout
+block settings 
+
+	- title = 'Диоптрика — Оформление заказа';
+
+block content
+	main.view(data-app-layout="view", data-app-layout-namespace="examples")
+
+		.home__tabs
+			a.home__tab(href="/")
+				+svg('tab_1', 'icon')
+				span.text Главная
+			a.home__tab(href="/catalog")
+				+svg('tab_2', 'icon')
+				span.text Каталог
+			a.home__tab.is-active(href="/cart")
+				+svg('tab_3', 'icon')
+				span.text Корзина
+			a.home__tab(href="/favorites")
+				+svg('tab_4', 'icon')
+				span.text Избранное
+			a.home__tab(href="/account")
+				+svg('tab_5', 'icon')
+				span.text Войти
+
+		section.checkout
+			.checkout__breadcrumbs.breadcrumbs
+				a.breadcrumbs__link(href="/") Диоптрика
+				span.slash /
+				a.breadcrumbs__link(href="/cart") Корзина
+				span.slash /
+				a.breadcrumbs__link.is-active Оформление заказа
+
+			h1.section_block__title Оформление заказа
+
+			.checkout__content 
+				.checkout__main
+					.checkout__main_wrap 
+						p.checkout__caption Платёжная информация
+						
+						.checkout_dropdown
+							.checkout_dropdown__top
+								.checkout_option
+									//-input.radio(type="radio", name="delivery_type", value ="", hidden="")
+									.checkout_option__block
+										+svg('order', 'icon')
+										.checkout_option__wrap
+											p.checkout_option__title.checkout_option__title--inter Самовывоз · ул. Академика Петровского
+											p.checkout_option__text ПН–ВС, 08:00-20:00, срок хранения заказа — 3 дня
+										+svg('link_arrow', 'icon_arrow')
+							
+
+							.checkout_dropdown__list
+								label.checkout_option.checkout_option--border
+									input.radio(type="radio", name="delivery_type", value ="", hidden="")
+									.checkout_option__block
+										.checkout_option__radio
+										.checkout_option__wrap
+											p.checkout_option__title.checkout_option__title--inter Доставка по России · г. Владивосток, ул. Светланская 54, кв. 12
+											p.checkout_option__text Итоговую стоимость с учётом доставки сообщит менеджер после оформления заказа
+								label.checkout_option.checkout_option--border
+									input.radio(type="radio", name="delivery_type", value ="", hidden="")
+									.checkout_option__block
+										.checkout_option__radio
+										.checkout_option__wrap
+											p.checkout_option__title.checkout_option__title--inter Самовывоз · ул. Академика Петровского
+											p.checkout_option__text ПН–ВС, 08:00-20:00, срок хранения заказа — 3 дня
+								
+								button.checkout_dropdown__new.checkout_option
+									.checkout_option__block
+										+svg('edit', 'icon')
+										.checkout_option__wrap
+											p.checkout_option__title.checkout_option__title--inter Новый адрес, данные или способ оплаты
+										+svg('link_arrow', 'icon_arrow icon_arrow--notrans')
+								button.checkout_dropdown__new.checkout_option
+									.checkout_option__block
+										+svg('error', 'icon icon--red')
+										.checkout_option__wrap
+											p.checkout_option__text.checkout_option__text--nomargin Превышен лимит платёжной информации: 5 позиций. #[br] Чтобы добавить новую платёжную информацию, удалите одну из существующих в личном кабинете.
+
+
+					.checkout__main_wrap 
+						p.checkout__caption Контактное лицо
+						p.checkout__text Перед оформлением заказа необходимо будет подтвердить номер телефона через смс
+
+						.checkout__inputs
+							.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+								input.input_wrapper__input(type="text" name="first_name" required autocomplete="off")
+								label.input_wrapper__label Имя*
+								.input_wrapper__tooltip(data-input-tooltip="")
+
+							.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+								input.input_wrapper__input(type="text" name="second_name" required autocomplete="off")
+								label.input_wrapper__label Фамилия*
+								.input_wrapper__tooltip(data-input-tooltip="")
+
+							.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+								input.input_wrapper__input(type="tel" name="phone" required autocomplete="off")
+								label.input_wrapper__label Номер телефона*
+								.input_wrapper__tooltip(data-input-tooltip="")
+
+							.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+								input.input_wrapper__input(type="email" name="email" autocomplete="off")
+								label.input_wrapper__label Email
+								.input_wrapper__tooltip(data-input-tooltip="")
+
+					.checkout__main_wrap 
+						p.checkout__caption Доставка
+						p.checkout__text Убедитесь, что правильно выбран адрес — от этого зависит стоимость доставки
+
+						.checkout__options
+
+							label.checkout_option(data-linked-modal="modal_checkout_moscow")
+								input.radio(type="radio", name="delivery_type", value ="", hidden="")
+								.checkout_option__block
+									.checkout_option__radio
+									.checkout_option__wrap
+										p.checkout_option__title По Москве в пределах МКАД
+										p.checkout_option__text Стоимость доставки — бесплатно, при заказе от 3000 руб. Если сумма заказа до 3000 руб — доставка 350 руб.
+							label.checkout_option(data-linked-modal="modal_checkout_moscow")
+								input.radio(type="radio", name="delivery_type", value ="", hidden="")
+								.checkout_option__block
+									.checkout_option__radio
+									.checkout_option__wrap
+										p.checkout_option__title Московская область
+										p.checkout_option__text Стоимость доставки — бесплатно, при заказе от 3000 руб. Если сумма заказа до 3000 руб — доставка 350 руб.
+							label.checkout_option(data-linked-modal="modal_checkout_moscow")
+								input.radio(type="radio", name="delivery_type", value ="", hidden="")
+								.checkout_option__block
+									.checkout_option__radio
+									.checkout_option__wrap
+										p.checkout_option__title доставка по россии
+										p.checkout_option__text Доставка платная, стоимость рассчитывает менеджер после оформления заказа.
+							label.checkout_option(data-linked-modal="modal_checkout_self")
+								input.radio(type="radio", name="delivery_type", value ="", hidden="")
+								.checkout_option__block
+									.checkout_option__radio
+									.checkout_option__wrap
+										p.checkout_option__title Самовывоз
+										p.checkout_option__text Бесплатная доставка в ближайший салон Диоптрика на территории России. Мы работаем с 08:00 до 20:00.
+					
+					
+					.checkout__main_wrap 
+						p.checkout__caption Способ оплаты
+						p.checkout__text Если вы не живёте в Москве и Московской области, то оплата возможна только на сайте
+
+						.checkout__options
+
+							label.checkout_option
+								input.radio(type="radio", name="payment_type", value ="", hidden="")
+								.checkout_option__block
+									.checkout_option__radio
+									.checkout_option__wrap
+										p.checkout_option__title онлайн на сайте
+										p.checkout_option__text Оплата картой любого банка или с помощью электронного кошелька через ЮKassa.
+							label.checkout_option
+								input.radio(type="radio", name="payment_type", value ="", hidden="")
+								.checkout_option__block
+									.checkout_option__radio
+									.checkout_option__wrap
+										p.checkout_option__title курьеру при доставке
+										p.checkout_option__text Оплата картой любого банка через терминал, оплата наличными или перевод с карты на карту с помощью QR-кода.
+							
+							label.checkout_option
+								input.radio(type="radio", name="payment_type", value ="", hidden="")
+								.checkout_option__block
+									.checkout_option__radio
+									.checkout_option__wrap
+										p.checkout_option__title при получении в салоне
+										p.checkout_option__text Оплата картой любого банка через терминал, оплата наличными или перевод с карты на карту с помощью QR-кода.
+
+					button.checkout__save_btn.btn.btn--outlined
+						span.btn__text сохранить платёжную информацию
+
+				
+				.checkout_total
+					.checkout_total__block
+						p.section_block__title.section_block__title--small.checkout_total__block_title Ваш заказ
+
+						.checkout_total__list
+							.checkout_total__line 
+								p.checkout_total__text Товары (2)
+								p.checkout_total__price 44 500 руб
+
+							.checkout_total__cards 
+								.checkout_total__card
+									.checkout_total__card_pic
+										+img(`${assetsPath}/img/cart_pic.jpg`, '', 'image')
+									p.checkout_total__card_text Prada Palette 01
+									p.checkout_total__card_text 17 500 руб
+								.checkout_total__card
+									.checkout_total__card_pic
+										+img(`${assetsPath}/img/cart_pic.jpg`, '', 'image')
+									p.checkout_total__card_text Balenciaga Tam 01
+									p.checkout_total__card_text 20 000 руб
+
+							.checkout_total__line 
+								p.checkout_total__text Скидка
+								p.checkout_total__price 7 000 руб
+							.checkout_total__line 
+								p.checkout_total__text Стоимость доставки
+								p.checkout_total__price Бесплатно
+							.checkout_total__line 
+								p.checkout_total__text Общая стоимость
+								p.checkout_total__price 37 500 руб
+
+						button.checkout_total__btn.btn.btn--filled
+							span.btn__text оформить заказ
+
+						p.checkout_total__privacy Подтверждая заказ, вы соглашаетесь с условиями #[a.link(href="/privacy") политики конфиденциальности] и #[a.link(href="/rules") правилами продажи]
+
+					.checkout_total__block
+						label.checkout_total__label
+							input.radio(type="checkbox", name="pay_info", value ="", hidden="", checked)
+							.checkout_total__label_radio
+								+svg('checkmark', 'icon')
+							p.checkout_total__label_text Сохранить платёжную информацию
+							
+						p.checkout_total__text.checkout_total__text--small Вы можете сохранить информацию о доставке и оплате, и вам не придётся при следующем заказе заполнять все данные заново. Для этого вам необходимо зарегистрироваться на сайте.

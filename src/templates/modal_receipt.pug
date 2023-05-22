@@ -1,0 +1,27 @@
+extends _base/_layout_empty
+block settings 
+
+	- title = 'Рецепт для очков';
+
+block content
+	section.modal_page
+		.modal_page__container
+			
+			.section_block.section_block--center
+				h1.section_block__title Рецепт для очков
+				p.section_block__text Есть ли у вас рецепт?
+
+			.modal_page__access_buttons 
+				.modal_page__access_wrap
+					a.modal_page__access_btn.modal_page__access_btn--no(href="/modal_no_receipt")
+						+svg('icon_cross', 'icon')
+					span.modal_page__access_caption рецепта нет
+				
+				.modal_page__access_wrap
+					a.modal_page__access_btn.modal_page__access_btn--yes(href="/modal_has_receipt")
+						+svg('icon_okay', 'icon')
+					span.modal_page__access_caption рецепт есть
+			
+			a.modal_page__button(href="/#glassesMaking") Вернуться назад
+
+			

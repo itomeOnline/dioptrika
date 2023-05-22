@@ -1,0 +1,61 @@
+extends _base/_layout
+block settings 
+
+	- title = 'Диоптрика — Каталог';
+
+
+
+block content
+	main.view(data-app-layout="view", data-app-layout-namespace="examples")
+
+		.home__tabs
+			a.home__tab(href="/")
+				+svg('tab_1', 'icon')
+				span.text Главная
+			a.home__tab.is-active(href="/catalog")
+				+svg('tab_2', 'icon')
+				span.text Каталог
+			a.home__tab(href="/cart")
+				+svg('tab_3', 'icon')
+				span.text Корзина
+			a.home__tab(href="/favorites")
+				+svg('tab_4', 'icon')
+				span.text Избранное
+			a.home__tab(href="/account")
+				+svg('tab_5', 'icon')
+				span.text Войти
+
+		section.catalog
+			.catalog__breadcrumbs.breadcrumbs
+				a.breadcrumbs__link(href="/") Диоптрика
+				span.slash /
+				a.breadcrumbs__link.is-active Каталог
+
+			h1.section_block__title Диоптрика — магазин #[br.mobile] очков и оптики
+
+			.catalog_search_mobile.catalog_search_mobile--mobile
+				+svg('icon_search', 'icon')
+				input.catalog_search_mobile__input(type="search", name="catalog_search", placeholder="Товар, бренд или артикул")
+
+			.catalog__content
+
+				a.catalog__category(href="/catalog_inner")
+					.catalog__category_img
+						+img(`${assetsPath}/img/catalog_sunglasses_cover.jpg`, '', 'image')
+					p.catalog__category_text Солнцезащитные очки
+				a.catalog__category(href="/catalog_inner")
+					.catalog__category_img
+						+img(`${assetsPath}/img/catalog_frameglasses_cover.jpg`, '', 'image')
+					p.catalog__category_text Оправы для очков
+				a.catalog__category(href="/catalog_inner")
+					.catalog__category_img
+						+img(`${assetsPath}/img/catalog_lenses_cover.jpg`, '', 'image')
+					p.catalog__category_text Линзы для очков
+				a.catalog__category(href="/catalog_inner")
+					.catalog__category_img
+						+img(`${assetsPath}/img/catalog_contacts_cover.jpg`, '', 'image')
+					p.catalog__category_text Контактные линзы
+				a.catalog__category(href="/accessories")
+					.catalog__category_img
+						+img(`${assetsPath}/img/catalog_accessories_cover.jpg`, '', 'image')
+					p.catalog__category_text Аксессуары

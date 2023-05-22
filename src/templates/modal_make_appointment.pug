@@ -1,0 +1,33 @@
+extends _base/_layout_empty
+block settings 
+
+	- title = 'Записаться на бесплатную проверку зрения';
+
+block content
+	section.modal_page
+		.modal_page__container.modal_page__container--center
+			
+			.section_block.section_block--center
+				h1.section_block__title Записаться #[br] на бесплатную проверку зрения
+				p.section_block__text Оставьте свои контакты, мы перезвоним и предложим удобное вам время.
+
+				form.modal_page__form(action="/mailer" data-mailer="" data-form-id="modal_make_appointment_form")
+					input(type="hidden", name="form", value="Записаться на бесплатную проверку зрения")
+
+					.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+						input.input_wrapper__input(type="text" name="name" required autocomplete="off")
+						label.input_wrapper__label Ваше имя
+						.input_wrapper__tooltip(data-input-tooltip="")
+
+					.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+						input.input_wrapper__input(type="tel" name="phone" required autocomplete="off")
+						label.input_wrapper__label Номер телефона
+						.input_wrapper__tooltip(data-input-tooltip="")
+
+					button.footer_table__form_btn.btn.btn--filled.btn--icon_right
+						span.btn__text Заказать обратный звонок
+						+svg('icon_send', "btn__icon btn__icon--white btn__icon--right")
+			
+		button.modal_page__button.modal_page__button--absolute(data-history-back="") Вернуться назад
+
+			

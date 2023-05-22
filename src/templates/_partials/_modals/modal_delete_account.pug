@@ -1,0 +1,15 @@
+.modal_delete_account.modal_form.modal(data-modal="modal_delete_account")
+
+	button.modal_close.modal_form__close(data-modal-close="")
+		+svg('icon_cross', 'icon')
+
+	h3.modal_form__title Удаление аккаунта
+	p.modal_form__text Вы уверены, что хотите удалить аккаунт? Вы сможете восстановить доступ в течение 30 дней.
+
+	.modal_form__buttons
+		button.modal_form__btn.btn.btn--grey(data-modal-close="")
+			span.btn__text отмена
+		button.modal_form__btn.btn.btn--red
+			span.btn__text удалить аккаунт
+
+	

@@ -1,0 +1,60 @@
+.modal_checkout_self.modal_checkout_moscow.modal_form.modal(data-modal="modal_checkout_self")
+
+	button.modal_close.modal_form__close(data-modal-close="")
+		+svg('icon_cross', 'icon')
+
+	.modal_checkout_moscow__mob_wrap
+		p.modal_checkout_moscow__title_mob Самовывоз
+		p.modal_checkout_moscow__text_mob Самовывоз доступен только #[br.mobile] на территории Москвы.
+
+	#modalMap.modal_checkout_moscow__map
+	
+	.modal_checkout_moscow__info
+		p.section_block__title.section_block__title--mob.section_block__title--small Самовывоз
+		p.section_block__text.section_block__title--mob Самовывоз доступен только на территории Москвы.
+
+		.modal_checkout_moscow__content
+			.modal_checkout_moscow__line
+				p.modal_checkout_moscow__input_caption Поиск
+
+				.input_wrapper.input_wrapper--outlined(data-input-wrapper="")
+					+svg('icon_search', 'icon icon_left')
+					input.input_wrapper__input.input_wrapper__input--icon_left(type="search" name="checkout_search" placeholder="Поиск пункта по улице" required autocomplete="off")
+
+			.modal_checkout_moscow__line
+				p.modal_checkout_moscow__input_caption Выбрать точку
+
+				.modal_checkout_moscow__radio_btns
+					label.checkout_option
+						input.radio(type="radio", name="pickup_shop", value ="", hidden="")
+						.checkout_option__block
+							.checkout_option__radio
+							.checkout_option__wrap
+								p.checkout_option__title Диоптрика, Москва
+								p.checkout_option__text Проспект 100-летия Владивостока 44
+								p.checkout_option__text.checkout_option__text--upper ПН–ВС, 08:00–20:00
+					label.checkout_option
+						input.radio(type="radio", name="pickup_shop", value ="", hidden="")
+						.checkout_option__block
+							.checkout_option__radio
+							.checkout_option__wrap
+								p.checkout_option__title Диоптрика, Москва
+								p.checkout_option__text Проспект 100-летия Владивостока 44
+								p.checkout_option__text.checkout_option__text--upper ПН–ВС, 08:00–20:00
+					label.checkout_option
+						input.radio(type="radio", name="pickup_shop", value ="", hidden="")
+						.checkout_option__block
+							.checkout_option__radio
+							.checkout_option__wrap
+								p.checkout_option__title Диоптрика, Москва
+								p.checkout_option__text Проспект 100-летия Владивостока 44
+								p.checkout_option__text.checkout_option__text--upper ПН–ВС, 08:00–20:00
+					label.checkout_option
+						input.radio(type="radio", name="pickup_shop", value ="", hidden="")
+						.checkout_option__block
+							.checkout_option__radio
+							.checkout_option__wrap
+								p.checkout_option__title Диоптрика, Владивосток
+								p.checkout_option__text Проспект 100-летия Владивостока 44
+								p.checkout_option__text.checkout_option__text--upper ПН–ВС, 08:00–20:00
+					

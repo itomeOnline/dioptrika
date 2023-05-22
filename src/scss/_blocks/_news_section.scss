@@ -1,0 +1,41 @@
+.news_section {
+	padding: em(120) em(30);
+    
+    @media(max-width: 750px) {
+        padding: em(60) em(10) em(30);
+    }
+
+    &.blog {
+        padding-top: em(60);
+    }
+
+    &__top {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__content {
+        margin-top: em(24);
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1em;
+
+        width: 100%;
+
+        @media(max-width: 750px) {
+            overflow: scroll;
+
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+
+
+}

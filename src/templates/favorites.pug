@@ -1,0 +1,100 @@
+extends _base/_layout
+block settings 
+
+	- title = 'Диоптрика — Избранное';
+
+
+mixin hitsSlideHvr(pic1, pic2, pic3, name, model, price)
+	a.hits_slide(data-linked-modal="modal_card")
+		.hits_slide__pic
+			.hits_slide__pic_wrap(data-hover-images="")
+				img.image(data-lazy, data-src= pic1, alt="")
+				img.image(data-lazy, data-src= pic2, alt="")
+				img.image(data-lazy, data-src= pic3, alt="")
+			+imgSvg(`${assetsPath}/img/loader.svg`, '', 'loader')
+			.hits_slide__hover_btn.btn.btn--filled Быстрый просмотр
+			button.hits_slide__btn.hits_slide__btn--mob
+				+imgSvg(`${assetsPath}/img/icon_fav_empty.svg`, '', 'image image__empty')
+				+imgSvg(`${assetsPath}/img/icon_fav_active.svg`, '', 'image image__active')
+		.hits_slide__info
+			.hits_slide__left
+				p.hits_slide__text.hits_slide__text--big= name
+				p.hits_slide__text= model
+				p.hits_slide__text= price
+			.hits_slide__right
+				button.hits_slide__btn
+					+imgSvg(`${assetsPath}/img/icon_cart_empty.svg`, '', 'image image__empty')
+					+imgSvg(`${assetsPath}/img/icon_cart_active.svg`, '', 'image image__active')
+				button.hits_slide__btn
+					+imgSvg(`${assetsPath}/img/icon_fav_empty.svg`, '', 'image image__empty')
+					+imgSvg(`${assetsPath}/img/icon_fav_active.svg`, '', 'image image__active')
+
+
+block content
+	main.view(data-app-layout="view", data-app-layout-namespace="examples")
+
+		.home__tabs
+			a.home__tab(href="/")
+				+svg('tab_1', 'icon')
+				span.text Главная
+			a.home__tab(href="/catalog")
+				+svg('tab_2', 'icon')
+				span.text Каталог
+			a.home__tab(href="/cart")
+				+svg('tab_3', 'icon')
+				span.text Корзина
+			a.home__tab.is-active(href="/favorites")
+				+svg('tab_4', 'icon')
+				span.text Избранное
+			a.home__tab(href="/account")
+				+svg('tab_5', 'icon')
+				span.text Войти
+
+		section.favorites
+			.favorites__breadcrumbs.breadcrumbs
+				a.breadcrumbs__link(href="/") Диоптрика
+				span.slash /
+				a.breadcrumbs__link.is-active Избранное
+
+			h1.section_block__title Избранное
+
+			.favorites__content 
+				.favorites__buttons 
+					button.favorites__filter_btn.is-active
+						span.text все товары
+						span.number 7
+					button.favorites__filter_btn
+						span.text солнцезащитные очки
+						span.number 4
+					button.favorites__filter_btn
+						span.text линзы для очков
+						span.number 2
+					button.favorites__filter_btn
+						span.text аксессуары
+						span.number 1
+
+				.favorites__main
+					.favorites__top
+						p.section_block__title.section_block__title--small Все товары
+
+						.select.favorites__select(data-dropdown="", data-dropdown-name="sorting", data-dropdown-placeholder="Сначала новые", data-dropdown-readonly="true", data-dropdown-options='[{"key":"сначала новые","value":"сначала новые"},{"key":"сначала старые","value":"сначала старые"},{"key":"по убыванию цены","value":"по убыванию цены"},{"key":"по возрастанию цены","value":"по возрастанию цены"}]')
+					
+					.favorites__cards
+						+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+						+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+						+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+						+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
+						+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+						+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+						
+
+					.favorites__pagination.pagination
+						button.pagination__btn_more.btn.btn--grey
+							span.btn__text Показать ещё
+						
+						.pagination__wrap 
+							button.pagination__num.is-active 1
+							button.pagination__num 2
+							button.pagination__num 3
+							button.pagination__num ...
+							button.pagination__num 12
