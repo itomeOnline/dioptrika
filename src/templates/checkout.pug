@@ -24,12 +24,12 @@ block content
 				span.text Войти
 
 		section.checkout
-			.checkout__breadcrumbs.breadcrumbs
-				a.breadcrumbs__link(href="/") Диоптрика
+			.checkout__breadcrumbs.breadcrumbs(itemscope itemtype="https://schema.org/BreadcrumbList")
+				a.breadcrumbs__link(href="/" itemprop="name") Диоптрика
 				span.slash /
-				a.breadcrumbs__link(href="/cart") Корзина
+				a.breadcrumbs__link(href="/cart" itemprop="name") Корзина
 				span.slash /
-				a.breadcrumbs__link.is-active Оформление заказа
+				a.breadcrumbs__link.is-active(itemprop="name") Оформление заказа
 
 			h1.section_block__title Оформление заказа
 

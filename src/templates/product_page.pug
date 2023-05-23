@@ -51,17 +51,17 @@ block content
 				+svg('tab_5', 'icon')
 				span.text Войти
 
-		section#beginning.product_page(data-scroll-id="beginning")
-			.product_page__breadcrumbs.breadcrumbs
-				a.breadcrumbs__link(href="/") Диоптрика
+		section#beginning.product_page(data-scroll-id="beginning" itemscope itemtype="http://schema.org/Product")
+			.product_page__breadcrumbs.breadcrumbs(itemscope itemtype="https://schema.org/BreadcrumbList")
+				a.breadcrumbs__link(href="/" itemprop="name") Диоптрика
 				span.slash /
-				a.breadcrumbs__link(href="/") Солнцезащитные очки
+				a.breadcrumbs__link(href="/" itemprop="name") Солнцезащитные очки
 				span.slash /
-				a.breadcrumbs__link(href="/") Prada
+				a.breadcrumbs__link(href="/" itemprop="name") Prada
 				span.slash /
-				a.breadcrumbs__link.is-active Prada Palette 01
+				a.breadcrumbs__link.is-active(itemprop="name") Prada Palette 01
 
-			h1.section_block__title Prada Palette 01
+			h1.section_block__title(itemprop="name") Prada Palette 01
 
 			.product_page__content
 				.product_page__gallery
@@ -70,43 +70,44 @@ block content
 						.text новинка
 
 					.product_page__gallery_wrap 
-						.product_page__gallery_pic 
+						.product_page__gallery_pic(itemprop="image") 
 							+img(`${assetsPath}/img/product_page_pic_1.jpg`, '', 'image')
-						.product_page__gallery_pic 
+						.product_page__gallery_pic(itemprop="image") 
 							+img(`${assetsPath}/img/product_page_pic_2.jpg`, '', 'image')
-						.product_page__gallery_pic
+						.product_page__gallery_pic(itemprop="image")
 							+img(`${assetsPath}/img/product_page_pic_3.jpg`, '', 'image')
-						.product_page__gallery_pic 
+						.product_page__gallery_pic(itemprop="image") 
 							+img(`${assetsPath}/img/product_page_pic_4.jpg`, '', 'image')
-						.product_page__gallery_pic 
+						.product_page__gallery_pic(itemprop="image") 
 							+img(`${assetsPath}/img/product_page_pic_5.jpg`, '', 'image')
 
 					.product_page__slider.slider.swiper 
 						.swiper-wrapper 
-							.product_page__gallery_pic.swiper-slide 
+							.product_page__gallery_pic.swiper-slide(itemprop="image") 
 								+img(`${assetsPath}/img/product_page_pic_1.jpg`, '', 'image')
-							.product_page__gallery_pic.swiper-slide 
+							.product_page__gallery_pic.swiper-slide(itemprop="image") 
 								+img(`${assetsPath}/img/product_page_pic_2.jpg`, '', 'image')
-							.product_page__gallery_pic.swiper-slide
+							.product_page__gallery_pic.swiper-slide(itemprop="image")
 								+img(`${assetsPath}/img/product_page_pic_3.jpg`, '', 'image')
-							.product_page__gallery_pic.swiper-slide 
+							.product_page__gallery_pic.swiper-slide(itemprop="image") 
 								+img(`${assetsPath}/img/product_page_pic_4.jpg`, '', 'image')
-							.product_page__gallery_pic.swiper-slide 
+							.product_page__gallery_pic.swiper-slide(itemprop="image") 
 								+img(`${assetsPath}/img/product_page_pic_5.jpg`, '', 'image')
 						
 						.product_page__slider_pagination
 
 
-				.product_page_info
+				.product_page_info(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
 					.product_page_info__container
-						.product_page_info__block.product_page_info__block--fix
+						.product_page_info__block.product_page_info__block--fix(data-buttons-wrap="")
 							span.product_page_info__text.product_page_info__text--small.green В наличии
+								link(itemprop="availability" href="http://schema.org/InStock")
 
 							p.product_page_info__title Prada Palette 01
 							.product_page_info__line 
-								span.product_page_info__price 17 900 руб
+								span.product_page_info__price(itemprop="price") 17 900 руб
 								span.product_page_info__price.old 24 000 руб
-							p.product_page_info__text Очки солнцезащитные от премиум-бренда выполнены из пластика. Особенности: нерегулируемые носовые упоры, фотохромные линзы, высокая степень светозащиты, в комплекте футляр.
+							p.product_page_info__text(itemprop="description") Очки солнцезащитные от премиум-бренда выполнены из пластика. Особенности: нерегулируемые носовые упоры, фотохромные линзы, высокая степень светозащиты, в комплекте футляр.
 							
 							.product_page_info__buttons.product_page_info__buttons--page
 								.product_page_info__buttons_wrap
@@ -561,16 +562,16 @@ block content
 							.product_page_info__colors
 								label.product_page_info__colors_btn
 									input.radio(type="radio", name="color", value ="", hidden="")
-									p.text чёрный
+									p.text(itemprop="color") чёрный
 								label.product_page_info__colors_btn
 									input.radio(type="radio", name="color", value ="", hidden="")
-									p.text красный
+									p.text(itemprop="color") красный
 								label.product_page_info__colors_btn
 									input.radio(type="radio", name="color", value ="", hidden="")
-									p.text белый
+									p.text(itemprop="color") белый
 								label.product_page_info__colors_btn
 									input.radio(type="radio", name="color", value ="", hidden="")
-									p.text оранжевый
+									p.text(itemprop="color") оранжевый
 							.select.select--outlined.product_page_info__select(data-dropdown="", data-dropdown-name="colors", data-dropdown-placeholder="Выбрать", data-dropdown-readonly="true", data-dropdown-options='[{"key":"Чёрный","value":"Чёрный"},{"key":"Красный","value":"Красный"},{"key":"Белый","value":"Белый"},{"key":"Оранжевый","value":"Оранжевый"}]')
 						
 						.product_page_info__block.product_page_info__block--scroll
@@ -584,27 +585,27 @@ block content
 										.product_page_size_block__pic
 											+imgSvg(`${assetsPath}/img/glasses_size_1.svg`, '', 'image')
 										p.product_page_size_block__text Ширина:
-										p.product_page_size_block__text 142 мм
+										p.product_page_size_block__text(itemprop="width") 142 мм
 									.product_page_size_block
 										.product_page_size_block__pic
 											+imgSvg(`${assetsPath}/img/glasses_size_2.svg`, '', 'image')
 										p.product_page_size_block__text Длина дужки:
-										p.product_page_size_block__text 140 мм
+										p.product_page_size_block__text(itemprop="width") 140 мм
 									.product_page_size_block
 										.product_page_size_block__pic
 											+imgSvg(`${assetsPath}/img/glasses_size_3.svg`, '', 'image')
 										p.product_page_size_block__text Высота линзы:
-										p.product_page_size_block__text 54 мм
+										p.product_page_size_block__text(itemprop="width") 54 мм
 									.product_page_size_block
 										.product_page_size_block__pic
 											+imgSvg(`${assetsPath}/img/glasses_size_4.svg`, '', 'image')
 										p.product_page_size_block__text Ширина линзы:
-										p.product_page_size_block__text 65 мм
+										p.product_page_size_block__text(itemprop="width") 65 мм
 									.product_page_size_block
 										.product_page_size_block__pic
 											+imgSvg(`${assetsPath}/img/glasses_size_5.svg`, '', 'image')
 										p.product_page_size_block__text Длина моста:
-										p.product_page_size_block__text 9 мм
+										p.product_page_size_block__text(itemprop="width") 9 мм
 						
 						
 						.product_page_info__block.product_page_info__block--scroll
@@ -622,7 +623,7 @@ block content
 										p.product_page_characteristics_block__text Красный
 									.product_page_characteristics_block
 										p.product_page_characteristics_block__text Материал солнцезащитных линз
-										p.product_page_characteristics_block__text Пластик
+										p.product_page_characteristics_block__text(itemprop="material") Пластик
 									.product_page_characteristics_block
 										p.product_page_characteristics_block__text Тип окраски линз
 										p.product_page_characteristics_block__text Однотонная
@@ -631,10 +632,10 @@ block content
 										p.product_page_characteristics_block__text.link Взрослый
 									.product_page_characteristics_block
 										p.product_page_characteristics_block__text Страна производства
-										p.product_page_characteristics_block__text.link Италия
+										p.product_page_characteristics_block__text.link(itemprop="countryOfAssembly") Италия
 									.product_page_characteristics_block
 										p.product_page_characteristics_block__text Бренд
-										p.product_page_characteristics_block__text.link Prada
+										p.product_page_characteristics_block__text.link(itemprop="brand") Prada
 									.product_page_characteristics_block
 										p.product_page_characteristics_block__text Пол
 										p.product_page_characteristics_block__text.link Для мужчин
@@ -643,7 +644,7 @@ block content
 										p.product_page_characteristics_block__text.link Трапеция
 									.product_page_characteristics_block
 										p.product_page_characteristics_block__text Материал оправы
-										p.product_page_characteristics_block__text.link Пластик
+										p.product_page_characteristics_block__text.link(itemprop="material") Пластик
 									.product_page_characteristics_block
 										p.product_page_characteristics_block__text Цвет оправы
 										p.product_page_characteristics_block__text.link Красный
@@ -658,7 +659,7 @@ block content
 										p.product_page_characteristics_block__text Красный
 									.product_page_characteristics_block
 										p.product_page_characteristics_block__text Номер модели
-										p.product_page_characteristics_block__text 0AX4115SU 807 887
+										p.product_page_characteristics_block__text(itemprop="model") 0AX4115SU 807 887
 									.product_page_characteristics_block
 										p.product_page_characteristics_block__text Конструкция оправы
 										p.product_page_characteristics_block__text.link Ободковая

@@ -238,6 +238,12 @@
 
     &__buttons_wrap {
         margin-bottom: 1em;
+        position: relative;
+        
+        .modal_card & {
+            margin-bottom: 0;
+            margin-right: em(24);
+        }
     }
 
     &__btn {

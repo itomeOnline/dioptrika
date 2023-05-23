@@ -377,19 +377,40 @@
             <div class="modal_card__slider_wrap" data-hover-images=""><img class="image" data-lazy data-src="/assets/img/product_page_pic_1.jpg" alt=""><img class="image" data-lazy data-src="/assets/img/hits_pic_2.jpg" alt=""><img class="image" data-lazy data-src="/assets/img/hits_pic_1.jpg" alt=""></div>
           </div>
           <div class="modal_card__info">
-            <div class="product_page_info__block"><span class="product_page_info__text product_page_info__text--small green">В наличии</span>
+            <div class="product_page_info__block" data-buttons-wrap=""><span class="product_page_info__text product_page_info__text--small green">В наличии</span>
               <p class="product_page_info__title">Prada Palette 01</p>
               <div class="product_page_info__line"> <span class="product_page_info__price">17 900 руб</span><span class="product_page_info__price old">24 000 руб</span></div>
               <p class="product_page_info__text">Очки солнцезащитные от премиум-бренда выполнены из пластика. Особенности: нерегулируемые носовые упоры, фотохромные линзы, высокая степень светозащиты, в комплекте футляр.</p>
-              <div class="product_page_info__buttons">
-                <button class="product_page_info__btn btn btn--filled btn--icon_right"><span class="btn__text">добавить в корзину</span>
-                  <svg class="btn__icon btn__icon--white btn__icon--right">
-                    <use xlink:href="#cart"></use>
-                  </svg>
-                </button>
-                <button class="product_page_info__btn btn btn--grey btn--icon_right"><span class="btn__text">избранное</span>
-                  <svg class="btn__icon btn__icon--black btn__icon--right">
+              <div class="product_page_info__buttons product_page_info__buttons--page">
+                <div class="product_page_info__buttons_wrap">
+                  <div class="product_page_counter">
+                    <button class="product_page_counter__btn product_page_counter__btn--minus">
+                      <svg class="icon">
+                        <use xlink:href="#minus"></use>
+                      </svg>
+                    </button>
+                    <p class="product_page_counter__text">количество: <span class="number">1</span></p>
+                    <button class="product_page_counter__btn product_page_counter__btn--plus">
+                      <svg class="icon">
+                        <use xlink:href="#plus"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <button class="product_page_info__btn product_page_info__btn--cart btn btn--filled btn--icon_right"><span class="btn__text btn__text--initial">добавить в корзину</span><span class="btn__text btn__text--added">в корзине</span>
+                    <svg class="btn__icon btn__icon--initial btn__icon--white btn__icon--right">
+                      <use xlink:href="#cart"></use>
+                    </svg>
+                    <svg class="btn__icon btn__icon--added btn__icon--black btn__icon--right">
+                      <use xlink:href="#icon_okay"></use>
+                    </svg>
+                  </button>
+                </div>
+                <button class="product_page_info__btn product_page_info__btn--fav btn btn--grey btn--icon_right"><span class="btn__text btn__text--initial">избранное</span><span class="btn__text btn__text--added">в избранном</span>
+                  <svg class="btn__icon btn__icon--initial btn__icon--black btn__icon--right">
                     <use xlink:href="#heart"></use>
+                  </svg>
+                  <svg class="btn__icon btn__icon--added btn__icon--red btn__icon--right">
+                    <use xlink:href="#heart_red"></use>
                   </svg>
                 </button>
               </div>
@@ -1112,7 +1133,7 @@
               </svg></a><a class="footer_table__link" href="/service_page" data-active-link="">Подбор контактных линз
               <svg class="icon">
                 <use xlink:href="#link_arrow"></use>
-              </svg></a><a class="footer_table__link" href="/service_page" data-active-link="">Индивидуальный сервис
+              </svg></a><a class="footer_table__link" href="/modal_return_call" data-active-link="">Индивидуальный сервис
               <svg class="icon">
                 <use xlink:href="#link_arrow"></use>
               </svg></a>

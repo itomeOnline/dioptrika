@@ -51,12 +51,12 @@ block content
 				span.text Войти
 
 		section.catalog_inner.catalog_inner--brands
-			.catalog__breadcrumbs.breadcrumbs
-				a.breadcrumbs__link(href="/") Диоптрика
+			.catalog__breadcrumbs.breadcrumbs(itemscope itemtype="https://schema.org/BreadcrumbList")
+				a.breadcrumbs__link(href="/" itemprop="name") Диоптрика
 				span.slash /
-				a.breadcrumbs__link(href="/brands") Бренды
+				a.breadcrumbs__link(href="/brands" itemprop="name") Бренды
 				span.slash /
-				a.breadcrumbs__link.is-active Balenciaga
+				a.breadcrumbs__link.is-active(itemprop="name") Balenciaga
 
 			h1.section_block__title Balenciaga
 

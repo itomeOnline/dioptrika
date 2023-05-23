@@ -60,12 +60,12 @@ block content
 				span.text Войти
 
 		section.catalog_inner
-			.catalog__breadcrumbs.breadcrumbs
-				a.breadcrumbs__link(href="/") Диоптрика
+			.catalog__breadcrumbs.breadcrumbs(itemscope itemtype="https://schema.org/BreadcrumbList")
+				a.breadcrumbs__link(href="/" itemprop="name") Диоптрика
 				span.slash /
-				a.breadcrumbs__link(href="/") Солнцезащитные очки
+				a.breadcrumbs__link(href="/" itemprop="name") Солнцезащитные очки
 				span.slash /
-				a.breadcrumbs__link.is-active Prada
+				a.breadcrumbs__link.is-active(itemprop="name") Prada
 
 			h1.section_block__title Prada
 

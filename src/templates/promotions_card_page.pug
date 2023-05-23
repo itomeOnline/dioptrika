@@ -30,12 +30,12 @@ block content
 
 			.news_card_page__container
 
-				.news_card_page__breadcrumbs.breadcrumbs
-					a.breadcrumbs__link(href="/") Диоптрика
+				.news_card_page__breadcrumbs.breadcrumbs(itemscope itemtype="https://schema.org/BreadcrumbList")
+					a.breadcrumbs__link(href="/" itemprop="name") Диоптрика
 					span.slash /
-					a.breadcrumbs__link(href="/news") Акции и промо
+					a.breadcrumbs__link(href="/news" itemprop="name") Акции и промо
 					span.slash /
-					a.breadcrumbs__link.is-active Приводите друзей и получайте бонусы за их первую покупку в мобильном приложении
+					a.breadcrumbs__link.is-active(itemprop="name") Приводите друзей и получайте бонусы за их первую покупку в мобильном приложении
 
 				.news_card_page__content 
 					h1.news_card_page__title Приводите друзей и получайте бонусы за их первую покупку в мобильном приложении

@@ -51,10 +51,10 @@ block content
 				span.text Войти
 
 		section.favorites
-			.favorites__breadcrumbs.breadcrumbs
-				a.breadcrumbs__link(href="/") Диоптрика
+			.favorites__breadcrumbs.breadcrumbs(itemscope itemtype="https://schema.org/BreadcrumbList")
+				a.breadcrumbs__link(href="/" itemprop="name") Диоптрика
 				span.slash /
-				a.breadcrumbs__link.is-active Избранное
+				a.breadcrumbs__link.is-active(itemprop="name") Избранное
 
 			h1.section_block__title Избранное
 

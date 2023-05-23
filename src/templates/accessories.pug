@@ -26,12 +26,12 @@ block content
 				span.text Войти
 
 		section.catalog.catalog--accessories
-			.catalog__breadcrumbs.breadcrumbs
-				a.breadcrumbs__link(href="/") Диоптрика
+			.catalog__breadcrumbs.breadcrumbs(itemscope itemtype="https://schema.org/BreadcrumbList")
+				a.breadcrumbs__link(href="/" itemprop="name") Диоптрика
 				span.slash /
-				a.breadcrumbs__link(href="/catalog") Каталог
+				a.breadcrumbs__link(href="/catalog" itemprop="name") Каталог
 				span.slash /
-				a.breadcrumbs__link.is-active Аксессуары
+				a.breadcrumbs__link.is-active(itemprop="name") Аксессуары
 
 			h1.section_block__title Аксессуары
 

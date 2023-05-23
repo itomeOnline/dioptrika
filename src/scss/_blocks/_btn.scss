@@ -41,6 +41,10 @@ $height: 3.5em;
 
 		& + & {
 			margin-top: .25rem;
+
+			.product_page_info__buttons & {
+				margin-top: 0;
+			}
 		}
 	}
 

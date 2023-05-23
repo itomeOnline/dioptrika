@@ -49,9 +49,19 @@
             background-color: #EEEEEE;
         }
 
+        .modal_card & {
+            width: em(40);
+            height: em(34);
+        }
+
         .icon {
             width: em(20);
             height: em(20);
+
+            .modal_card & {
+                width: em(18);
+                height: em(18);
+            }
         }
     }
 

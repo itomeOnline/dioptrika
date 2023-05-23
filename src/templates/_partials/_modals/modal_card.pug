@@ -17,7 +17,7 @@
 
 		.modal_card__info
 
-			.product_page_info__block
+			.product_page_info__block(data-buttons-wrap="")
 				span.product_page_info__text.product_page_info__text--small.green В наличии
 
 				p.product_page_info__title Prada Palette 01
@@ -26,13 +26,26 @@
 					span.product_page_info__price.old 24 000 руб
 				p.product_page_info__text Очки солнцезащитные от премиум-бренда выполнены из пластика. Особенности: нерегулируемые носовые упоры, фотохромные линзы, высокая степень светозащиты, в комплекте футляр.
 				
-				.product_page_info__buttons
-					button.product_page_info__btn.btn.btn--filled.btn--icon_right
-						span.btn__text добавить в корзину
-						+svg('cart', "btn__icon btn__icon--white btn__icon--right")
-					button.product_page_info__btn.btn.btn--grey.btn--icon_right
-						span.btn__text избранное
-						+svg('heart', "btn__icon btn__icon--black btn__icon--right")
+				.product_page_info__buttons.product_page_info__buttons--page
+					.product_page_info__buttons_wrap
+						.product_page_counter
+							button.product_page_counter__btn.product_page_counter__btn--minus
+								+svg('minus', 'icon')
+							p.product_page_counter__text количество: #[span.number 1]
+							button.product_page_counter__btn.product_page_counter__btn--plus
+								+svg('plus', 'icon')
+
+						button.product_page_info__btn.product_page_info__btn--cart.btn.btn--filled.btn--icon_right
+							span.btn__text.btn__text--initial добавить в корзину
+							span.btn__text.btn__text--added в корзине
+							+svg('cart', "btn__icon btn__icon--initial btn__icon--white btn__icon--right")
+							+svg('icon_okay', "btn__icon btn__icon--added btn__icon--black btn__icon--right")
+
+					button.product_page_info__btn.product_page_info__btn--fav.btn.btn--grey.btn--icon_right
+						span.btn__text.btn__text--initial избранное
+						span.btn__text.btn__text--added в избранном
+						+svg('heart', "btn__icon btn__icon--initial btn__icon--black btn__icon--right")
+						+svg('heart_red', "btn__icon btn__icon--added btn__icon--red btn__icon--right")
 
 			.product_page_info__block.product_page_info__block--scroll 
 				p.product_page_info__caption Выберите цвет

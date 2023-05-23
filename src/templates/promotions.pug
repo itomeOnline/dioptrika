@@ -34,10 +34,10 @@ block content
 				span.text Войти
 
 		section.news.promotions
-			.news__breadcrumbs.breadcrumbs
-				a.breadcrumbs__link(href="/") Диоптрика
+			.news__breadcrumbs.breadcrumbs(itemscope itemtype="https://schema.org/BreadcrumbList")
+				a.breadcrumbs__link(href="/" itemprop="name") Диоптрика
 				span.slash /
-				a.breadcrumbs__link.is-active Акции и промо
+				a.breadcrumbs__link.is-active(itemprop="name") Акции и промо
 
 			h1.section_block__title Акции и промо
 			

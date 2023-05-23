@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", _ => {
     historyBack();
     headerSearch();
     productCardMobile();
+    productCardButtons();
 
     catalogInfiniteSlider();
     hitsSlider();
@@ -89,9 +90,9 @@ document.addEventListener("DOMContentLoaded", _ => {
         indexCatalog();
     } 
     
-    if (document.querySelector('.product_page')) {
-        productCardButtons();
-    } 
+    // if (document.querySelector('.product_page')) {
+        
+    // } 
 
     if (document.querySelector('.dropzone')) {
         document.querySelectorAll('.dropzone').forEach(item => {

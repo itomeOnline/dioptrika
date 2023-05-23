@@ -28,10 +28,10 @@ block content
 		section.account
 			.account__column
 				.account__column_wrap
-					.account__breadcrumbs.breadcrumbs
-						a.breadcrumbs__link(href="/") Диоптрика
+					.account__breadcrumbs.breadcrumbs(itemscope itemtype="https://schema.org/BreadcrumbList")
+						a.breadcrumbs__link(href="/" itemprop="name") Диоптрика
 						span.slash /
-						a.breadcrumbs__link.is-active Личный кабинет
+						a.breadcrumbs__link.is-active(itemprop="name") Личный кабинет
 					
 					h1.section_block__title Личный кабинет
 				
