@@ -2,15 +2,19 @@ include _globals
 doctype html
 html(lang="ru")
 	block settings
-	head
+	head(itemscope itemtype="http://schema.org/WPHeader")
 		meta(charset="UTF-8")
 		meta(name='viewport', content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no")
 		if title 
-			title #{title}
+			title(itemprop="headline") #{title}
 			-
 		if description
 			-
-			meta(content=description, name="description")
+			meta(itemprop="description" content=description, name="description")
+			-
+		if keywords
+			-
+			meta(itemprop="keywords" name="keywords" content=keywords)
 			
 		link(rel='stylesheet', href='/css/main.css?v1.1.1')
 		link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css")
