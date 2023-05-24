@@ -13908,6 +13908,7 @@
   if (canUseDom) {
     SimpleBar.initHtmlApi();
   }
+  //# sourceMappingURL=simplebar.esm.js.map
 
   class Modal {
   	constructor(el) {
@@ -21362,17 +21363,29 @@
       const dropdownItems = document.querySelectorAll('[data-dropdown-block=""]');
       
       dropdownItems.forEach( item => {
-          
-          item.querySelector('[data-dropdown-block-btn]').addEventListener('click', _ => {
-              dropdownItems.forEach(btn => {
-                  if (btn  === item) return
 
-                  btn.classList.remove('is-active');
+          if (document.querySelector('.product_page')) {
+
+              item.querySelector('[data-dropdown-block-btn]').addEventListener('click', _ => {
+                  
+                  item.classList.toggle('is-active');
               });
-              
-              item.classList.toggle('is-active');
-          });
+          } else {
+
+              item.querySelector('[data-dropdown-block-btn]').addEventListener('click', _ => {
+                  dropdownItems.forEach(btn => {
+                      if (btn  === item) return
+      
+                      btn.classList.remove('is-active');
+                  });
+                  
+                  item.classList.toggle('is-active');
+              });
+          }
+          
       });
+
+
   }
 
   function filters () {
@@ -26206,6 +26219,7 @@
       if (typeof obj !== "undefined" && obj !== null && typeof obj[methodName] === "function") return transform(obj, methodName);
       else return undefined;
   }
+  //# sourceMappingURL=dropzone.mjs.map
 
   class DropzoneArea {
       constructor (el) {
@@ -26369,21 +26383,30 @@
       buttonsWrap.forEach(wrap => {
 
           const buttonsWrap = wrap.querySelector('.product_page_info__buttons--page');
-          const btnCart = wrap.querySelector('.product_page_info__buttons_wrap');
+          const btnCartWrap = wrap.querySelector('.product_page_info__buttons_wrap');
+          const btnCart = wrap.querySelector('.product_page_info__btn--cart');
           const btnFav = wrap.querySelector('.product_page_info__btn--fav');
       
           btnFav.addEventListener('click', _ => {
               btnFav.classList.toggle('is-added');
           });
+          
+          btnCart.addEventListener('click', _ => {
+              btnCart.classList.add('is-added');
+              
+              if (btnCart.classList.contains('is-added')) {
       
-      
-          btnCart.addEventListener('mouseover', _ => {
-              buttonsWrap.classList.add('is-counter-active');
+                  btnCartWrap.addEventListener('mouseover', _ => {
+                      buttonsWrap.classList.add('is-counter-active');
+                  });
+              
+                  btnCartWrap.addEventListener('mouseout', _ => {
+                      buttonsWrap.classList.remove('is-counter-active');
+                  });
+              }
           });
+
       
-          btnCart.addEventListener('mouseout', _ => {
-              buttonsWrap.classList.remove('is-counter-active');
-          });
       
           if (window.matchMedia("(max-width:750px)").matches) {
               

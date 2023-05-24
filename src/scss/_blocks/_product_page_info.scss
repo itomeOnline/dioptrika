@@ -243,6 +243,7 @@
         .modal_card & {
             margin-bottom: 0;
             margin-right: em(24);
+            min-width: 12em;
         }
     }
 
@@ -257,6 +258,13 @@
 
         &--fav {
             border: 1px solid #EEEEEE;
+        }
+
+        &--cart {
+
+            .modal_card & {
+                min-width: 12rem;
+            }
         }
 
         &.is-added {
