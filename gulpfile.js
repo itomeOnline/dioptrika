@@ -218,4 +218,5 @@ exports.svg = svg;
 exports.watch = watch;
 exports.scripts = scripts;
 exports.scriptsBuild = scriptsBuild;
+exports.build = gulp.series(convertToWebP, optimizeImgs, svg, templates, processSass, scripts);
 exports.default = gulp.series(templates, processSass, scripts, watching);
