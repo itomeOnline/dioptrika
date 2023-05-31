@@ -21,7 +21,6 @@ jobs:
       - run: mkdir "$HOME/.ssh"
       - run: echo "${{ secrets.key }}" > "$HOME/.ssh/key"
       - run: chmod 600 "$HOME/.ssh/key"
-      - run: chmod 600 rsync_pass
       # Build
       - run: npm install
       - run: npm run build
