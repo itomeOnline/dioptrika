@@ -25,4 +25,4 @@ jobs:
       # - run: npm install
       # - run: npm run build
       # Deploy
-      - run: cd dist && sshpass -p 'kU1pU0tP0nnP2y' rsync -vaurP -e 'ssh -p 2222' --archive --compress -v . root@82.146.51.205:/var/www/user4114/data/www/dioptrika.itome.site/
+      - run: cd dist && sshpass -p 'kU1pU0tP0nnP2y' rsync -vaurP -e 'ssh -p 22' --archive --compress -v . root@82.146.51.205:/var/www/user4114/data/www/dioptrika.itome.site/
