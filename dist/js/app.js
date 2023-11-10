@@ -26436,6 +26436,26 @@
 
   }
 
+  function homeSlider () {
+      const slider = new Swiper('.home__slider', {
+          modules: [ Navigation, Mousewheel, EffectFade],
+          slidesPerView: 1,
+          speed: 700,
+          loop: true,
+          watchOverflow: true,
+          watchSlidesProgress: true,
+          preventInteractionOnTransition: true,
+          autoplay: {
+  	        delay: 6000,
+  	      },
+          effect: "fade",
+          fadeEffect: {
+            crossFade: true
+          },
+        });
+
+  }
+
   setTimeout(() => { 
       document.querySelector('body').classList.add('on-loaded');
   }, 1000);
@@ -26481,7 +26501,7 @@
       contactsSlider();
       indexCatalogSlider();
       productPageSlider();
-      
+      homeSlider();
       
 
       if (document.querySelector('[data-hover-images=""]')) {

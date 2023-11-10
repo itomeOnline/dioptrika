@@ -33,6 +33,7 @@ import HvrSlider from "./components/sliders/HvrSlider";
 import productCardMobile from "./components/productCardMobile";
 import productCardButtons from "./components/productCardButtons";
 import productPageSlider from "./components/sliders/productPageSlider";
+import homeSlider from "./components/sliders/homeSlider";
 
 setTimeout(() => { 
     document.querySelector('body').classList.add('on-loaded');
@@ -79,7 +80,7 @@ document.addEventListener("DOMContentLoaded", _ => {
     contactsSlider();
     indexCatalogSlider();
     productPageSlider();
-    
+    homeSlider();
     
 
     if (document.querySelector('[data-hover-images=""]')) {

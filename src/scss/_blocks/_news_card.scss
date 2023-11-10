@@ -5,18 +5,33 @@
     height: auto;
     
     &__img {
-        height: em(160);
+        //min-height: em(160);
+        height: auto;
 
         margin-bottom: em(14);
 
         @media(max-width: 750px) {
-            height: em(192);
-
             margin-bottom: em(6);
         }
 
         .image {
             object-fit: cover;
+            height: auto;
+
+            &--desk {
+
+                @media(max-width: 750px) {
+                    display: none;
+                }
+            }
+
+            &--mob {
+                display: none;
+
+                @media(max-width: 750px) {
+                    display: initial;
+                }
+            }
         }
     }
 

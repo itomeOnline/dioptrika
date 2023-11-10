@@ -17,6 +17,21 @@
 
         .image {
             object-fit: cover;
+
+            &--desk {
+
+                @media(max-width: 750px) {
+                    display: none;
+                }
+            }
+
+            &--mob {
+                display: none;
+
+                @media(max-width: 750px) {
+                    display: initial;
+                }
+            }
         }
     }
 

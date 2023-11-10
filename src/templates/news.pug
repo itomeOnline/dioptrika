@@ -4,10 +4,11 @@ block settings
 	- title = 'Диоптрика — Новости';
 
 
-mixin newsCard(img, date, title, text)
+mixin newsCard(imgDesk, imgMob, date, title, text)
 	a.news_card(href="/news_card_page")
 		.news_card__img 
-			+imgSvg(img, '', 'image')
+			+img(imgDesk, '', 'image image--desk')
+			+img(imgMob, '', 'image image--mob')
 		p.news_card__date= date
 		p.news_card__title!= title
 		p.news_card__text!= text
@@ -47,20 +48,25 @@ block content
 					+svg('icon_sort', "btn__icon btn__icon--black btn__icon--right")
 
 			.news__content 
-				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы за их первую покупку в мобильном приложении', 'Отправьте вашу ссылку на установку мобильного приложения другу, который еще не является пользователем мобильного.')
-				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы за их первую покупку в мобильном', 'Отправьте вашу ссылку на установку мобильного приложения другу, который еще не является пользователем мобильного.')
-				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы', 'Отправьте вашу ссылку на установку мобильного приложения другу, который еще не является пользователем мобильного.')
-				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы', 'Отправьте вашу ссылку на установку')
+				+newsCard(`${assetsPath}/img/preview_desk.png`, `${assetsPath}/img/preview_mob.png`, '7 апреля, 2023', 'Компания Safilo представила коллекции осень-зима 2023.', 'своих лицензионных брендов Boss, Carolina Herrera, David Beckham, DSquared2, Marc Jacobs, Moschino.')
+				+newsCard(`${assetsPath}/img/preview_desk.png`, `${assetsPath}/img/preview_mob.png`, '7 апреля, 2023', 'Компания Safilo представила коллекции осень-зима 2023.', 'своих лицензионных брендов Boss, Carolina Herrera, David Beckham, DSquared2, Marc Jacobs, Moschino.')
+				+newsCard(`${assetsPath}/img/preview_desk.png`, `${assetsPath}/img/preview_mob.png`, '7 апреля, 2023', 'Компания Safilo представила коллекции осень-зима 2023.', 'своих лицензионных брендов Boss, Carolina Herrera, David Beckham, DSquared2, Marc Jacobs, Moschino.')
+				+newsCard(`${assetsPath}/img/preview_desk.png`, `${assetsPath}/img/preview_mob.png`, '7 апреля, 2023', 'Компания Safilo представила коллекции осень-зима 2023.', 'своих лицензионных брендов Boss, Carolina Herrera, David Beckham, DSquared2, Marc Jacobs, Moschino.')
+				
 		   
-				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы за их первую покупку в мобильном приложении', 'Отправьте вашу ссылку на установку мобильного приложения другу, который еще не является пользователем мобильного.')
-				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы за их первую покупку в мобильном', 'Отправьте вашу ссылку на установку мобильного приложения другу, который еще не является пользователем мобильного.')
-				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы', 'Отправьте вашу ссылку на установку мобильного приложения другу, который еще не является пользователем мобильного.')
-				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы', 'Отправьте вашу ссылку на установку')
+				+newsCard(`${assetsPath}/img/preview_desk.png`, `${assetsPath}/img/preview_mob.png`, '7 апреля, 2023', 'Компания Safilo представила коллекции осень-зима 2023.', 'своих лицензионных брендов Boss, Carolina Herrera, David Beckham, DSquared2, Marc Jacobs, Moschino.')
+				+newsCard(`${assetsPath}/img/preview_desk.png`, `${assetsPath}/img/preview_mob.png`, '7 апреля, 2023', 'Компания Safilo представила коллекции осень-зима 2023.', 'своих лицензионных брендов Boss, Carolina Herrera, David Beckham, DSquared2, Marc Jacobs, Moschino.')
+				+newsCard(`${assetsPath}/img/preview_desk.png`, `${assetsPath}/img/preview_mob.png`, '7 апреля, 2023', 'Компания Safilo представила коллекции осень-зима 2023.', 'своих лицензионных брендов Boss, Carolina Herrera, David Beckham, DSquared2, Marc Jacobs, Moschino.')
+				+newsCard(`${assetsPath}/img/preview_desk.png`, `${assetsPath}/img/preview_mob.png`, '7 апреля, 2023', 'Компания Safilo представила коллекции осень-зима 2023.', 'своих лицензионных брендов Boss, Carolina Herrera, David Beckham, DSquared2, Marc Jacobs, Moschino.')
+				
 		   
-				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы за их первую покупку в мобильном приложении', 'Отправьте вашу ссылку на установку мобильного приложения другу, который еще не является пользователем мобильного.')
-				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы за их первую покупку в мобильном', 'Отправьте вашу ссылку на установку мобильного приложения другу, который еще не является пользователем мобильного.')
-				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы', 'Отправьте вашу ссылку на установку мобильного приложения другу, который еще не является пользователем мобильного.')
-				+newsCard(`${assetsPath}/img/cover_pic.svg`, '7 апреля, 2023', 'Приводите друзей и получайте бонусы', 'Отправьте вашу ссылку на установку')
+				+newsCard(`${assetsPath}/img/preview_desk.png`, `${assetsPath}/img/preview_mob.png`, '7 апреля, 2023', 'Компания Safilo представила коллекции осень-зима 2023.', 'своих лицензионных брендов Boss, Carolina Herrera, David Beckham, DSquared2, Marc Jacobs, Moschino.')
+				+newsCard(`${assetsPath}/img/preview_desk.png`, `${assetsPath}/img/preview_mob.png`, '7 апреля, 2023', 'Компания Safilo представила коллекции осень-зима 2023.', 'своих лицензионных брендов Boss, Carolina Herrera, David Beckham, DSquared2, Marc Jacobs, Moschino.')
+				+newsCard(`${assetsPath}/img/preview_desk.png`, `${assetsPath}/img/preview_mob.png`, '7 апреля, 2023', 'Компания Safilo представила коллекции осень-зима 2023.', 'своих лицензионных брендов Boss, Carolina Herrera, David Beckham, DSquared2, Marc Jacobs, Moschino.')
+				+newsCard(`${assetsPath}/img/preview_desk.png`, `${assetsPath}/img/preview_mob.png`, '7 апреля, 2023', 'Компания Safilo представила коллекции осень-зима 2023.', 'своих лицензионных брендов Boss, Carolina Herrera, David Beckham, DSquared2, Marc Jacobs, Moschino.')
+				
+		   
+				
 		   
 					  
 			.news__pagination.pagination
