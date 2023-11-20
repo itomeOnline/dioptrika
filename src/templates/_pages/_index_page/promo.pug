@@ -1,0 +1,28 @@
+mixin newsCard(img, title)
+	a.news_card.news_card--promo.swiper-slide(href="/promotions_card_page")
+		.news_card__img 
+			+imgSvg(img, '', 'image')
+		p.news_card__title!= title
+
+
+section.hits.promo
+	.hits__top
+		h2.section_block__title Акции
+
+		.hits__nav.slider__buttons
+			button.slider__button.slider__button--prev.promo__nav_btn--prev
+				+svg('link_arrow', 'icon')
+			button.slider__button.slider__button--next.promo__nav_btn--next
+				+svg('link_arrow', 'icon')
+	
+
+	.promo__slider.slider.swiper.hits__slider--promo
+		.swiper-wrapper
+			+newsCard(`${assetsPath}/img/cover_pic.svg`, '-15% на солнцезащитные очки')
+			+newsCard(`${assetsPath}/img/cover_pic.svg`, '-15% на солнцезащитные очки')
+			+newsCard(`${assetsPath}/img/cover_pic.svg`, '-15% на солнцезащитные очки')
+			+newsCard(`${assetsPath}/img/cover_pic.svg`, '-15% на солнцезащитные очки')
+			+newsCard(`${assetsPath}/img/cover_pic.svg`, '-15% на солнцезащитные очки')
+	
+	a.hits__btn_more.btn.btn--grey(href="/promotions")
+		span.btn__text СМОТРЕТЬ БОЛЬШЕ

@@ -34,6 +34,7 @@ import productCardMobile from "./components/productCardMobile";
 import productCardButtons from "./components/productCardButtons";
 import productPageSlider from "./components/sliders/productPageSlider";
 import homeSlider from "./components/sliders/homeSlider";
+import promoSlider from "./components/sliders/promoSlider";
 
 setTimeout(() => { 
     document.querySelector('body').classList.add('on-loaded');
@@ -81,6 +82,7 @@ document.addEventListener("DOMContentLoaded", _ => {
     indexCatalogSlider();
     productPageSlider();
     homeSlider();
+    promoSlider();
     
 
     if (document.querySelector('[data-hover-images=""]')) {

@@ -1,9 +1,9 @@
 mixin hitsSlideHvr(pic1, pic2, pic3, name, model, price)
 	a.hits_slide.swiper-slide(data-linked-modal="modal_card")
 		.hits_slide__pic
-			.product_page__tag.is-hit
+			.product_page__tag.is-new 
 				+svg('tag', 'bg')
-				.text хит
+				.text новинка
 			.hits_slide__pic_wrap(data-hover-images="")
 				img.image(data-lazy, data-src= pic1, alt="")
 				img.image(data-lazy, data-src= pic2, alt="")
@@ -26,9 +26,9 @@ mixin hitsSlideHvr(pic1, pic2, pic3, name, model, price)
 					+imgSvg(`${assetsPath}/img/icon_fav_empty.svg`, '', 'image image__empty')
 					+imgSvg(`${assetsPath}/img/icon_fav_active.svg`, '', 'image image__active')
 
-section.hits
+section.hits.new_products
 	.hits__top
-		h2.section_block__title Хиты
+		h2.section_block__title Новинки
 
 		.hits__nav.slider__buttons
 			button.slider__button.slider__button--prev.hits__nav_btn--prev

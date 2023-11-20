@@ -17,8 +17,13 @@
             margin-bottom: em(6);
         }
 
+        .blog_main & {
+            height: em(280);
+        }
+
         .image {
             object-fit: cover;
+            object-position: top;
         }
     }
 

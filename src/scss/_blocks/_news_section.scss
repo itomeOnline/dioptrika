@@ -9,6 +9,10 @@
         padding-top: em(60);
     }
 
+    &.blog_main {
+        padding-bottom: em(0);
+    }
+
     &__top {
         width: 100%;
         display: flex;
@@ -34,6 +38,10 @@
             &::-webkit-scrollbar {
                 display: none;
             }
+        }
+
+        &--blog {
+            grid-template-columns: repeat(3, 1fr);
         }
     }
 

@@ -64,7 +64,8 @@
 
     &__slider,
     &__slider_1, 
-    &__slider_2 {
+    &__slider_2,
+    &__slider--promo {
         margin-top: em(30);
 
         @media(max-width: 750px) {

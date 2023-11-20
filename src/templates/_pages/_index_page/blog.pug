@@ -1,0 +1,20 @@
+mixin newsSectionCard(img, text, date)
+	a.news_section_card(href="/blog_card")
+		.news_section_card__img 
+			+img(img, '', 'image')
+		p.news_section_card__text!= text
+		p.news_section_card__date= date
+
+
+section.news_section.blog_main
+
+	.news_section__top 
+		h2.section_block__title.section_block__title--small Блог
+		a.news_section__btn.btn.btn--grey.btn--icon_right(href="/blog")
+			span.btn__text перейти в блог
+			+svg('link_arrow', "btn__icon btn__icon--black btn__icon--right")
+
+	.news_section__content.news_section__content--blog
+		+newsSectionCard(`${assetsPath}/img/news_pic_1.jpg`, 'Вы их искали: прямые черные брюки, как у Кайи Гербер', '8 марта, 2023')
+		+newsSectionCard(`${assetsPath}/img/news_pic_1.jpg`, 'Вы их искали: прямые черные брюки, как у Кайи Гербер', '8 марта, 2023')
+		+newsSectionCard(`${assetsPath}/img/news_pic_1.jpg`, 'Вы их искали: прямые черные брюки, как у Кайи Гербер', '8 марта, 2023')
