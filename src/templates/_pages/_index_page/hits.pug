@@ -26,28 +26,126 @@ mixin hitsSlideHvr(pic1, pic2, pic3, name, model, price)
 					+imgSvg(`${assetsPath}/img/icon_fav_empty.svg`, '', 'image image__empty')
 					+imgSvg(`${assetsPath}/img/icon_fav_active.svg`, '', 'image image__active')
 
-section.hits
+section.hits(data-many-sliders="")
 	.hits__top
 		h2.section_block__title Хиты
 
-		.hits__nav.slider__buttons
-			button.slider__button.slider__button--prev.hits__nav_btn--prev
-				+svg('link_arrow', 'icon')
-			button.slider__button.slider__button--next.hits__nav_btn--next
-				+svg('link_arrow', 'icon')
-	
+	.hits__block.hits__block--margin(data-tab-wrapper="")
 
-	.hits__slider.slider.swiper
-		.swiper-wrapper
-			+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
-			+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
-			+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
-			+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
-			+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
-			+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
-			+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
-			+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
-			
+		h3.section_block__title.section_block__title--small Солнцезащитные очки
+
+		.hits__block_top
+			.hits__tabs 
+				button.hits__tabs_btn.is-active(data-tab-id="1") МУЖСКИЕ
+				span.slash /
+				button.hits__tabs_btn(data-tab-id="2") ЖЕНСКИЕ
+
+			.hits__nav.slider__buttons
+				button.slider__button.slider__button--prev.hits__nav_btn--prev
+					+svg('link_arrow', 'icon')
+				button.slider__button.slider__button--next.hits__nav_btn--next
+					+svg('link_arrow', 'icon')
+
+		.hits__inner
+
+			.hits__slider.slider.swiper.is-active(data-tab="1")
+				.swiper-wrapper
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
+			.hits__slider.slider.swiper(data-tab="2")
+				.swiper-wrapper
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
+					
 	
-	a.hits__btn_more.btn.btn--grey(href="/catalog")
-		span.btn__text СМОТРЕТЬ БОЛЬШЕ
+		a.hits__btn_more.btn.btn--filled(href="/catalog")
+			span.btn__text СМОТРЕТЬ БОЛЬШЕ
+
+	
+	.hits__block(data-tab-wrapper="")
+
+		h3.section_block__title.section_block__title--small Оправы для очков
+
+		.hits__block_top
+			.hits__tabs 
+				button.hits__tabs_btn.is-active(data-tab-id="1") МУЖСКИЕ
+				span.slash /
+				button.hits__tabs_btn(data-tab-id="2") ЖЕНСКИЕ
+
+			.hits__nav.slider__buttons
+				button.slider__button.slider__button--prev.hits_1__nav_btn--prev
+					+svg('link_arrow', 'icon')
+				button.slider__button.slider__button--next.hits_1__nav_btn--next
+					+svg('link_arrow', 'icon')
+
+		.hits__inner
+
+			.hits__slider_1.slider.swiper.is-active(data-tab="1")
+				.swiper-wrapper
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
+			.hits__slider_1.slider.swiper(data-tab="2")
+				.swiper-wrapper
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
+					
+	
+		a.hits__btn_more.btn.btn--filled(href="/catalog")
+			span.btn__text СМОТРЕТЬ БОЛЬШЕ
+	
+	
+	
+	.hits__block
+
+
+		.hits__block_top
+			
+			h3.section_block__title.section_block__title--small Аксессуары
+
+			.hits__nav.slider__buttons
+				button.slider__button.slider__button--prev.hits_2__nav_btn--prev
+					+svg('link_arrow', 'icon')
+				button.slider__button.slider__button--next.hits_2__nav_btn--next
+					+svg('link_arrow', 'icon')
+
+		.hits__inner
+
+			.hits__slider_2.slider.swiper.is-active
+				.swiper-wrapper
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, `${assetsPath}/img/hits_pic_1.jpg`, 'Prada', 'Bandoneon.S PC5', '17 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, `${assetsPath}/img/hits_pic_2.jpg`, 'Prada', 'Sound Net WC6', '15 900 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, `${assetsPath}/img/hits_pic_3.jpg`, 'Prada', 'Hue BRC10', '45 000 RUB')
+					+hitsSlideHvr(`${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, `${assetsPath}/img/hits_pic_4.jpg`, 'Prada', 'Jackie 01', '5 000 RUB')
+	
+					
+	
+		a.hits__btn_more.btn.btn--filled(href="/catalog")
+			span.btn__text СМОТРЕТЬ БОЛЬШЕ

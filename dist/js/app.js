@@ -26534,6 +26534,16 @@
       productPageSlider();
       homeSlider();
       promoSlider();
+
+      if (document.querySelectorAll('[data-many-sliders=""]')) {
+          const blocks = document.querySelectorAll('[data-many-sliders=""]');
+
+          blocks.forEach(block => {
+              hitsSlider();
+              hitsSlider1();
+              hitsSlider2();
+          });
+      }
       
 
       if (document.querySelector('[data-hover-images=""]')) {
@@ -26585,8 +26595,12 @@
           new Dropdown(el);
       });
 
-      if (document.querySelector('[data-tab-wrapper]')) {
-          tab(document.querySelector('[data-tab-wrapper]'));
+      if (document.querySelectorAll('[data-tab-wrapper]')) {
+          const wrappers = document.querySelectorAll('[data-tab-wrapper]');
+          
+          wrappers.forEach(wrap => {
+              tab(wrap);
+          });
       }
 
 
