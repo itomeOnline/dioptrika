@@ -13908,7 +13908,6 @@
   if (canUseDom) {
     SimpleBar.initHtmlApi();
   }
-  //# sourceMappingURL=simplebar.esm.js.map
 
   class Modal {
   	constructor(el) {
@@ -26219,7 +26218,6 @@
       if (typeof obj !== "undefined" && obj !== null && typeof obj[methodName] === "function") return transform(obj, methodName);
       else return undefined;
   }
-  //# sourceMappingURL=dropzone.mjs.map
 
   class DropzoneArea {
       constructor (el) {
